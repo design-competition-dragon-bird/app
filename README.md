@@ -18,7 +18,7 @@ Group Project - README
 - **Category:** Medical 
 - **Mobile:**
 - **Story:**
-- **Market:**
+- **Market:** Patients with Parkinson's disease, thier caregivers and their doctors. 
 - **Habit:**
 - **Scope:**
 
