@@ -15,7 +15,7 @@ Group Project - README
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
+- **Category:** Medical 
 - **Mobile:**
 - **Story:**
 - **Market:**
