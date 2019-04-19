@@ -1,4 +1,4 @@
-Group Project - README Template
+Group Project - README
 ===
 
 # SoleMate
