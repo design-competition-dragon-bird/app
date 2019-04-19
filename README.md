@@ -64,7 +64,8 @@ Group Project - README
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="<img width="451" alt="Screen Shot 2019-04-18 at 5 15 32 PM" src="https://user-images.githubusercontent.com/36114497/56398748-18ac2380-61ff-11e9-8af3-4f177c4e4ee6.png">
+" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
