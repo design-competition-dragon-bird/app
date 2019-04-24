@@ -28,8 +28,8 @@ Group Project - README
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* As a Parkinson Patient I want to see my gait analysis so that I know my stepping patterns.
+* ... 
 
 **Optional Nice-to-have Stories**
 
