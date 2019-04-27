@@ -11,16 +11,16 @@ Group Project - README
 
 ## Overview
 ### Description
-Using sensors in shoe soles to record and send pressure signals, the application will allow Patients with Parkinsons to control their movement by reading pressure points on their feet and customize the signal to send to their shoe soles.
+Using sensors in shoe soles to record and send pressure signals, the application will allow Patients with Parkinson;s to control their movement by reading pressure points on their feet and customize the signal to send to their shoe soles. Will potentially include functions that allows communcation between doctors and patients and a map of resources available locally.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Medical 
-- **Mobile:**
-- **Story:**
+- **Mobile:** This app would be used for patients to track their devices connected to their shoes. It allows flexible functionalities for the users to adjust and adapt to the insoles so that they can move freely without fear of falling.
+- **Story:** Analyze pressure points on foot, connect via bluetooth to send signals to and receive signals from the mobile application, and give cues for patients to move in certain directions.
 - **Market:** Patients with Parkinson's disease, thier caregivers and their doctors. 
-- **Habit:**
-- **Scope:**
+- **Habit:** This app should be used on a daily basis in order for patients to get used to the device and take advantage of it.
+- **Scope:** First we will have patients volunteer to test out the product to see if it is a viable solution to their mobility issues and then possibly expand to be an application for all Patients with Parkinson's.
 
 ## Product Spec
 
