@@ -17,10 +17,10 @@
 		5EE5D6AF228F9C76000AFCE8 /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5D6AE228F9C76000AFCE8 /* Messages.storyboard */; };
 		5EE5D6B1228F9CB3000AFCE8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5D6B0228F9CB3000AFCE8 /* MessagesViewController.swift */; };
 		5EE5D6B3228F9ED8000AFCE8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5D6B2228F9ED8000AFCE8 /* Message.swift */; };
-		5EE5D6B5228FA9EB000AFCE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5D6B4228FA9EB000AFCE8 /* GoogleService-Info.plist */; };
 		5EE5D6B72290AD36000AFCE8 /* heatMap2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5D6B62290AD36000AFCE8 /* heatMap2.0.swift */; };
 		5EE5D6B92290AD4F000AFCE8 /* heatMap2.0.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */; };
 		D220340A9AEBFBCA5C5A9274 /* Pods_HeatMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955B71AEEEFB1845B552F7CB /* Pods_HeatMap.framework */; };
+		FD7A573D2290E77100AF9F56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		5EE5D6AE228F9C76000AFCE8 /* Messages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		5EE5D6B0228F9CB3000AFCE8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		5EE5D6B2228F9ED8000AFCE8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		5EE5D6B4228FA9EB000AFCE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EE5D6B62290AD36000AFCE8 /* heatMap2.0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heatMap2.0.swift; sourceTree = "<group>"; };
 		5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = heatMap2.0.storyboard; sourceTree = "<group>"; };
 		8C9A7C66FD575775BF66F628 /* Pods-HeatMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeatMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeatMap/Pods-HeatMap.debug.xcconfig"; sourceTree = "<group>"; };
 		955B71AEEEFB1845B552F7CB /* Pods_HeatMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeatMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE2CF7B8CC1CCEB65BC06B /* Pods-HeatMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeatMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeatMap/Pods-HeatMap.release.xcconfig"; sourceTree = "<group>"; };
+		FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 				5E2354EA226BBECC00B4E21C /* LaunchScreen.storyboard */,
 				5E2354ED226BBECC00B4E21C /* Info.plist */,
 				5EB23922227D2745006225E3 /* viabration_info.swift */,
-				5EE5D6B4228FA9EB000AFCE8 /* GoogleService-Info.plist */,
+				FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */,
 				5EE5D6B62290AD36000AFCE8 /* heatMap2.0.swift */,
 				5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */,
 			);
@@ -175,9 +175,9 @@
 				5EE5D6B92290AD4F000AFCE8 /* heatMap2.0.storyboard in Resources */,
 				5E2354EC226BBECC00B4E21C /* LaunchScreen.storyboard in Resources */,
 				5E2354E9226BBECC00B4E21C /* Assets.xcassets in Resources */,
-				5EE5D6B5228FA9EB000AFCE8 /* GoogleService-Info.plist in Resources */,
 				5EE5D6AF228F9C76000AFCE8 /* Messages.storyboard in Resources */,
 				5E2354E7226BBECB00B4E21C /* Main.storyboard in Resources */,
+				FD7A573D2290E77100AF9F56 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,13 +405,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7CFTN6YLZP;
+				DEVELOPMENT_TEAM = 8LVMJG2BJ6;
 				INFOPLIST_FILE = HeatMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Design-Competition.HeatMap";
+				PRODUCT_BUNDLE_IDENTIFIER = wefg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,13 +424,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7CFTN6YLZP;
+				DEVELOPMENT_TEAM = 8LVMJG2BJ6;
 				INFOPLIST_FILE = HeatMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Design-Competition.HeatMap";
+				PRODUCT_BUNDLE_IDENTIFIER = wefg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_sole_icon_3" translatesAutoresizingMaskIntoConstraints="NO" id="64m-tq-Sie">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_sole_icon" translatesAutoresizingMaskIntoConstraints="NO" id="64m-tq-Sie">
                                 <rect key="frame" x="57.5" y="160" width="299" height="576"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="64m-tq-Sie" secondAttribute="height" multiplier="300:577" id="w32-TN-QYr"/>
@@ -43,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="right_sole_icon_3" width="80" height="199"/>
+        <image name="right_sole_icon" width="82" height="199"/>
     </resources>
 </document>
