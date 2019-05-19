@@ -21,6 +21,7 @@
 		5EE5D6B92290AD4F000AFCE8 /* heatMap2.0.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */; };
 		D220340A9AEBFBCA5C5A9274 /* Pods_HeatMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955B71AEEEFB1845B552F7CB /* Pods_HeatMap.framework */; };
 		FD7A573D2290E77100AF9F56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */; };
+		FDA28D06229128BC00A6BDC3 /* dataPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = FDA28D05229128BC00A6BDC3 /* dataPoints.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		955B71AEEEFB1845B552F7CB /* Pods_HeatMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeatMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE2CF7B8CC1CCEB65BC06B /* Pods-HeatMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeatMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeatMap/Pods-HeatMap.release.xcconfig"; sourceTree = "<group>"; };
 		FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FDA28D05229128BC00A6BDC3 /* dataPoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dataPoints.json; path = ../../Images/dataPoints.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */,
 				5EE5D6B62290AD36000AFCE8 /* heatMap2.0.swift */,
 				5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */,
+				FDA28D05229128BC00A6BDC3 /* dataPoints.json */,
 			);
 			path = HeatMap;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				5E2354EC226BBECC00B4E21C /* LaunchScreen.storyboard in Resources */,
 				5E2354E9226BBECC00B4E21C /* Assets.xcassets in Resources */,
 				5EE5D6AF228F9C76000AFCE8 /* Messages.storyboard in Resources */,
+				FDA28D06229128BC00A6BDC3 /* dataPoints.json in Resources */,
 				5E2354E7226BBECB00B4E21C /* Main.storyboard in Resources */,
 				FD7A573D2290E77100AF9F56 /* GoogleService-Info.plist in Resources */,
 			);

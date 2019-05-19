@@ -25,8 +25,9 @@ class HeatMap_2_0: UIViewController{
     let num_Cols = 5
     
     var pixelMatrix = [[PixelData]]()
-    var indexMatrix = [[Int]]() //contains the x and y location for all 70 pressure points
     var pressure_Data = [[CGFloat]]()
+    
+    var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)//contains the x and y location for all 70 pressure points
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,17 +59,40 @@ class HeatMap_2_0: UIViewController{
             pixelMatrix.append(pixArray)
         }
         
+        update_index()
+        print(indexMatrix)
+        updateMap()
+        
+        /*
+         * convert the pixel array into an image
+         */
         right_sole_icon.image = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
         
 //        print(pixelMatrix.flatMap{$0}.count)
 //        print(image_width)
 //        print(image_height)
         print("done!!")
+        
     }
     
     func update_index() {
-        //update indexMatrix
-        
+        if let path = Bundle.main.path(forResource: "dataPoints", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? Dictionary<String, [String]> {
+                    for point in jsonResult {
+                        let row = Int(point.value[0])!
+                        let col = Int(point.value[1])!
+                        
+                        indexMatrix[Int(point.key)!][0] = row
+                        indexMatrix[Int(point.key)!][1] = col
+                    }
+                }
+            } catch {
+                // handle error
+            }
+        }
     }
     
     func updateMap() {

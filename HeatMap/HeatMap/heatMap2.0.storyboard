@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4q-5N-Ysb">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,21 +15,21 @@
             <objects>
                 <viewController id="j4q-5N-Ysb" customClass="HeatMap_2_0" customModule="HeatMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d5x-Qj-5e2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_sole_icon" translatesAutoresizingMaskIntoConstraints="NO" id="64m-tq-Sie">
-                                <rect key="frame" x="57.5" y="160" width="299" height="576"/>
+                                <rect key="frame" x="82" y="64.666666666666686" width="250" height="606.66666666666652"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="64m-tq-Sie" secondAttribute="height" multiplier="300:577" id="w32-TN-QYr"/>
+                                    <constraint firstAttribute="width" secondItem="64m-tq-Sie" secondAttribute="height" multiplier="82:199" id="0at-4f-apq"/>
+                                    <constraint firstAttribute="width" constant="250" id="Lqy-MT-QPi"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="64m-tq-Sie" firstAttribute="centerX" secondItem="d5x-Qj-5e2" secondAttribute="centerX" id="AuA-PU-Tet"/>
-                            <constraint firstItem="64m-tq-Sie" firstAttribute="centerY" secondItem="d5x-Qj-5e2" secondAttribute="centerY" id="e7o-g4-3AD"/>
-                            <constraint firstItem="64m-tq-Sie" firstAttribute="top" secondItem="gNh-ot-bZI" secondAttribute="top" constant="116" id="yar-Sf-dgK"/>
+                            <constraint firstItem="64m-tq-Sie" firstAttribute="centerY" secondItem="d5x-Qj-5e2" secondAttribute="centerY" id="UvO-Hd-sxH"/>
+                            <constraint firstItem="64m-tq-Sie" firstAttribute="centerX" secondItem="d5x-Qj-5e2" secondAttribute="centerX" id="xId-CK-AN8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gNh-ot-bZI"/>
                     </view>
