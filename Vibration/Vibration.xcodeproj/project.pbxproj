@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0302D92CB07C4F848C40D275 /* Pods_VibrationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683164361084F09589A7A006 /* Pods_VibrationUITests.framework */; };
+		4B97E2BB227D092C00745F69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2BA227D092C00745F69 /* AppDelegate.swift */; };
+		4B97E2C0227D092C00745F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B97E2BE227D092C00745F69 /* Main.storyboard */; };
+		4B97E2C2227D092D00745F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B97E2C1227D092D00745F69 /* Assets.xcassets */; };
+		4B97E2C5227D092D00745F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B97E2C3227D092D00745F69 /* LaunchScreen.storyboard */; };
+		4B97E2D0227D092D00745F69 /* VibrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2CF227D092D00745F69 /* VibrationTests.swift */; };
+		4B97E2DB227D092D00745F69 /* VibrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2DA227D092D00745F69 /* VibrationUITests.swift */; };
+		4B97E2E9227D0BC500745F69 /* VibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2E8227D0BC500745F69 /* VibrationViewController.swift */; };
+		4B97E2ED227D2A4C00745F69 /* Vibration_Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2EC227D2A4C00745F69 /* Vibration_Info.swift */; };
+		4BE87E3C22901D0400B6825A /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE87E3B22901D0400B6825A /* PatternTableViewController.swift */; };
+		4BE87E3E2290243400B6825A /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE87E3D2290243400B6825A /* CustomViewController.swift */; };
+		4BE87E4022909ECE00B6825A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE87E3F22909ECE00B6825A /* GoogleService-Info.plist */; };
+		7AB9D641376591A1DAD8E631 /* Pods_VibrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0482E54C72D8EB3388BFE6C7 /* Pods_VibrationTests.framework */; };
+		CE9425BC75B9675FBD27A5BB /* Pods_Vibration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8040016114994525F3427CBA /* Pods_Vibration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4B97E2CC227D092D00745F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B97E2AF227D092C00745F69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B97E2B6227D092C00745F69;
+			remoteInfo = Vibration;
+		};
+		4B97E2D7227D092D00745F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B97E2AF227D092C00745F69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B97E2B6227D092C00745F69;
+			remoteInfo = Vibration;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0482E54C72D8EB3388BFE6C7 /* Pods_VibrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VibrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CD4819CA5B53EA69DBA6A82 /* Pods-Vibration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibration.debug.xcconfig"; path = "Target Support Files/Pods-Vibration/Pods-Vibration.debug.xcconfig"; sourceTree = "<group>"; };
+		4B97E2B7227D092C00745F69 /* Vibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B97E2BA227D092C00745F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B97E2BF227D092C00745F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B97E2C1227D092D00745F69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B97E2C4227D092D00745F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B97E2C6227D092D00745F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B97E2CB227D092D00745F69 /* VibrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B97E2CF227D092D00745F69 /* VibrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationTests.swift; sourceTree = "<group>"; };
+		4B97E2D1227D092D00745F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B97E2D6227D092D00745F69 /* VibrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B97E2DA227D092D00745F69 /* VibrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationUITests.swift; sourceTree = "<group>"; };
+		4B97E2DC227D092D00745F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B97E2E8227D0BC500745F69 /* VibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationViewController.swift; sourceTree = "<group>"; };
+		4B97E2EC227D2A4C00745F69 /* Vibration_Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration_Info.swift; sourceTree = "<group>"; };
+		4BE87E3B22901D0400B6825A /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
+		4BE87E3D2290243400B6825A /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		4BE87E3F22909ECE00B6825A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5AC9D4495A64E4C65714199A /* Pods-VibrationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibrationUITests.debug.xcconfig"; path = "Target Support Files/Pods-VibrationUITests/Pods-VibrationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		683164361084F09589A7A006 /* Pods_VibrationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VibrationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68B4AF5D7F71CD3B7D1A7CE2 /* Pods-VibrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibrationTests.release.xcconfig"; path = "Target Support Files/Pods-VibrationTests/Pods-VibrationTests.release.xcconfig"; sourceTree = "<group>"; };
+		8040016114994525F3427CBA /* Pods_Vibration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vibration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		971581819A7B7A5B21FA2BFD /* Pods-Vibration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibration.release.xcconfig"; path = "Target Support Files/Pods-Vibration/Pods-Vibration.release.xcconfig"; sourceTree = "<group>"; };
+		A7C40657F39DE833041EDBC9 /* Pods-VibrationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibrationUITests.release.xcconfig"; path = "Target Support Files/Pods-VibrationUITests/Pods-VibrationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D3CF8E20EC0B500903529AF7 /* Pods-VibrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibrationTests.debug.xcconfig"; path = "Target Support Files/Pods-VibrationTests/Pods-VibrationTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B97E2B4227D092C00745F69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE9425BC75B9675FBD27A5BB /* Pods_Vibration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B97E2C8227D092D00745F69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB9D641376591A1DAD8E631 /* Pods_VibrationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B97E2D3227D092D00745F69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0302D92CB07C4F848C40D275 /* Pods_VibrationUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19A8F80D4867584F8A2C755E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8040016114994525F3427CBA /* Pods_Vibration.framework */,
+				0482E54C72D8EB3388BFE6C7 /* Pods_VibrationTests.framework */,
+				683164361084F09589A7A006 /* Pods_VibrationUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B97E2AE227D092C00745F69 = {
+			isa = PBXGroup;
+			children = (
+				4B97E2B9227D092C00745F69 /* Vibration */,
+				4B97E2CE227D092D00745F69 /* VibrationTests */,
+				4B97E2D9227D092D00745F69 /* VibrationUITests */,
+				4B97E2B8227D092C00745F69 /* Products */,
+				78BE0380FBB2447CB4F1BCB5 /* Pods */,
+				19A8F80D4867584F8A2C755E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4B97E2B8227D092C00745F69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B97E2B7227D092C00745F69 /* Vibration.app */,
+				4B97E2CB227D092D00745F69 /* VibrationTests.xctest */,
+				4B97E2D6227D092D00745F69 /* VibrationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B97E2B9227D092C00745F69 /* Vibration */ = {
+			isa = PBXGroup;
+			children = (
+				4B97E2BE227D092C00745F69 /* Main.storyboard */,
+				4B97E2E8227D0BC500745F69 /* VibrationViewController.swift */,
+				4BE87E3B22901D0400B6825A /* PatternTableViewController.swift */,
+				4BE87E3D2290243400B6825A /* CustomViewController.swift */,
+				4B97E2EC227D2A4C00745F69 /* Vibration_Info.swift */,
+				4B97E2BA227D092C00745F69 /* AppDelegate.swift */,
+				4B97E2C3227D092D00745F69 /* LaunchScreen.storyboard */,
+				4B97E2C1227D092D00745F69 /* Assets.xcassets */,
+				4B97E2C6227D092D00745F69 /* Info.plist */,
+				4BE87E3F22909ECE00B6825A /* GoogleService-Info.plist */,
+			);
+			path = Vibration;
+			sourceTree = "<group>";
+		};
+		4B97E2CE227D092D00745F69 /* VibrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B97E2CF227D092D00745F69 /* VibrationTests.swift */,
+				4B97E2D1227D092D00745F69 /* Info.plist */,
+			);
+			path = VibrationTests;
+			sourceTree = "<group>";
+		};
+		4B97E2D9227D092D00745F69 /* VibrationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4B97E2DA227D092D00745F69 /* VibrationUITests.swift */,
+				4B97E2DC227D092D00745F69 /* Info.plist */,
+			);
+			path = VibrationUITests;
+			sourceTree = "<group>";
+		};
+		78BE0380FBB2447CB4F1BCB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CD4819CA5B53EA69DBA6A82 /* Pods-Vibration.debug.xcconfig */,
+				971581819A7B7A5B21FA2BFD /* Pods-Vibration.release.xcconfig */,
+				D3CF8E20EC0B500903529AF7 /* Pods-VibrationTests.debug.xcconfig */,
+				68B4AF5D7F71CD3B7D1A7CE2 /* Pods-VibrationTests.release.xcconfig */,
+				5AC9D4495A64E4C65714199A /* Pods-VibrationUITests.debug.xcconfig */,
+				A7C40657F39DE833041EDBC9 /* Pods-VibrationUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B97E2B6227D092C00745F69 /* Vibration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B97E2DF227D092D00745F69 /* Build configuration list for PBXNativeTarget "Vibration" */;
+			buildPhases = (
+				87BE4CC16AA86BC826EDF2F8 /* [CP] Check Pods Manifest.lock */,
+				4B97E2B3227D092C00745F69 /* Sources */,
+				4B97E2B4227D092C00745F69 /* Frameworks */,
+				4B97E2B5227D092C00745F69 /* Resources */,
+				A7E5B0404FAC5B2B03A9CECD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vibration;
+			productName = Vibration;
+			productReference = 4B97E2B7227D092C00745F69 /* Vibration.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4B97E2CA227D092D00745F69 /* VibrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B97E2E2227D092D00745F69 /* Build configuration list for PBXNativeTarget "VibrationTests" */;
+			buildPhases = (
+				E1C2CA91ADA4E84E5DB93DC0 /* [CP] Check Pods Manifest.lock */,
+				4B97E2C7227D092D00745F69 /* Sources */,
+				4B97E2C8227D092D00745F69 /* Frameworks */,
+				4B97E2C9227D092D00745F69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B97E2CD227D092D00745F69 /* PBXTargetDependency */,
+			);
+			name = VibrationTests;
+			productName = VibrationTests;
+			productReference = 4B97E2CB227D092D00745F69 /* VibrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4B97E2D5227D092D00745F69 /* VibrationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B97E2E5227D092D00745F69 /* Build configuration list for PBXNativeTarget "VibrationUITests" */;
+			buildPhases = (
+				BF73665822805FE7D8C43D63 /* [CP] Check Pods Manifest.lock */,
+				4B97E2D2227D092D00745F69 /* Sources */,
+				4B97E2D3227D092D00745F69 /* Frameworks */,
+				4B97E2D4227D092D00745F69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B97E2D8227D092D00745F69 /* PBXTargetDependency */,
+			);
+			name = VibrationUITests;
+			productName = VibrationUITests;
+			productReference = 4B97E2D6227D092D00745F69 /* VibrationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B97E2AF227D092C00745F69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Po Hsiang Huang";
+				TargetAttributes = {
+					4B97E2B6227D092C00745F69 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					4B97E2CA227D092D00745F69 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4B97E2B6227D092C00745F69;
+					};
+					4B97E2D5227D092D00745F69 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4B97E2B6227D092C00745F69;
+					};
+				};
+			};
+			buildConfigurationList = 4B97E2B2227D092C00745F69 /* Build configuration list for PBXProject "Vibration" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4B97E2AE227D092C00745F69;
+			productRefGroup = 4B97E2B8227D092C00745F69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B97E2B6227D092C00745F69 /* Vibration */,
+				4B97E2CA227D092D00745F69 /* VibrationTests */,
+				4B97E2D5227D092D00745F69 /* VibrationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B97E2B5227D092C00745F69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B97E2C5227D092D00745F69 /* LaunchScreen.storyboard in Resources */,
+				4BE87E4022909ECE00B6825A /* GoogleService-Info.plist in Resources */,
+				4B97E2C2227D092D00745F69 /* Assets.xcassets in Resources */,
+				4B97E2C0227D092C00745F69 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B97E2C9227D092D00745F69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B97E2D4227D092D00745F69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87BE4CC16AA86BC826EDF2F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vibration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7E5B0404FAC5B2B03A9CECD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vibration/Pods-Vibration-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vibration/Pods-Vibration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF73665822805FE7D8C43D63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VibrationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1C2CA91ADA4E84E5DB93DC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VibrationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B97E2B3227D092C00745F69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B97E2E9227D0BC500745F69 /* VibrationViewController.swift in Sources */,
+				4BE87E3C22901D0400B6825A /* PatternTableViewController.swift in Sources */,
+				4BE87E3E2290243400B6825A /* CustomViewController.swift in Sources */,
+				4B97E2ED227D2A4C00745F69 /* Vibration_Info.swift in Sources */,
+				4B97E2BB227D092C00745F69 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B97E2C7227D092D00745F69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B97E2D0227D092D00745F69 /* VibrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B97E2D2227D092D00745F69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B97E2DB227D092D00745F69 /* VibrationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4B97E2CD227D092D00745F69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B97E2B6227D092C00745F69 /* Vibration */;
+			targetProxy = 4B97E2CC227D092D00745F69 /* PBXContainerItemProxy */;
+		};
+		4B97E2D8227D092D00745F69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B97E2B6227D092C00745F69 /* Vibration */;
+			targetProxy = 4B97E2D7227D092D00745F69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4B97E2BE227D092C00745F69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B97E2BF227D092C00745F69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4B97E2C3227D092D00745F69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B97E2C4227D092D00745F69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B97E2DD227D092D00745F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4B97E2DE227D092D00745F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B97E2E0227D092D00745F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CD4819CA5B53EA69DBA6A82 /* Pods-Vibration.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Vibration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Po-Hsiang-Huang.Vibration";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4B97E2E1227D092D00745F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 971581819A7B7A5B21FA2BFD /* Pods-Vibration.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Vibration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Po-Hsiang-Huang.Vibration";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4B97E2E3227D092D00745F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3CF8E20EC0B500903529AF7 /* Pods-VibrationTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VibrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Po-Hsiang-Huang.VibrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vibration.app/Vibration";
+			};
+			name = Debug;
+		};
+		4B97E2E4227D092D00745F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68B4AF5D7F71CD3B7D1A7CE2 /* Pods-VibrationTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VibrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Po-Hsiang-Huang.VibrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vibration.app/Vibration";
+			};
+			name = Release;
+		};
+		4B97E2E6227D092D00745F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AC9D4495A64E4C65714199A /* Pods-VibrationUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VibrationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Po-Hsiang-Huang.VibrationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vibration;
+			};
+			name = Debug;
+		};
+		4B97E2E7227D092D00745F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7C40657F39DE833041EDBC9 /* Pods-VibrationUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VibrationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Po-Hsiang-Huang.VibrationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vibration;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B97E2B2227D092C00745F69 /* Build configuration list for PBXProject "Vibration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B97E2DD227D092D00745F69 /* Debug */,
+				4B97E2DE227D092D00745F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B97E2DF227D092D00745F69 /* Build configuration list for PBXNativeTarget "Vibration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B97E2E0227D092D00745F69 /* Debug */,
+				4B97E2E1227D092D00745F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B97E2E2227D092D00745F69 /* Build configuration list for PBXNativeTarget "VibrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B97E2E3227D092D00745F69 /* Debug */,
+				4B97E2E4227D092D00745F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B97E2E5227D092D00745F69 /* Build configuration list for PBXNativeTarget "VibrationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B97E2E6227D092D00745F69 /* Debug */,
+				4B97E2E7227D092D00745F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B97E2AF227D092C00745F69 /* Project object */;
+}
