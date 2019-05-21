@@ -8,11 +8,11 @@
 
 import UIKit
 
-struct Point_3D{
-    var x:CGFloat
-    var y:CGFloat
-    var z:CGFloat
-}
+//struct Point_3D{
+//    var x:CGFloat
+//    var y:CGFloat
+//    var z:CGFloat
+//}
 
 class ViewController: UIViewController {
 

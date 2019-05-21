@@ -9,6 +9,11 @@
 import UIKit
 import CoreGraphics
 
+struct Point_3D{
+    var x:CGFloat
+    var y:CGFloat
+    var z:CGFloat
+}
 
 public struct PixelData {
     var a: UInt8
@@ -21,34 +26,85 @@ class HeatMap_2_0: UIViewController{
     
     @IBOutlet weak var right_sole_icon: UIImageView!
     
+    var p0: Point_3D!
+    var p1: Point_3D!
+    var p2: Point_3D!
+    
+    let NOT_INSIDE_BOUNDARY = -1
+    
     let num_Rows = 14
     let num_Cols = 5
     
-    var pixelMatrix = [[PixelData]]()
-    var pressure_Data = [[CGFloat]]()
+    var image_width = 0
+    var image_height = 0
     
-    var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)//contains the x and y location for all 70 pressure points
+    /**
+        Matrix of pixel values for the heat map. Size 82 x 199
+     */
+    var pixelMatrix = [[PixelData]]()
+    
+    /**
+        Raw data from sensors. Values between 0 and 99. Size 14 x 5
+     */
+    var pressure_Data = [[Int]](repeating: [Int](repeating: 0, count: 5), count: 14)
+    
+    /**
+     Matrix of pressure values for the heat map. Size 82 x 199
+     */
+    var pressureMatrix: [[Int]]!
+
+    
+    /**
+        Contains the x and y location for all 70 pressure points
+     */
+    var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        p0 = Point_3D(x: 0, y: 0, z: 1)
+        p1 = Point_3D(x: 0, y: 1, z: 0)
+        p2 = Point_3D(x: 1, y: 0, z: 0)
 
         let soleImage: UIImage = UIImage(named: "right_sole_icon")!
         
         let pixelData = soleImage.pixelData()
-        let image_width = Int(soleImage.size.width)            // 82
-        let image_height = Int(soleImage.size.height)          // 199
+        self.image_width = Int(soleImage.size.width)            // 82
+        self.image_height = Int(soleImage.size.height)
+        
+        copy_outline(pixelData)
+        get_PP_location()
+        randomly_fill_pressure_data() //random set of pressure data
+        pressureMatrix = fill_pressure_values_for_image(pixelMatrix)
+        update_map_with_pressure_points()
+        color_map()
+        
         
         /*
-        * fill in the pixelMatrix with the values from the given shoe
-        */
-        for j in 0..<image_height{
+         * convert the pixel array into an image
+         */
+        right_sole_icon.image = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
+        
+        print("done!!")
+        
+    }
+    
+    /**
+     Fill in the pixelMatrix with the values from the given shoe
+     */
+    func copy_outline(_ pixelData: [PixelData]?) {
+        
+        for j in 0..<self.image_height{
             var pixArray = [PixelData]()
-            for i in 0..<image_width{
-                if let pix = pixelData?[j*Int(image_width) + i]{
+            for i in 0..<self.image_width{
+                let one_d_rep = j*Int(image_width) + i
+                if let pix = pixelData?[one_d_rep]{//get corresponding pixel value from shoe outline matrix
                     if pix.r == 0 && pix.g == 0 && pix.b == 0 {
+                        //if pixel belongs to outline, keep it
                         pixArray.append(pix)
                     }
                     else {
+                        //otherwise append a white pixel
                         pixArray.append(PixelData(a: 255, r: 255, g: 255, b: 255))
                     }
                 }
@@ -58,24 +114,12 @@ class HeatMap_2_0: UIViewController{
             }
             pixelMatrix.append(pixArray)
         }
-        
-        update_index()
-        print(indexMatrix)
-        updateMap()
-        
-        /*
-         * convert the pixel array into an image
-         */
-        right_sole_icon.image = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
-        
-//        print(pixelMatrix.flatMap{$0}.count)
-//        print(image_width)
-//        print(image_height)
-        print("done!!")
-        
     }
     
-    func update_index() {
+    /**
+     Reads JSON and updates the location of pressure points
+     */
+    func get_PP_location() {
         if let path = Bundle.main.path(forResource: "dataPoints", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -95,16 +139,116 @@ class HeatMap_2_0: UIViewController{
         }
     }
     
-    func updateMap() {
-        for j in 0..<(num_Cols*num_Rows) {
-            var point = indexMatrix[j]
-            if var pix = pixelMatrix[point[0]][point[1]] as PixelData? {
-                pix = PixelData(a: 255, r: 255, g: 0, b: 0) // update this according to recieved pressure data
-                pixelMatrix[point[0]][point[1]] = pix
+    /**
+     Randomly assigns each pressure point a value
+     */
+    func randomly_fill_pressure_data() {
+        
+        for j in 0..<num_Rows {
+            for i in 0..<num_Cols {
+                let randomInt = Int.random(in: 0..<100)
+                pressure_Data[j][i] = randomInt
             }
         }
     }
     
+    /**
+        Assign each pixel whether it's inside or outside boundary
+     */
+    func fill_pressure_values_for_image(_ pixelMatrix: [[PixelData]]) -> [[Int]] {
+        
+        var pressureMatrix = [[Int]](repeating: [Int](repeating: 0, count: self.image_width), count: self.image_height)
+        var trigger = false
+        for j in 0..<self.image_height{
+            trigger = false
+            for i in 0..<self.image_width-1{
+                let pix = pixelMatrix[j][i]
+                let next_pix = pixelMatrix[j][i+1]
+                if pix.r == 0 && pix.g == 0 && pix.b == 0 {
+                    // set pressure to 'on boundary'
+                    pressureMatrix[j][i] = NOT_INSIDE_BOUNDARY
+                    if next_pix.r == 0 && next_pix.g == 0 && next_pix.b == 0 {
+                        continue
+                    }
+                    
+                    trigger = !trigger
+                }
+                else{
+                    //white pixel
+                    if trigger {
+                        // set pressure to 'inside boundary'
+                        pressureMatrix[j][i] = get_pressure_value_for_pixel(row: j, col: i)
+                    }
+                    else {
+                        // set pressure to 'outside boundary'
+                        pressureMatrix[j][i] = NOT_INSIDE_BOUNDARY
+                    }
+                    
+                }
+                
+            }
+            
+            // edge case
+            if trigger{
+                for k in 0..<self.image_width{
+                    pressureMatrix[j][k] = NOT_INSIDE_BOUNDARY
+                }
+            }
+            pressureMatrix[j][image_width - 1] = NOT_INSIDE_BOUNDARY
+        }
+        
+        return pressureMatrix
+    }
+    
+    /**
+        Algorithm to find pressure value based on distance
+     */
+    func get_pressure_value_for_pixel(row: Int, col: Int) -> Int{
+        //TODO: algorithm to find pressure value based on distance
+        return Int.random(in: 0..<100)
+    }
+    
+    /**
+        Renders the map with the location of the 70 pressure points
+     */
+    func update_map_with_pressure_points() {
+        for j in 0..<(num_Cols*num_Rows) {
+            var point = indexMatrix[j]
+            pressureMatrix[point[0]][point[1]] = pressure_Data[j / 14][j % 5]
+        }
+    }
+    
+    func color_map(){
+        
+        for j in 0..<self.image_height {
+            for i in 0..<self.image_width {
+                if pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
+                    pixelMatrix[j][i] = from_pressure_data_to_pixel_data(pressureMatrix[j][i])
+                }
+            }
+        }
+    }
+    
+    func from_pressure_data_to_pixel_data(_ pressure_value: Int) -> PixelData{
+        var pixelData = PixelData(a: 255, r: 255, g: 0, b: 0)
+        
+        let new_color = get_color_from_pressure_data(p0: self.p0, p1: self.p1, p2: self.p2, t: CGFloat(pressure_value) / 100)
+        pixelData.r = UInt8(new_color.x * 255)
+        pixelData.g = UInt8(new_color.y * 255)
+        pixelData.b = UInt8(new_color.z * 255)
+        
+        return pixelData
+    }
+    
+    func get_color_from_pressure_data(p0: Point_3D, p1: Point_3D, p2: Point_3D, t: CGFloat) -> Point_3D{
+        var pFinal = Point_3D(x: 0, y: 0, z: 0)
+        
+        pFinal.x = sqrt(t)
+        pFinal.y = -4 * pow(t - 0.5, 2) + 1
+        pFinal.z = -pow(t, 2) + 1
+        
+        return pFinal
+    }
 }
 
 extension HeatMap_2_0{
