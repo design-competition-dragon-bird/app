@@ -431,7 +431,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
-					"\"$(PROJECT_DIR)/\"",
+					"\"../\"",
 				);
 				INFOPLIST_FILE = HeatMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,7 +469,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
-					"\"$(PROJECT_DIR)/\"",
+					"\"../\"",
 				);
 				INFOPLIST_FILE = HeatMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
