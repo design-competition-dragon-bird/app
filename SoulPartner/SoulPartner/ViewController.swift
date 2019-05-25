@@ -14,6 +14,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordButton_outlet: UIButton!
     @IBOutlet weak var logInButton_outlet: UIButton!
     
+    let yourAttributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont.systemFont(ofSize: 18),
+        .foregroundColor: UIColor.white,
+        .underlineStyle: NSUnderlineStyle.single.rawValue]
+    
     @IBAction func forgotButton_action(_ sender: Any) {
         
     }
@@ -56,9 +61,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        forgotButton_outlet.customize_button()
         passwordButton_outlet.customize_button()
         logInButton_outlet.customize_button()
+        
+        let attributeString = NSMutableAttributedString(string: "Forgot Password?",
+                                                        attributes: yourAttributes)
+        forgotButton_outlet.setAttributedTitle(attributeString, for: .normal)
+        forgotButton_outlet.backgroundColor = .clear
+        
+        emailTextField.attributedPlaceholder = NSAttributedString(string: " Email",
+                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password",
+                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -118,7 +133,7 @@ extension UIButton{
     func customize_button(){
         self.layer.cornerRadius = self.frame.size.height / 2
         self.layer.backgroundColor = UIColor(red: (211/255), green: (136/255), blue: CGFloat(61/255), alpha: 1.0).cgColor
-        self.setTitleColor(UIColor.gray, for: .normal)
+        self.setTitleColor(UIColor.white, for: .normal)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 2.0
         self.layer.shadowOffset = CGSize(width: 0, height: 4)
