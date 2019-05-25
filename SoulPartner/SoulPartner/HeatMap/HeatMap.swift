@@ -279,6 +279,10 @@ class HeatMap {
                 if pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
                     pixelMatrix[j][i] = from_pressure_data_to_pixel_data(pressureMatrix[j][i])
                 }
+                else{
+//                    1E1B2F
+                    pixelMatrix[j][i] = PixelData(a: 1, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
+                }
             }
         }
     }

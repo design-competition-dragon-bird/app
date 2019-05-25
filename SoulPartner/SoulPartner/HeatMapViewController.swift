@@ -37,8 +37,8 @@ class HeatMapViewController: UIViewController, Observer {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("view did appear")
-        heatMap.randomize_data()
-        right_sole_icone.image = heatMap.right_sole_icon
+//        heatMap.randomize_data()
+//        right_sole_icone.image = heatMap.right_sole_icon
     }
 
     func generateSpectrum(){
