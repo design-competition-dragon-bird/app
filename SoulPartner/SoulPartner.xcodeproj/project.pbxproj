@@ -10,7 +10,6 @@
 		4B1411E52299C66E00C683C3 /* VibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1411E42299C66E00C683C3 /* VibrationViewController.swift */; };
 		4B1411E92299C69B00C683C3 /* PatternsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1411E82299C69B00C683C3 /* PatternsTableViewCell.swift */; };
 		4B1411EB2299C6B800C683C3 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1411EA2299C6B800C683C3 /* CustomViewController.swift */; };
-		4B1411ED2299C6E400C683C3 /* Vibration_Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1411EC2299C6E400C683C3 /* Vibration_Info.swift */; };
 		4B1411EF2299CA2200C683C3 /* PatternsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1411EE2299CA2200C683C3 /* PatternsViewController.swift */; };
 		5E15B5DD2299255B002637C8 /* HeatMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E15B5DC2299255B002637C8 /* HeatMap.storyboard */; };
 		5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5DE229925DD002637C8 /* HeatMapViewController.swift */; };
@@ -48,7 +47,6 @@
 		4B1411E42299C66E00C683C3 /* VibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationViewController.swift; sourceTree = "<group>"; };
 		4B1411E82299C69B00C683C3 /* PatternsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsTableViewCell.swift; sourceTree = "<group>"; };
 		4B1411EA2299C6B800C683C3 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		4B1411EC2299C6E400C683C3 /* Vibration_Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration_Info.swift; sourceTree = "<group>"; };
 		4B1411EE2299CA2200C683C3 /* PatternsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsViewController.swift; sourceTree = "<group>"; };
 		5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulPartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E15B5DC2299255B002637C8 /* HeatMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = HeatMap.storyboard; path = SoulPartner/HeatMap.storyboard; sourceTree = SOURCE_ROOT; };
@@ -161,7 +159,6 @@
 				4B1411E42299C66E00C683C3 /* VibrationViewController.swift */,
 				4B1411E82299C69B00C683C3 /* PatternsTableViewCell.swift */,
 				4B1411EA2299C6B800C683C3 /* CustomViewController.swift */,
-				4B1411EC2299C6E400C683C3 /* Vibration_Info.swift */,
 				FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */,
 				FDF76A252299089000905231 /* Assets.xcassets */,
 				FDF76A272299089000905231 /* LaunchScreen.storyboard */,
@@ -396,7 +393,6 @@
 				4B1411EF2299CA2200C683C3 /* PatternsViewController.swift in Sources */,
 				5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */,
 				5E16FA0D229938800054E3FD /* BluetoothInterface.swift in Sources */,
-				4B1411ED2299C6E400C683C3 /* Vibration_Info.swift in Sources */,
 				FDC81C1D22995CDD00005B5B /* SignUpViewController.swift in Sources */,
 				5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */,
 				4B1411E92299C69B00C683C3 /* PatternsTableViewCell.swift in Sources */,

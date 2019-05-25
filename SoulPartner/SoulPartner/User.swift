@@ -20,11 +20,7 @@ class User{
     var password: String!
     var userType: String!
     var phone: String!
-    var pp1_pattern: String!
-    var pp2_pattern: String!
-    var pp3_pattern: String!
-    var pp4_pattern: String!
-    var pp5_pattern: String!
+    var selectedButton: String!
     
     private var db: Firestore!
     
@@ -37,11 +33,7 @@ class User{
         self.password = nil
         self.userType = nil
         self.phone = nil
-        self.pp1_pattern = "One"
-        self.pp2_pattern = "Two"
-        self.pp3_pattern = "Three"
-        self.pp4_pattern = "Four"
-        self.pp5_pattern = "Five"
+        self.selectedButton = "default button"
 
         self.db = Firestore.firestore()
     }
@@ -52,12 +44,7 @@ class User{
             "Last Name": self.lastName!,
             "Email": self.email!,
             "Phone": self.phone!,
-            "User Type": self.userType!,
-            "PP1 Pattern": self.pp1_pattern!,
-            "PP2 Pattern": self.pp2_pattern!,
-            "PP3 Pattern": self.pp3_pattern!,
-            "PP4 Pattern": self.pp4_pattern!,
-            "PP5 Pattern": self.pp5_pattern!
+            "User Type": self.userType!
         ], merge: true) { (err) in
             // do nothing
             if err != nil{

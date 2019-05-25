@@ -11,7 +11,6 @@ import Firebase
 
 class PatternsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let db = Firestore.firestore()
-    var PressurePoint: String!
     let PatternArray = ["Spring", "Summer", "Autumn", "Winter", "Custom"]
     
     @IBOutlet weak var patternsTableView: UITableView!
@@ -25,7 +24,7 @@ class PatternsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidAppear(_ animated: Bool) {
         var pattern:String = ""
-        db.collection("User/\(User.instance.userId)/PressurePoints").document(Vibration_Info.button_info.button).getDocument { (snapshot, err) in
+        db.collection("User/\(User.instance.userId)/PressurePoints").document(User.instance.selectedButton).getDocument { (snapshot, err) in
             if let data = snapshot?.data() {
                 if data["pattern"] != nil {
                     pattern = data["pattern"] as! String
@@ -55,7 +54,7 @@ class PatternsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        setData(point: Vibration_Info.button_info.button, pattern: PatternArray[indexPath.row])
+        setData(point: User.instance.selectedButton, pattern: PatternArray[indexPath.row])
         
         for row in 0..<PatternArray.count {
             let iterateIndexPath = IndexPath(row: row, section:0)
@@ -69,18 +68,7 @@ class PatternsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-//    func findData(point: String) {
-//        db.collection("PressurePoints").document("point").getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//    }
-    
+
     func setData(point: String, pattern: String) {
         db.collection("User/\(User.instance.userId)/PressurePoints").document(point).setData(["pattern": pattern]) { err in
             if let err = err {

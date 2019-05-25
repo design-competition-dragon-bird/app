@@ -10,7 +10,6 @@ import UIKit
 
 class VibrationViewController: UIViewController {
     var selected_button: String!
-    var vibration_info: Vibration_Info = Vibration_Info()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class VibrationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        Vibration_Info.button_info.button = selected_button
+        User.instance.selectedButton = selected_button
     }
     
     @IBAction func PP1(_ sender: Any) {
