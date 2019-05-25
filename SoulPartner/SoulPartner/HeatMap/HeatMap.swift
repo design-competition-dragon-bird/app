@@ -120,7 +120,7 @@ class HeatMap {
             for i in 0..<num_Cols {
                 let randomInt = Int.random(in: 0..<100)
                 pressure_Data[j][i] = randomInt
-//                pressure_Data[j][i] = Int(count / Double(num_Rows * num_Cols) * 100)
+                pressure_Data[j][i] = Int(count / Double(num_Rows * num_Cols) * 100)
                 
                 count += 1
             }

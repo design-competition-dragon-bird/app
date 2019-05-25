@@ -17,11 +17,11 @@ enum TAB_BAR:Int{
     case MODEL_3D_PAGE = 2
 }
 
-var current_tab = TAB_BAR.MODEL_3D_PAGE.rawValue
+var current_tab = TAB_BAR.VIBRATION_PAGE.rawValue
 
 let tab_bar_color = [
-    UIColor(red: (0xff/255), green: (0xaa/255), blue: (0x00/255), alpha: 1),
-    UIColor(red: (98/255), green: (211/255), blue: (68/255), alpha: 1),
+    UIColor(red: (69/255), green: (28/255), blue: (37/255), alpha: 1),
+    UIColor(red: (69/255), green: (28/255), blue: (37/255), alpha: 1),
     UIColor(red: (69/255), green: (28/255), blue: (37/255), alpha: 1)
 ]
 

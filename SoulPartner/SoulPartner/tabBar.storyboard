@@ -25,7 +25,7 @@
                                 <rect key="frame" x="102" y="190.66666666666666" width="30" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <state key="normal" title="O">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.9245623946" green="0.59831756349999998" blue="0.24887773390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="PP2:" destination="qUz-3a-vBb" eventType="touchUpInside" id="dez-LN-Xcp"/>
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="147" y="615.66666666666663" width="30" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <state key="normal" title="O">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.9245623946" green="0.59831756349999998" blue="0.24887773390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="PP4:" destination="qUz-3a-vBb" eventType="touchUpInside" id="XMv-cW-MtP"/>
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="117" y="515.66666666666663" width="30" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <state key="normal" title="O">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.9245623946" green="0.59831756349999998" blue="0.24887773390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="PP3:" destination="qUz-3a-vBb" eventType="touchUpInside" id="Bvs-Qn-PD9"/>
@@ -55,7 +55,7 @@
                                 <rect key="frame" x="117" y="90.666666666666671" width="30" height="55.000000000000014"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <state key="normal" title="O">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.9245623946" green="0.59831756349999998" blue="0.24887773390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="PP1:" destination="qUz-3a-vBb" eventType="touchUpInside" id="OXl-xV-9Js"/>
@@ -65,14 +65,14 @@
                                 <rect key="frame" x="192" y="565.66666666666663" width="30" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <state key="normal" title="O">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.9245623946" green="0.59831756349999998" blue="0.24887773390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="PP5:" destination="qUz-3a-vBb" eventType="touchUpInside" id="HIg-vC-jg0"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1058823529" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KHz-JT-nrl" firstAttribute="top" secondItem="CbK-Q2-T5C" secondAttribute="top" id="3VC-90-hju"/>
                             <constraint firstItem="LSe-cH-4ja" firstAttribute="centerY" secondItem="wB0-x1-2PD" secondAttribute="centerY" constant="275" id="Eqf-vy-hgd"/>
@@ -354,6 +354,6 @@
         <image name="vibration_tab copy" width="75" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zTM-ny-hZm"/>
+        <segue reference="TZH-pZ-u1F"/>
     </inferredMetricsTieBreakers>
 </document>

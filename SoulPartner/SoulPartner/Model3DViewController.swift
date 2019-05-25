@@ -80,13 +80,13 @@ class Model3DViewController: UIViewController, Observer {
         shoeNode = sceneView.scene?.rootNode.childNode(withName: "shoe", recursively: false)
         sceneView.scene?.rootNode.isPaused = false
         
-        if isDone{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "bt_interface_view_controller")
-            self.present(controller, animated: true, completion: nil)
-            isDone = false
-            addToObserver()
-        }
+//        if isDone{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let controller = storyboard.instantiateViewController(withIdentifier: "bt_interface_view_controller")
+//            self.present(controller, animated: true, completion: nil)
+//            isDone = false
+//            addToObserver()
+//        }
         
     }
     
