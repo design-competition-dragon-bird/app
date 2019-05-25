@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A1E2299088F00905231 /* AppDelegate.swift */; };
 		FDF76A212299088F00905231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A202299088F00905231 /* ViewController.swift */; };
 		FDF76A242299088F00905231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF76A222299088F00905231 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10AD1278F052C58061751D65 /* Pods-SoulPartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.debug.xcconfig"; sourceTree = "<group>"; };
+		5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulPartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FDF76A1B2299088F00905231 /* SoulPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF76A1E2299088F00905231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDF76A202299088F00905231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FEE2ECCDEC80807F3E29241 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		380D5EA74D9829A4AB553511 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10AD1278F052C58061751D65 /* Pods-SoulPartner.debug.xcconfig */,
+				90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FDF76A122299088F00905231 = {
 			isa = PBXGroup;
 			children = (
 				FDF76A1D2299088F00905231 /* SoulPartner */,
 				FDF76A1C2299088F00905231 /* Products */,
+				380D5EA74D9829A4AB553511 /* Pods */,
+				1FEE2ECCDEC80807F3E29241 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDF76A2D2299089000905231 /* Build configuration list for PBXNativeTarget "SoulPartner" */;
 			buildPhases = (
+				94AE3B5EA43F6D87FAA83F90 /* [CP] Check Pods Manifest.lock */,
 				FDF76A172299088F00905231 /* Sources */,
 				FDF76A182299088F00905231 /* Frameworks */,
 				FDF76A192299088F00905231 /* Resources */,
+				6A27706777E52271B9F29673 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +211,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A27706777E52271B9F29673 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94AE3B5EA43F6D87FAA83F90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoulPartner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDF76A172299088F00905231 /* Sources */ = {
@@ -336,6 +411,7 @@
 		};
 		FDF76A2E2299089000905231 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10AD1278F052C58061751D65 /* Pods-SoulPartner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -354,6 +430,7 @@
 		};
 		FDF76A2F2299089000905231 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
