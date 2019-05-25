@@ -257,12 +257,9 @@ class HeatMap_2_0: UIViewController{
             let pressure = self.pressure_Data[pressure_row][pressure_col]
             pressureVal += Double(pressure) * (Double(k_array[i]) / Double(totalDistance))
         }
-        
-//        print("total distance = ", totalDistance)
-//        print("row: \(row), col: \(col)")
-//        print("pRow: \(indexMatrix[0][0]), pCol: \(indexMatrix[0][1])")
+
         return Int(pressureVal)
-//        return Int.random(in: 0..<100)
+
     }
     
     
