@@ -7,8 +7,9 @@ target 'SoulPartner' do
 
   # Pods for SoulPartner
   pod 'MessageKit'
-  pod  'MessageInputBar'
+  pod 'MessageInputBar'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
 end

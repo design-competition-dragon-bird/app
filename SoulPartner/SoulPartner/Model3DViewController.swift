@@ -9,7 +9,12 @@
 import UIKit
 import SceneKit
 
-class Model3DViewController: UIViewController {
+class Model3DViewController: UIViewController, Observer {
+    
+    func update(value: [Character : String]) {
+        // do nothing
+    }
+    
 
     private var shoeNode : SCNNode?
     @IBOutlet weak var sceneView: SCNView!
