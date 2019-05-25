@@ -329,8 +329,8 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="e8B-ik-k3C" kind="relationship" relationship="viewControllers" id="ECX-C1-hwN"/>
                         <segue destination="qUz-3a-vBb" kind="relationship" relationship="viewControllers" id="QLQ-J1-saB"/>
+                        <segue destination="e8B-ik-k3C" kind="relationship" relationship="viewControllers" id="ECX-C1-hwN"/>
                         <segue destination="iEb-SI-17r" kind="relationship" relationship="viewControllers" id="ihB-Zm-z0b"/>
                     </connections>
                 </tabBarController>
