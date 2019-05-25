@@ -15,6 +15,9 @@
 		5E15B5E72299283F002637C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E15B5E62299283F002637C8 /* GoogleService-Info.plist */; };
 		5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5E82299296A002637C8 /* MessagesViewController.swift */; };
 		5E15B5EB2299299F002637C8 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5EA2299299F002637C8 /* Messages.swift */; };
+		5E16FA0D229938800054E3FD /* BluetoothInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA0C229938800054E3FD /* BluetoothInterface.swift */; };
+		5E16FA0F229938BA0054E3FD /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA0E229938BA0054E3FD /* Parse.swift */; };
+		5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA10229938E00054E3FD /* ObserverPattern.swift */; };
 		5E8DEAFB22993612001AAB08 /* shoe.scn in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFA22993612001AAB08 /* shoe.scn */; };
 		5E8DEAFD22993644001AAB08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFC22993644001AAB08 /* Model.swift */; };
 		5E8DEAFF22993679001AAB08 /* 3DModel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */; };
@@ -38,6 +41,9 @@
 		5E15B5E62299283F002637C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E15B5E82299296A002637C8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = SoulPartner/MessagesViewController.swift; sourceTree = SOURCE_ROOT; };
 		5E15B5EA2299299F002637C8 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Messages.swift; path = SoulPartner/Messages.swift; sourceTree = SOURCE_ROOT; };
+		5E16FA0C229938800054E3FD /* BluetoothInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BluetoothInterface.swift; path = SoulPartner/BluetoothInterface.swift; sourceTree = SOURCE_ROOT; };
+		5E16FA0E229938BA0054E3FD /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Parse.swift; path = SoulPartner/Parse.swift; sourceTree = SOURCE_ROOT; };
+		5E16FA10229938E00054E3FD /* ObserverPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ObserverPattern.swift; path = SoulPartner/ObserverPattern.swift; sourceTree = SOURCE_ROOT; };
 		5E8DEAFA22993612001AAB08 /* shoe.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = shoe.scn; path = ../../../graphic_test/shoe.scn; sourceTree = "<group>"; };
 		5E8DEAFC22993644001AAB08 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SoulPartner/Model.swift; sourceTree = SOURCE_ROOT; };
 		5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = 3DModel.storyboard; path = SoulPartner/3DModel.storyboard; sourceTree = SOURCE_ROOT; };
@@ -169,6 +175,9 @@
 		FDF76A352299092500905231 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				5E16FA0C229938800054E3FD /* BluetoothInterface.swift */,
+				5E16FA0E229938BA0054E3FD /* Parse.swift */,
+				5E16FA10229938E00054E3FD /* ObserverPattern.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -323,12 +332,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E8DEAFD22993644001AAB08 /* Model.swift in Sources */,
+				5E16FA0F229938BA0054E3FD /* Parse.swift in Sources */,
 				5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */,
 				5E15B5EB2299299F002637C8 /* Messages.swift in Sources */,
 				5E15B5E122992609002637C8 /* HeatMap.swift in Sources */,
 				5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */,
+				5E16FA0D229938800054E3FD /* BluetoothInterface.swift in Sources */,
 				5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */,
 				FDF76A212299088F00905231 /* ViewController.swift in Sources */,
+				5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */,
 				FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
