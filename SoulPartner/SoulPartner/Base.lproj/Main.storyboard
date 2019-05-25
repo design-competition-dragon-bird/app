@@ -242,7 +242,7 @@
                         <outlet property="phoneNumber_textField" destination="4aJ-8l-R1G" id="vOj-gr-zLb"/>
                         <outlet property="picker_outlet" destination="yuc-77-GWs" id="n1M-lc-EDs"/>
                         <outlet property="signUpButton_outlet" destination="9ow-i6-ph2" id="xcG-oI-CQc"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goBackidentifier" id="G27-hY-KVJ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goBackIdentifier" id="G27-hY-KVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYb-av-nKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,6 +394,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y1L-vQ-v3S"/>
-        <segue reference="uad-Jo-H8f"/>
+        <segue reference="G27-hY-KVJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -150,6 +150,7 @@
 				FDF76A30229908B900905231 /* HeatMap */,
 				FDF76A1E2299088F00905231 /* AppDelegate.swift */,
 				FDF76A202299088F00905231 /* ViewController.swift */,
+				FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */,
 				FDF76A222299088F00905231 /* Main.storyboard */,
 				FDC81C2522997BA800005B5B /* BTViewController.swift */,
 				FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */,
@@ -159,7 +160,6 @@
 				4B1411E42299C66E00C683C3 /* VibrationViewController.swift */,
 				4B1411E82299C69B00C683C3 /* PatternsTableViewCell.swift */,
 				4B1411EA2299C6B800C683C3 /* CustomViewController.swift */,
-				FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */,
 				FDF76A252299089000905231 /* Assets.xcassets */,
 				FDF76A272299089000905231 /* LaunchScreen.storyboard */,
 				FDF76A2A2299089000905231 /* Info.plist */,
@@ -549,7 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LVMJG2BJ6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SoulPartner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,7 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LVMJG2BJ6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SoulPartner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
