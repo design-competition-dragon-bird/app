@@ -390,7 +390,6 @@
         <image name="back" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="os0-h0-uTd"/>
         <segue reference="Y1L-vQ-v3S"/>
         <segue reference="uad-Jo-H8f"/>
     </inferredMetricsTieBreakers>
