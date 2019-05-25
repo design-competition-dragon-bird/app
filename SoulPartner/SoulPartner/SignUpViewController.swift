@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    let pickerData = ["Doctor", "Patient", "Care Giver"]
+    let pickerData = ["Care Giver", "Patient", "Doctor"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let string = pickerData[component]
+        let string = pickerData[row]
         return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
@@ -42,18 +42,23 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.picker_outlet.delegate = self
         self.picker_outlet.dataSource = self
         
-        // Do any additional setup after loading the view.
+        self.password_textField.delegate = self
+        self.email_textField.delegate = self
+        self.phoneNumber_textField.delegate = self
+        self.lastName_textField.delegate = self
+        self.firstName_textField.delegate = self
+        
+        
+        password_textField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        email_textField.attributedPlaceholder = NSAttributedString(string: "Email",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        phoneNumber_textField.attributedPlaceholder = NSAttributedString(string: "Phone",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        lastName_textField.attributedPlaceholder = NSAttributedString(string: "Last Name",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        firstName_textField.attributedPlaceholder = NSAttributedString(string: "Fast Name",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
