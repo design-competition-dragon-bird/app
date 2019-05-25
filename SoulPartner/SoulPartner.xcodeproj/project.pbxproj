@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E15B5DD2299255B002637C8 /* HeatMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E15B5DC2299255B002637C8 /* HeatMap.storyboard */; };
+		5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5DE229925DD002637C8 /* HeatMapViewController.swift */; };
+		5E15B5E122992609002637C8 /* HeatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5E022992609002637C8 /* HeatMap.swift */; };
+		5E15B5E322992690002637C8 /* dataPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E15B5E222992690002637C8 /* dataPoints.json */; };
 		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A1E2299088F00905231 /* AppDelegate.swift */; };
 		FDF76A212299088F00905231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A202299088F00905231 /* ViewController.swift */; };
@@ -18,6 +22,10 @@
 /* Begin PBXFileReference section */
 		10AD1278F052C58061751D65 /* Pods-SoulPartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulPartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E15B5DC2299255B002637C8 /* HeatMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = HeatMap.storyboard; path = SoulPartner/HeatMap.storyboard; sourceTree = SOURCE_ROOT; };
+		5E15B5DE229925DD002637C8 /* HeatMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeatMapViewController.swift; path = SoulPartner/HeatMapViewController.swift; sourceTree = SOURCE_ROOT; };
+		5E15B5E022992609002637C8 /* HeatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMap.swift; sourceTree = "<group>"; };
+		5E15B5E222992690002637C8 /* dataPoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dataPoints.json; path = ../../../HeatMap/HeatMap/HeatMap/dataPoints.json; sourceTree = "<group>"; };
 		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FDF76A1B2299088F00905231 /* SoulPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF76A1E2299088F00905231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 		FDF76A30229908B900905231 /* HeatMap */ = {
 			isa = PBXGroup;
 			children = (
+				5E15B5DC2299255B002637C8 /* HeatMap.storyboard */,
+				5E15B5DE229925DD002637C8 /* HeatMapViewController.swift */,
+				5E15B5E022992609002637C8 /* HeatMap.swift */,
+				5E15B5E222992690002637C8 /* dataPoints.json */,
 			);
 			path = HeatMap;
 			sourceTree = "<group>";
@@ -205,7 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF76A292299089000905231 /* LaunchScreen.storyboard in Resources */,
+				5E15B5DD2299255B002637C8 /* HeatMap.storyboard in Resources */,
 				FDF76A262299089000905231 /* Assets.xcassets in Resources */,
+				5E15B5E322992690002637C8 /* dataPoints.json in Resources */,
 				FDF76A242299088F00905231 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E15B5E122992609002637C8 /* HeatMap.swift in Sources */,
+				5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */,
 				FDF76A212299088F00905231 /* ViewController.swift in Sources */,
 				FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */,
 			);
