@@ -47,8 +47,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 // successful registration
                 User.instance.storeUserInfo(success: {
                     // writing to database success
-                    let alert = UIAlertController(title: "Success", message: "New User successfully created.", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Success", message: "We've send you a link to verify your email. Please verify your email before logging in.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (err) in
+                        self.performSegue(withIdentifier: "goBackIdentifier", sender: self)
+                    }))
                     self.present(alert, animated: true)
                     
                 }, failure: {
