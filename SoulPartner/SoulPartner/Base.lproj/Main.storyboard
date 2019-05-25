@@ -333,9 +333,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-Mr-sUk">
-                                <rect key="frame" x="154" y="639" width="106" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status will be printeed here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-WL-vxx">
+                                <rect key="frame" x="20" y="551" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="9RS-Gt-CPj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-Mr-sUk">
+                                <rect key="frame" x="132" y="628" width="150" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="DhP-U3-bbq"/>
+                                    <constraint firstAttribute="height" constant="45" id="jfc-ra-yED"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Pair Device"/>
                                 <connections>
@@ -344,18 +357,10 @@
                                     <action selector="signUpButton_action:" destination="dvd-n2-i5W" eventType="touchUpInside" id="3Qh-3e-MiC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status will be printeed here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-WL-vxx">
-                                <rect key="frame" x="20" y="562" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="9RS-Gt-CPj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.10396578162908554" blue="0.18268254399299622" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xgM-Mr-sUk" firstAttribute="centerX" secondItem="tgh-VF-IqV" secondAttribute="centerX" id="5dp-aa-Ou6"/>
                             <constraint firstItem="nAz-ZX-QUj" firstAttribute="bottom" secondItem="xgM-Mr-sUk" secondAttribute="bottom" constant="63" id="9sf-40-mVu"/>
                             <constraint firstItem="ARk-WL-vxx" firstAttribute="leading" secondItem="nAz-ZX-QUj" secondAttribute="leading" constant="20" id="eXK-sp-fKR"/>
                             <constraint firstItem="nAz-ZX-QUj" firstAttribute="trailing" secondItem="ARk-WL-vxx" secondAttribute="trailing" constant="20" id="ehZ-59-n2G"/>
@@ -369,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kha-qC-QsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="49"/>
+            <point key="canvasLocation" x="2486.9565217391305" y="48.913043478260875"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="sR1-EH-HNl">
@@ -385,7 +390,8 @@
         <image name="back" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aeo-7b-uR8"/>
+        <segue reference="os0-h0-uTd"/>
+        <segue reference="Y1L-vQ-v3S"/>
         <segue reference="uad-Jo-H8f"/>
     </inferredMetricsTieBreakers>
 </document>

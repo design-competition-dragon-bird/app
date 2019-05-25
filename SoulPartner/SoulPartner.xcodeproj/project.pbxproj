@@ -142,8 +142,8 @@
 				FDF76A202299088F00905231 /* ViewController.swift */,
 				FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */,
 				FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */,
-				FDF76A222299088F00905231 /* Main.storyboard */,
 				FDC81C2522997BA800005B5B /* BTViewController.swift */,
+				FDF76A222299088F00905231 /* Main.storyboard */,
 				FDC81C212299771F00005B5B /* tabBar.storyboard */,
 				FDF76A252299089000905231 /* Assets.xcassets */,
 				FDF76A272299089000905231 /* LaunchScreen.storyboard */,
@@ -313,6 +313,7 @@
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -328,6 +329,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
