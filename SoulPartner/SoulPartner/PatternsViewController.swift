@@ -25,7 +25,7 @@ class PatternsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidAppear(_ animated: Bool) {
         var pattern:String = ""
-        db.collection("PressurePoints").document(Vibration_Info.button_info.button).getDocument { (snapshot, err) in
+        db.collection("User/\(User.instance.userId)/PressurePoints").document(Vibration_Info.button_info.button).getDocument { (snapshot, err) in
             if let data = snapshot?.data() {
                 if data["pattern"] != nil {
                     pattern = data["pattern"] as! String
@@ -70,19 +70,19 @@ class PatternsViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func findData(point: String) {
-        db.collection("PressurePoints").document("point").getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
+//    func findData(point: String) {
+//        db.collection("PressurePoints").document("point").getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+//    }
     
     func setData(point: String, pattern: String) {
-        db.collection("PressurePoints").document(point).setData(["pattern": pattern]) { err in
+        db.collection("User/\(User.instance.userId)/PressurePoints").document(point).setData(["pattern": pattern]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {

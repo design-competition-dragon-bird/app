@@ -193,7 +193,6 @@
                                         <barButtonItem key="rightBarButtonItem" title="Select" id="xJo-zL-9oG">
                                             <connections>
                                                 <action selector="selectPattern:" destination="9bI-HU-hJX" id="cZ4-VH-hS6"/>
-                                                <segue destination="E8Q-1k-XIh" kind="show" identifier="back_to_vibration_pattern" id="Gne-sT-e70"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -250,6 +249,7 @@
                     <connections>
                         <outlet property="startLabel" destination="ohG-NZ-9T7" id="SIP-XE-ioJ"/>
                         <outlet property="tapButton" destination="XYL-MZ-FvQ" id="8Cy-xp-vc8"/>
+                        <segue destination="E8Q-1k-XIh" kind="show" identifier="back_to_vibration_pattern" id="zTM-ny-hZm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCT-RL-Ggm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,6 +346,6 @@
         <image name="vibration_tab copy" width="75" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TZH-pZ-u1F"/>
+        <segue reference="zTM-ny-hZm"/>
     </inferredMetricsTieBreakers>
 </document>

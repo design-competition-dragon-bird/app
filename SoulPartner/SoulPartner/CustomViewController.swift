@@ -25,13 +25,18 @@ class CustomViewController: UIViewController {
         super.viewDidLoad()
         tapCounts = Array(repeating: false, count: self.maxTime)
         if(time==maxTime) {tapButton.isEnabled = false}
-        CustomRef = self.db.collection("PressurePoints").document("Custom")
+//        CustomRef = self.db.collection("User/\(User.instance.userId)/PressurePoints").document("Custom")
     }
     
     @IBAction func selectPattern(_ sender: Any) {
         if(tapped == true) {
-            CustomRef.updateData(["CustomPattern": FieldValue.delete()])
-            CustomRef.setData(["CustomPattern": tapCounts!])
+            db.collection("User/\(User.instance.userId)/PressurePoints").document("Custom").setData(["CustomPattern": tapCounts!]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
         }
         self.performSegue(withIdentifier: "back_to_vibration_pattern", sender: self)
     }
@@ -52,6 +57,7 @@ class CustomViewController: UIViewController {
             i+=1
         }
         tapped = true
+        print("tapped")
     }
     
     @objc func action() {
