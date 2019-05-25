@@ -16,9 +16,10 @@
 		4B97E2DB227D092D00745F69 /* VibrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2DA227D092D00745F69 /* VibrationUITests.swift */; };
 		4B97E2E9227D0BC500745F69 /* VibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2E8227D0BC500745F69 /* VibrationViewController.swift */; };
 		4B97E2ED227D2A4C00745F69 /* Vibration_Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97E2EC227D2A4C00745F69 /* Vibration_Info.swift */; };
-		4BE87E3C22901D0400B6825A /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE87E3B22901D0400B6825A /* PatternTableViewController.swift */; };
+		4B9E1B392298E750005E03FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B9E1B382298E750005E03FA /* GoogleService-Info.plist */; };
+		4B9E1B3B2298FBF4005E03FA /* PatternsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9E1B3A2298FBF4005E03FA /* PatternsViewController.swift */; };
+		4B9E1B3D229900B0005E03FA /* PatternsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9E1B3C229900B0005E03FA /* PatternsTableViewCell.swift */; };
 		4BE87E3E2290243400B6825A /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE87E3D2290243400B6825A /* CustomViewController.swift */; };
-		4BE87E4022909ECE00B6825A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE87E3F22909ECE00B6825A /* GoogleService-Info.plist */; };
 		7AB9D641376591A1DAD8E631 /* Pods_VibrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0482E54C72D8EB3388BFE6C7 /* Pods_VibrationTests.framework */; };
 		CE9425BC75B9675FBD27A5BB /* Pods_Vibration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8040016114994525F3427CBA /* Pods_Vibration.framework */; };
 /* End PBXBuildFile section */
@@ -57,9 +58,10 @@
 		4B97E2DC227D092D00745F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B97E2E8227D0BC500745F69 /* VibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationViewController.swift; sourceTree = "<group>"; };
 		4B97E2EC227D2A4C00745F69 /* Vibration_Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration_Info.swift; sourceTree = "<group>"; };
-		4BE87E3B22901D0400B6825A /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
+		4B9E1B382298E750005E03FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B9E1B3A2298FBF4005E03FA /* PatternsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsViewController.swift; sourceTree = "<group>"; };
+		4B9E1B3C229900B0005E03FA /* PatternsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsTableViewCell.swift; sourceTree = "<group>"; };
 		4BE87E3D2290243400B6825A /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		4BE87E3F22909ECE00B6825A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AC9D4495A64E4C65714199A /* Pods-VibrationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibrationUITests.debug.xcconfig"; path = "Target Support Files/Pods-VibrationUITests/Pods-VibrationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		683164361084F09589A7A006 /* Pods_VibrationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VibrationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B4AF5D7F71CD3B7D1A7CE2 /* Pods-VibrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibrationTests.release.xcconfig"; path = "Target Support Files/Pods-VibrationTests/Pods-VibrationTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,14 +136,15 @@
 			children = (
 				4B97E2BE227D092C00745F69 /* Main.storyboard */,
 				4B97E2E8227D0BC500745F69 /* VibrationViewController.swift */,
-				4BE87E3B22901D0400B6825A /* PatternTableViewController.swift */,
+				4B9E1B3C229900B0005E03FA /* PatternsTableViewCell.swift */,
+				4B9E1B3A2298FBF4005E03FA /* PatternsViewController.swift */,
 				4BE87E3D2290243400B6825A /* CustomViewController.swift */,
 				4B97E2EC227D2A4C00745F69 /* Vibration_Info.swift */,
 				4B97E2BA227D092C00745F69 /* AppDelegate.swift */,
 				4B97E2C3227D092D00745F69 /* LaunchScreen.storyboard */,
 				4B97E2C1227D092D00745F69 /* Assets.xcassets */,
 				4B97E2C6227D092D00745F69 /* Info.plist */,
-				4BE87E3F22909ECE00B6825A /* GoogleService-Info.plist */,
+				4B9E1B382298E750005E03FA /* GoogleService-Info.plist */,
 			);
 			path = Vibration;
 			sourceTree = "<group>";
@@ -286,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B97E2C5227D092D00745F69 /* LaunchScreen.storyboard in Resources */,
-				4BE87E4022909ECE00B6825A /* GoogleService-Info.plist in Resources */,
+				4B9E1B392298E750005E03FA /* GoogleService-Info.plist in Resources */,
 				4B97E2C2227D092D00745F69 /* Assets.xcassets in Resources */,
 				4B97E2C0227D092C00745F69 /* Main.storyboard in Resources */,
 			);
@@ -417,8 +420,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B97E2E9227D0BC500745F69 /* VibrationViewController.swift in Sources */,
-				4BE87E3C22901D0400B6825A /* PatternTableViewController.swift in Sources */,
+				4B9E1B3D229900B0005E03FA /* PatternsTableViewCell.swift in Sources */,
 				4BE87E3E2290243400B6825A /* CustomViewController.swift in Sources */,
+				4B9E1B3B2298FBF4005E03FA /* PatternsViewController.swift in Sources */,
 				4B97E2ED227D2A4C00745F69 /* Vibration_Info.swift in Sources */,
 				4B97E2BB227D092C00745F69 /* AppDelegate.swift in Sources */,
 			);

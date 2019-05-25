@@ -45,8 +45,7 @@ class VibrationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vibration_setting = segue.destination as! PatternTableViewController
-        vibration_setting.PressurePoint = selected_button
+        Vibration_Info.button_info.button = selected_button
     }
     
 }

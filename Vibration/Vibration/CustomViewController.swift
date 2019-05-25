@@ -16,6 +16,8 @@ class CustomViewController: UIViewController {
     var time = 0
     var timer = Timer()
     var tapCounts: Array<Bool>!
+    var tapped = false
+   
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var tapButton: UIButton!
     
@@ -23,23 +25,24 @@ class CustomViewController: UIViewController {
         super.viewDidLoad()
         tapCounts = Array(repeating: false, count: self.maxTime)
         if(time==maxTime) {tapButton.isEnabled = false}
-        CustomRef = self.db.collection("Pattern").document("DpfW6iqZKwdeUF7V96lr")
+        CustomRef = self.db.collection("PressurePoints").document("Custom")
     }
     
-    @IBAction func back(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
-    }
     @IBAction func selectPattern(_ sender: Any) {
-        CustomRef.updateData(["CustomPattern": FieldValue.delete()])
-        CustomRef.updateData(["CustomPattern": FieldValue.arrayUnion(tapCounts)])
-        _ = navigationController?.popViewController(animated: true)
+        if(tapped == true) {
+            CustomRef.updateData(["CustomPattern": FieldValue.delete()])
+            CustomRef.setData(["CustomPattern": tapCounts!])
+        }
+        self.performSegue(withIdentifier: "back_to_vibration_pattern", sender: self)
     }
+    
     @IBAction func replay(_ sender: Any) {
         startLabel.isHidden = false
         time = 0
         tapButton.isEnabled = true
         dump(tapCounts)
     }
+    
     @IBAction func tap(_ sender: Any) {
         startLabel.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CustomViewController.action), userInfo: nil, repeats: true)
@@ -48,6 +51,7 @@ class CustomViewController: UIViewController {
             tapCounts[time+i] = true
             i+=1
         }
+        tapped = true
     }
     
     @objc func action() {

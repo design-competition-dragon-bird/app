@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import Firebase
 
 class Vibration_Info{
+    
+    static let button_info = Vibration_Info()
     
     var button: String!
     var pattern: String!
@@ -16,4 +19,5 @@ class Vibration_Info{
         button = "default button"
         pattern = "default pattern"
     }
+    
 }
