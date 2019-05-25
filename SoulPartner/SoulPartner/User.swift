@@ -11,19 +11,22 @@ import FirebaseFirestore
 
 class User{
     
+    static let instance = User()
+    
     var userId: String!
     var firstName: String!
     var lastName: String!
     var email: String!
     var password: String!
     var userType: String!
+    var phone: String!
     var pp1_pattern: String!
     var pp2_pattern: String!
     var pp3_pattern: String!
     var pp4_pattern: String!
     var pp5_pattern: String!
     
-    var db: Firestore!
+    private var db: Firestore!
     
     init() {
         // do nothing
@@ -33,6 +36,7 @@ class User{
         self.email = nil
         self.password = nil
         self.userType = nil
+        self.phone = nil
         self.pp1_pattern = "One"
         self.pp2_pattern = "Two"
         self.pp3_pattern = "Three"
@@ -47,6 +51,7 @@ class User{
             "First Name": self.firstName!,
             "Last Name": self.lastName!,
             "Email": self.email!,
+            "Phone": self.phone!,
             "User Type": self.userType!,
             "PP1 Pattern": self.pp1_pattern!,
             "PP2 Pattern": self.pp2_pattern!,
@@ -61,6 +66,16 @@ class User{
             else{
                 success()
             }
+        }
+    }
+    
+    func registerUser(success: @escaping () -> (), failure: @escaping () -> ()){
+        Authenticate.instance.register_user(email: self.email, passWord: self.password, success: {
+            // user registration success
+            success()
+        }) {
+            // user registration failure
+            failure()
         }
     }
 }
