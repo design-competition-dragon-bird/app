@@ -11,37 +11,54 @@ import SceneKit
 
 class Model3DViewController: UIViewController, Observer {
     
+//    static let instance = Model3DViewController()
+    
     func update(value: [Character : String]) {
         // do nothing
-        
-        
-        pitch = 2
-        roll = 2
-        yawn = 2
-        
-        sceneView.scene?.rootNode.isPaused = false
-        let rotateOne = SCNAction.rotateBy(x: CGFloat(pitch - self.pitch), y: CGFloat(yawn - self.yawn), z: CGFloat(roll - self.roll), duration: 1.5)
-        shoeNode?.runAction(rotateOne)
-        
-        self.pitch += pitch
-        self.roll += roll
-        self.yawn += yawn
+        print("update in gyro stuff")
+        if let data = value["G"] {
+            var dataArray = data.components(separatedBy: " ")
+            var floatArray = [Float]()
+            for i in dataArray {
+                floatArray.append(Float(i) as! Float)
+            }
+            print(floatArray)
+            
+            var pitch = floatArray[1]
+            var roll = floatArray[2]
+            var yawn = floatArray[0]
+            
+            sceneView.scene?.rootNode.isPaused = false
+            let rotateOne = SCNAction.rotateBy(x: CGFloat(pitch - self.pitch), y: CGFloat(yawn - self.yawn), z: CGFloat(roll - self.roll), duration: 1.5)
+            shoeNode?.runAction(rotateOne)
+            
+            self.pitch += pitch
+            self.roll += roll
+            self.yawn += yawn
+            
+        }
     }
     
-    private var pitch = 0
-    private var roll = 0
-    private var yawn = 0
+    private var pitch: Float = 0
+    private var roll: Float = 0
+    private var yawn: Float = 0
     
     private var shoeNode : SCNNode?
     
     @IBOutlet weak var sceneView: SCNView!
     
+    var parser: Parse!
+    var isDone: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-         shoeNode = sceneView.scene?.rootNode.childNode(withName: "shoe", recursively: false)
-        sceneView.scene?.rootNode.isPaused = false
+//         shoeNode = sceneView.scene?.rootNode.childNode(withName: "shoe", recursively: false)
+//        sceneView.scene?.rootNode.isPaused = false
+        
+        parser = Parse()
+        parser.attachObserver(observer: self)
+        
         
 //        print(sceneView.scene?.rootNode.simdRotation)
         
@@ -50,6 +67,31 @@ class Model3DViewController: UIViewController, Observer {
 //            let rotateOne = SCNAction.rotateBy(x: 0, y: CGFloat(i), z: 0, duration: 1.5) //pitch, yaw, roll
 //            shoeNode?.runAction(rotateOne)
 //        }
+        print("view did load of 3D model......")
+        if Parse.instance.temp == true{
+            isDone = true
+            Parse.instance.temp = false
+        }
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        shoeNode = sceneView.scene?.rootNode.childNode(withName: "shoe", recursively: false)
+        sceneView.scene?.rootNode.isPaused = false
+        
+        if isDone{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "bt_interface_view_controller")
+            self.present(controller, animated: true, completion: nil)
+            isDone = false
+            addToObserver()
+        }
+        
+    }
+    
+    func addToObserver(){
+        Parse.instance.attachObserver(observer: self)
+        print("hello")
+    }
 }

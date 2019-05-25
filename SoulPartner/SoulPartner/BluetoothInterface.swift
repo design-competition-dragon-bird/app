@@ -8,14 +8,22 @@
 
 import Foundation
 import CoreBluetooth
+import UIKit
 
 class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManagerDelegate, CBPeripheralDelegate {
+    
+    
+    static let bt_instance = BluetoothInterface()
     
     override init() {
         super.init()
         print("Stella Manager init")
         centralManager = CBCentralManager(delegate: self, queue: nil)
 //        initVar()
+//        let storyboard = UIStoryboard(name: "tabBar", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "gyroModel") as! Model3DViewController
+//        controller.addToObserver()
+//        Model3DViewController.instance.addToObserver()
     }
     
     func initVar() {
@@ -54,7 +62,7 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
         if nil == self.connectedPeripheral {
             self.connectedPeripheral = peripheral
             self.connectedPeripheral.delegate = self    //Allowing the peripheral to discover services
-            notifyBTConnectionObservers(value: "Connected")
+            notifyBTConnectionObservers(value: "Connected") // swtch screen if this gets called
             print("connected to: \(peripheral.name!)")
             self.connectedPeripheral.discoverServices(nil)      //look for services for the specified peripheral
         }
@@ -89,7 +97,7 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
                 //                let data = "a\n".data(using: .utf8)!
                 //                writeData(data: data, characteristic: characteristic)
             }
-            print(serviceDictionary);
+            print("serviceDictionary", serviceDictionary);
         }
     }
     
@@ -97,8 +105,9 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
         if let data = characteristic.value {
             notifyObservers(data: data)
             let val = String.init(data: data, encoding: .utf8) ?? "nil"
-            //            print("val = ", val)
+//            print("val = ", val)
             self.parser.processData(string: val)
+//            Parse.instance.processData(string: val)
         }
         //        print(serviceDictionary)
     }

@@ -14,7 +14,11 @@ struct DataStruct {
     
 }
 
+var val: String!
+
 class Parse {
+    
+    static let instance = Parse()
     
     init() {
         self.initVar()
@@ -23,6 +27,7 @@ class Parse {
     func initVar() {
         end_of_packet = false
         tempString = ""
+        temp = true
     }
     
     func processData(string: String) {
@@ -33,7 +38,7 @@ class Parse {
             end_of_packet = false
             tempString = ""
             print("package recieved: ", packetDict)
-            decodeData()
+//            decodeData()
             notify(value: packetDict)
         }
     }
@@ -44,10 +49,17 @@ class Parse {
     
     private func processString(string: String) {
         // append to the array
-        tempString += string
-        if string.last == "\u{04}" {
-            tempString = String(tempString.dropLast(2))
-            end_of_packet = true
+        if string.contains("#"){
+            for i in string {
+                if i == "#" {
+                    end_of_packet = true
+                    break;
+                }
+                tempString += String(i)
+            }
+        }
+        else {
+            tempString += string
         }
     }
     
@@ -56,6 +68,9 @@ class Parse {
     }
     
     private func notify(value: [Character: String]){
+//        print("notifyig ovserasf")
+        
+        
         for observer in observerArray{
             observer.update(value: value)
         }
@@ -63,7 +78,9 @@ class Parse {
     
     private func decodeData() {
         //parse the data string into corresponding data type for each sensor
+//        print("decode data")
         
+//        print(packetDict["G"])
     }
     
     private var end_of_packet: Bool!
@@ -72,4 +89,6 @@ class Parse {
     private var observerArray = [Observer]()
     
     var dataStruct: DataStruct!
+    
+    var temp: Bool!
 }

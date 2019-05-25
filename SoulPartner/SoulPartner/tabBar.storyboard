@@ -60,7 +60,7 @@
         <!--3D Model-->
         <scene sceneID="bmh-Oo-3jK">
             <objects>
-                <viewController id="iEb-SI-17r" customClass="Model3DViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gyroModel" id="iEb-SI-17r" customClass="Model3DViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ej-NL-Gyi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAG-v9-HT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2191.304347826087" y="-611.41304347826087"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="1Fs-93-3FK">
+            <objects>
+                <viewControllerPlaceholder id="TeG-L7-b2w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXC-dn-byH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1944" y="-110"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="XsE-nN-LI6">

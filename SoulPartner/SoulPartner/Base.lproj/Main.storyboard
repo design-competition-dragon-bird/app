@@ -121,6 +121,7 @@
                         <outlet property="passwordButton_outlet" destination="Yhf-AH-M5Z" id="sJ9-hu-9ay"/>
                         <outlet property="passwordTextField" destination="UHx-MD-Gqo" id="nbb-qk-IX0"/>
                         <segue destination="a2e-CF-ADa" kind="show" identifier="to_bt_connection" id="v29-ey-137"/>
+                        <segue destination="rBM-6a-1AN" kind="show" identifier="main_to_tab_bar_controller" id="kBN-2G-D7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se0-il-iE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +330,7 @@
         <!--View Controller-->
         <scene sceneID="IUc-qh-vFc">
             <objects>
-                <viewController id="a2e-CF-ADa" customClass="BTViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bt_interface_view_controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a2e-CF-ADa" customClass="BTViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tgh-VF-IqV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,6 +394,7 @@
         <image name="back" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="GOd-Jg-bR1"/>
         <segue reference="Y1L-vQ-v3S"/>
         <segue reference="uad-Jo-H8f"/>
     </inferredMetricsTieBreakers>

@@ -17,7 +17,7 @@ enum TAB_BAR:Int{
     case MODEL_3D_PAGE = 2
 }
 
-var current_tab = TAB_BAR.GATE_PAGE.rawValue
+var current_tab = TAB_BAR.MODEL_3D_PAGE.rawValue
 let tab_bar_color = [
     UIColor(red: (0xff/255), green: (0xaa/255), blue: (0x00/255), alpha: 1),
     UIColor(red: (98/255), green: (211/255), blue: (68/255), alpha: 1),
@@ -38,7 +38,13 @@ let tab_bar_deselected_image = [
     UIImage(named: "shoe_tab")?.withRenderingMode(.alwaysOriginal)
 ]
 
-class tabBarViewController: UITabBarController {
+class tabBarViewController: UITabBarController, Observer {
+    
+    func update(value: [Character : String]) {
+        // do something
+        print("value = ", value)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +54,12 @@ class tabBarViewController: UITabBarController {
      
         customize_tab_bar()
         
+//        Parse.instance.attachObserver(observer: self)
+        
         self.selectedIndex = current_tab
         self.tabBar.barTintColor = tab_bar_color[self.selectedIndex]
         self.tabBar.items![selectedIndex].title = tab_bar_titles[self.selectedIndex]
+        
     }
     
     private func customize_tab_bar(){

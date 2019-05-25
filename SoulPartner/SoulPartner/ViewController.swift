@@ -32,7 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Authenticate.instance.authenticate_user_login(email: email, passWord: password, success: {
                 // perform segue
-                self.performSegue(withIdentifier: "to_bt_connection", sender: self)
+                self.performSegue(withIdentifier: "main_to_tab_bar_controller", sender: self)
+//                self.performSegue(withIdentifier: "to_bt_connection", sender: self)
             }) {
                 // show error
                 print("failed login...")
