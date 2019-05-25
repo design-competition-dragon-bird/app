@@ -120,7 +120,7 @@ class HeatMap {
             for i in 0..<num_Cols {
                 let randomInt = Int.random(in: 0..<100)
                 pressure_Data[j][i] = randomInt
-                pressure_Data[j][i] = Int(count / Double(num_Rows * num_Cols) * 100)
+//                pressure_Data[j][i] = Int(count / Double(num_Rows * num_Cols) * 100)
                 
                 count += 1
             }
@@ -189,9 +189,43 @@ class HeatMap {
     func get_pressure_value_for_pixel(row: Int, col: Int) -> Int{
         //TODO: algorithm to find pressure value based on distance
         
-        var dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
-        var k_array = [Int](repeating: 1000000, count: self.K)
-        var k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
+        if self.dist_array == nil{
+            self.dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
+            self.k_array = [Int](repeating: 1000000, count: self.K)
+            self.k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
+            
+//            // KNN algorithm
+//            // finding distance to each PP
+//            var count = 0
+//            for k in indexMatrix{
+//                let x = k[0]
+//                let y = k[1]
+//
+//                //            let dist = abs(x - row) + abs(y - col)
+//                let dist = sqrt(pow((CGFloat(x-row)),2) + pow((CGFloat(y - col)),2))
+//                //            print(dist)
+//                dist_array![count] = Int(dist)
+//                count += 1
+//            }
+//
+//            // finding the k-nearest PP
+//            for i in 0..<dist_array!.count {
+//                let max_in_k = k_array!.max()!
+//                if dist_array![i] < max_in_k {
+//                    let max_index = k_array!.firstIndex(of: max_in_k)!
+//                    k_array![max_index] = dist_array![i]
+//                    k_array_index![max_index][0] = i / 5
+//                    k_array_index![max_index][1] = i % 5
+//                }
+//            }
+        }
+        else{
+            
+        }
+        
+        dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
+        k_array = [Int](repeating: 1000000, count: self.K)
+        k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
         
         // KNN algorithm
         // finding distance to each PP
@@ -199,39 +233,39 @@ class HeatMap {
         for k in indexMatrix{
             let x = k[0]
             let y = k[1]
-            
+
             //            let dist = abs(x - row) + abs(y - col)
             let dist = sqrt(pow((CGFloat(x-row)),2) + pow((CGFloat(y - col)),2))
             //            print(dist)
-            dist_array[count] = Int(dist)
+            dist_array![count] = Int(dist)
             count += 1
         }
-        
+
         // finding the k-nearest PP
-        for i in 0..<dist_array.count {
-            let max_in_k = k_array.max()!
-            if dist_array[i] < max_in_k {
-                let max_index = k_array.firstIndex(of: max_in_k)!
-                k_array[max_index] = dist_array[i]
-                k_array_index[max_index][0] = i / 5
-                k_array_index[max_index][1] = i % 5
+        for i in 0..<dist_array!.count {
+            let max_in_k = k_array!.max()!
+            if dist_array![i] < max_in_k {
+                let max_index = k_array!.firstIndex(of: max_in_k)!
+                k_array![max_index] = dist_array![i]
+                k_array_index![max_index][0] = i / 5
+                k_array_index![max_index][1] = i % 5
             }
         }
         
         // calculate pressure based on k-neareast PP
-        let totalDistance = k_array.reduce(0, +)
+        let totalDistance = k_array!.reduce(0, +)
         
         if totalDistance == 0{
-            return self.pressure_Data[k_array_index[0][0]][k_array_index[0][1]]
+            return self.pressure_Data[k_array_index![0][0]][k_array_index![0][1]]
         }
         
         var pressureVal: Double = 0
         
         for i in 0..<self.K{
-            let pressure_row = k_array_index[i][0]
-            let pressure_col = k_array_index[i][1]
+            let pressure_row = k_array_index![i][0]
+            let pressure_col = k_array_index![i][1]
             let pressure = self.pressure_Data[pressure_row][pressure_col]
-            pressureVal += Double(pressure) * (Double(k_array[i]) / Double(totalDistance))
+            pressureVal += Double(pressure) * (Double(k_array![i]) / Double(totalDistance))
         }
         
         return Int(pressureVal)
@@ -244,6 +278,10 @@ class HeatMap {
             for i in 0..<self.image_width {
                 if pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
                     pixelMatrix[j][i] = from_pressure_data_to_pixel_data(pressureMatrix[j][i])
+                }
+                else{
+//                    1E1B2F
+                    pixelMatrix[j][i] = PixelData(a: 1, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
                 }
             }
         }
@@ -268,6 +306,25 @@ class HeatMap {
         pFinal.z = -pow(t, 2) + 1
         
         return pFinal
+    }
+    
+    func randomize_data(){
+        for j in 0..<num_Rows {
+            for i in 0..<num_Cols {
+                let randomInt = Int.random(in: 0..<100)
+                pressure_Data[j][i] = randomInt
+                
+            }
+        }
+        
+        pressureMatrix = fill_pressure_values_for_image(pixelMatrix)
+        color_map()
+        
+        
+        /*
+         * convert the pixel array into an image
+         */
+        right_sole_icon = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
     }
     
     private var p0: Point_3D!
@@ -308,6 +365,12 @@ class HeatMap {
      Contains the x and y location for all 70 pressure points
      */
     private var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)
+    
+    private var dist_array: [Int]?
+    
+    private var k_array: [Int]?
+    
+    private var k_array_index: [[Int]]?
     
 }
 

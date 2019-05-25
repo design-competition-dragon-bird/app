@@ -13,18 +13,253 @@
         <!--Vibration-->
         <scene sceneID="8mU-sk-uFx">
             <objects>
-                <viewController id="qUz-3a-vBb" sceneMemberID="viewController">
+                <viewController id="qUz-3a-vBb" customClass="VibrationViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wB0-x1-2PD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_sole_icon" translatesAutoresizingMaskIntoConstraints="NO" id="KHz-JT-nrl">
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHx-Mk-40L">
+                                <rect key="frame" x="102" y="190.66666666666666" width="30" height="55"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="PP2:" destination="qUz-3a-vBb" eventType="touchUpInside" id="dez-LN-Xcp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSe-cH-4ja">
+                                <rect key="frame" x="147" y="615.66666666666663" width="30" height="55"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="PP4:" destination="qUz-3a-vBb" eventType="touchUpInside" id="XMv-cW-MtP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kur-aB-7kN">
+                                <rect key="frame" x="117" y="515.66666666666663" width="30" height="55"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="PP3:" destination="qUz-3a-vBb" eventType="touchUpInside" id="Bvs-Qn-PD9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k41-Vz-Bqo">
+                                <rect key="frame" x="117" y="90.666666666666671" width="30" height="55.000000000000014"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="PP1:" destination="qUz-3a-vBb" eventType="touchUpInside" id="OXl-xV-9Js"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-R5-m8w">
+                                <rect key="frame" x="192" y="565.66666666666663" width="30" height="55"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="PP5:" destination="qUz-3a-vBb" eventType="touchUpInside" id="HIg-vC-jg0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KHz-JT-nrl" firstAttribute="top" secondItem="CbK-Q2-T5C" secondAttribute="top" id="3VC-90-hju"/>
+                            <constraint firstItem="LSe-cH-4ja" firstAttribute="centerY" secondItem="wB0-x1-2PD" secondAttribute="centerY" constant="275" id="Eqf-vy-hgd"/>
+                            <constraint firstItem="Kur-aB-7kN" firstAttribute="centerX" secondItem="wB0-x1-2PD" secondAttribute="centerX" constant="-75" id="F2x-cg-fyQ"/>
+                            <constraint firstItem="IRv-R5-m8w" firstAttribute="centerY" secondItem="wB0-x1-2PD" secondAttribute="centerY" constant="225" id="Huf-VI-7p4"/>
+                            <constraint firstItem="QHx-Mk-40L" firstAttribute="centerY" secondItem="wB0-x1-2PD" secondAttribute="centerY" constant="-150" id="Kf7-UC-aq4"/>
+                            <constraint firstItem="CbK-Q2-T5C" firstAttribute="trailing" secondItem="KHz-JT-nrl" secondAttribute="trailing" id="RUu-gp-GL3"/>
+                            <constraint firstItem="k41-Vz-Bqo" firstAttribute="centerX" secondItem="wB0-x1-2PD" secondAttribute="centerX" constant="-75" id="YEM-bA-Ozi"/>
+                            <constraint firstItem="LSe-cH-4ja" firstAttribute="centerX" secondItem="wB0-x1-2PD" secondAttribute="centerX" constant="-45" id="bJP-DU-NNN"/>
+                            <constraint firstItem="QHx-Mk-40L" firstAttribute="centerX" secondItem="wB0-x1-2PD" secondAttribute="centerX" constant="-90" id="ff0-S9-HJ5"/>
+                            <constraint firstItem="KHz-JT-nrl" firstAttribute="leading" secondItem="CbK-Q2-T5C" secondAttribute="leading" id="iZp-FU-wj2"/>
+                            <constraint firstItem="Kur-aB-7kN" firstAttribute="centerY" secondItem="wB0-x1-2PD" secondAttribute="centerY" constant="175" id="ndj-UF-M9A"/>
+                            <constraint firstItem="k41-Vz-Bqo" firstAttribute="centerY" secondItem="wB0-x1-2PD" secondAttribute="centerY" constant="-250" id="tIS-Le-dBi"/>
+                            <constraint firstItem="CbK-Q2-T5C" firstAttribute="bottom" secondItem="KHz-JT-nrl" secondAttribute="bottom" id="tO1-7C-ako"/>
+                            <constraint firstItem="IRv-R5-m8w" firstAttribute="centerX" secondItem="wB0-x1-2PD" secondAttribute="centerX" id="wlr-OV-EWN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CbK-Q2-T5C"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Vibration" image="vibration_tab copy" id="vqf-t1-isS"/>
+                    <connections>
+                        <segue destination="E8Q-1k-XIh" kind="show" identifier="SettingSegue" id="TZH-pZ-u1F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GnH-aX-ztP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-172" y="37"/>
+        </scene>
+        <!--Patterns View Controller-->
+        <scene sceneID="UsH-eD-GRa">
+            <objects>
+                <viewController id="E8Q-1k-XIh" customClass="PatternsViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rdT-RW-0mr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwP-jD-SYE">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Vibration Pattern" id="wcz-DI-x9j">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="lyo-kc-py0">
+                                            <connections>
+                                                <action selector="back:" destination="E8Q-1k-XIh" id="o9U-hg-Sdh"/>
+                                                <segue destination="oOb-Yf-dGV" kind="presentation" id="1KG-YX-UEA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ra-ZY-5RG">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PatternsTableViewCell" id="knM-OK-u3X" customClass="PatternsTableViewCell" customModule="SoulPartner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="knM-OK-u3X" id="1wd-xd-b3W">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izf-ju-bRd">
+                                                    <rect key="frame" x="25" y="25.333333333333329" width="364" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="izf-ju-bRd" firstAttribute="leading" secondItem="1wd-xd-b3W" secondAttribute="leadingMargin" constant="5" id="2hD-dn-O1O"/>
+                                                <constraint firstItem="izf-ju-bRd" firstAttribute="centerY" secondItem="1wd-xd-b3W" secondAttribute="centerY" id="vWX-Mg-pEh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="izf-ju-bRd" secondAttribute="trailing" constant="5" id="yKw-NN-usT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="PatternCell" destination="izf-ju-bRd" id="ego-fg-GwX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tAA-ys-Yv1" firstAttribute="bottom" secondItem="6Ra-ZY-5RG" secondAttribute="bottom" id="2au-tj-kKG"/>
+                            <constraint firstItem="RwP-jD-SYE" firstAttribute="top" secondItem="tAA-ys-Yv1" secondAttribute="top" id="6Gf-mh-whe"/>
+                            <constraint firstItem="RwP-jD-SYE" firstAttribute="trailing" secondItem="tAA-ys-Yv1" secondAttribute="trailing" id="7eO-pt-YJq"/>
+                            <constraint firstItem="tAA-ys-Yv1" firstAttribute="trailing" secondItem="6Ra-ZY-5RG" secondAttribute="trailing" id="L7r-f8-FwA"/>
+                            <constraint firstItem="6Ra-ZY-5RG" firstAttribute="top" secondItem="RwP-jD-SYE" secondAttribute="bottom" id="YAL-yP-SnS"/>
+                            <constraint firstItem="6Ra-ZY-5RG" firstAttribute="leading" secondItem="tAA-ys-Yv1" secondAttribute="leading" id="rsD-CS-8Tw"/>
+                            <constraint firstItem="RwP-jD-SYE" firstAttribute="leading" secondItem="tAA-ys-Yv1" secondAttribute="leading" id="w1i-cx-9rO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tAA-ys-Yv1"/>
+                    </view>
+                    <connections>
+                        <outlet property="patternsTableView" destination="6Ra-ZY-5RG" id="XqE-dx-9nz"/>
+                        <segue destination="9bI-HU-hJX" kind="show" identifier="CustomPattern" id="Erd-9E-NXL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46N-Jr-mFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="37"/>
+        </scene>
+        <!--Custom View Controller-->
+        <scene sceneID="IJA-fm-tbx">
+            <objects>
+                <viewController id="9bI-HU-hJX" customClass="CustomViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IjQ-Kb-gDW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-4u-YkW">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Custom Pattern" id="Qyn-0Z-oyq">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="G0d-Kv-nBC">
+                                            <connections>
+                                                <segue destination="E8Q-1k-XIh" kind="presentation" id="lVU-ws-eoe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Select" id="xJo-zL-9oG">
+                                            <connections>
+                                                <action selector="selectPattern:" destination="9bI-HU-hJX" id="cZ4-VH-hS6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tem-pb-qEg">
+                                <rect key="frame" x="0.0" y="661" width="414" height="75"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="udd-aW-Kyd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Replay Vibration"/>
+                                <connections>
+                                    <action selector="replay:" destination="9bI-HU-hJX" eventType="touchUpInside" id="pIa-zp-hIt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYL-MZ-FvQ">
+                                <rect key="frame" x="0.0" y="64" width="414" height="597"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eas-P9-0Uh" appends="YES" id="isF-te-c3d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start recording custom vibration pattern for 10 seconds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohG-NZ-9T7">
+                                <rect key="frame" x="32" y="218" width="350" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Vuc-Mc-6Y3"/>
+                                    <constraint firstAttribute="width" constant="350" id="ppQ-pz-OgL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="1" green="0.085055055919999997" blue="0.086700730700000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dyh-4u-YkW" firstAttribute="top" secondItem="3Wa-dw-UMI" secondAttribute="top" id="2Xe-FQ-t0t"/>
+                            <constraint firstItem="XYL-MZ-FvQ" firstAttribute="leading" secondItem="3Wa-dw-UMI" secondAttribute="leading" id="CYC-4c-YAc"/>
+                            <constraint firstItem="ohG-NZ-9T7" firstAttribute="centerY" secondItem="IjQ-Kb-gDW" secondAttribute="centerY" id="K0c-zK-nhA"/>
+                            <constraint firstItem="tem-pb-qEg" firstAttribute="top" secondItem="XYL-MZ-FvQ" secondAttribute="bottom" id="QgN-WC-Sks"/>
+                            <constraint firstItem="3Wa-dw-UMI" firstAttribute="bottom" secondItem="tem-pb-qEg" secondAttribute="bottom" id="RdL-kp-wMK"/>
+                            <constraint firstItem="XYL-MZ-FvQ" firstAttribute="top" secondItem="dyh-4u-YkW" secondAttribute="bottom" id="VDr-Rl-Kfs"/>
+                            <constraint firstItem="ohG-NZ-9T7" firstAttribute="centerX" secondItem="IjQ-Kb-gDW" secondAttribute="centerX" id="g8y-3l-wzP"/>
+                            <constraint firstItem="3Wa-dw-UMI" firstAttribute="trailing" secondItem="XYL-MZ-FvQ" secondAttribute="trailing" id="lIT-30-kDF"/>
+                            <constraint firstItem="3Wa-dw-UMI" firstAttribute="trailing" secondItem="tem-pb-qEg" secondAttribute="trailing" id="t2K-II-rlA"/>
+                            <constraint firstItem="dyh-4u-YkW" firstAttribute="leading" secondItem="3Wa-dw-UMI" secondAttribute="leading" id="uIN-WA-fIG"/>
+                            <constraint firstItem="dyh-4u-YkW" firstAttribute="trailing" secondItem="3Wa-dw-UMI" secondAttribute="trailing" id="vQQ-KF-yCC"/>
+                            <constraint firstItem="tem-pb-qEg" firstAttribute="leading" secondItem="3Wa-dw-UMI" secondAttribute="leading" id="vtZ-IT-YG0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Wa-dw-UMI"/>
+                    </view>
+                    <connections>
+                        <outlet property="startLabel" destination="ohG-NZ-9T7" id="SIP-XE-ioJ"/>
+                        <outlet property="tapButton" destination="XYL-MZ-FvQ" id="8Cy-xp-vc8"/>
+                        <segue destination="E8Q-1k-XIh" kind="show" identifier="back_to_vibration_pattern" id="zTM-ny-hZm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCT-RL-Ggm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eas-P9-0Uh">
+                    <connections>
+                        <action selector="tap:" destination="9bI-HU-hJX" id="by1-zP-Bet"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1433" y="37"/>
         </scene>
         <!--Gait-->
         <scene sceneID="ScA-34-7CN">
@@ -44,7 +279,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tOL-rH-Y44"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gait" image="right_sole_icon_tab" id="Kcg-sY-7HI"/>
@@ -71,7 +306,7 @@
                                 <color key="backgroundColor" red="0.16643648688231782" green="0.14677275343949112" blue="0.26080754399299622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </sceneKitView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1176470588" green="0.1039657816" blue="0.182682544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DKH-Uw-CiG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="3D Model" image="shoe_tab" id="kl9-G6-Yhb"/>
@@ -102,8 +337,8 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="e8B-ik-k3C" kind="relationship" relationship="viewControllers" id="ECX-C1-hwN"/>
                         <segue destination="qUz-3a-vBb" kind="relationship" relationship="viewControllers" id="QLQ-J1-saB"/>
+                        <segue destination="e8B-ik-k3C" kind="relationship" relationship="viewControllers" id="ECX-C1-hwN"/>
                         <segue destination="iEb-SI-17r" kind="relationship" relationship="viewControllers" id="ihB-Zm-z0b"/>
                     </connections>
                 </tabBarController>
@@ -113,8 +348,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="right_sole_icon" width="82" height="199"/>
         <image name="right_sole_icon_tab" width="64" height="26"/>
         <image name="shoe_tab" width="64" height="64"/>
         <image name="vibration_tab copy" width="75" height="42"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zTM-ny-hZm"/>
+    </inferredMetricsTieBreakers>
 </document>
