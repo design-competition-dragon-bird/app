@@ -27,6 +27,9 @@
 		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FDC81C1D22995CDD00005B5B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */; };
 		FDC81C20229969EE00005B5B /* bluetooth_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = FDC81C1F229969EE00005B5B /* bluetooth_animation.json */; };
+		FDC81C222299771F00005B5B /* tabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC81C212299771F00005B5B /* tabBar.storyboard */; };
+		FDC81C2422997B5700005B5B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */; };
+		FDC81C2622997BA800005B5B /* BTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC81C2522997BA800005B5B /* BTViewController.swift */; };
 		FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A1E2299088F00905231 /* AppDelegate.swift */; };
 		FDF76A212299088F00905231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A202299088F00905231 /* ViewController.swift */; };
 		FDF76A242299088F00905231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF76A222299088F00905231 /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FDC81C1F229969EE00005B5B /* bluetooth_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bluetooth_animation.json; path = ../../../Images/bluetooth_animation.json; sourceTree = "<group>"; };
+		FDC81C212299771F00005B5B /* tabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = tabBar.storyboard; sourceTree = "<group>"; };
+		FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		FDC81C2522997BA800005B5B /* BTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTViewController.swift; sourceTree = "<group>"; };
 		FDF76A1B2299088F00905231 /* SoulPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF76A1E2299088F00905231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDF76A202299088F00905231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +141,9 @@
 				FDF76A1E2299088F00905231 /* AppDelegate.swift */,
 				FDF76A202299088F00905231 /* ViewController.swift */,
 				FDF76A222299088F00905231 /* Main.storyboard */,
+				FDC81C2522997BA800005B5B /* BTViewController.swift */,
+				FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */,
+				FDC81C212299771F00005B5B /* tabBar.storyboard */,
 				FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */,
 				FDF76A252299089000905231 /* Assets.xcassets */,
 				FDF76A272299089000905231 /* LaunchScreen.storyboard */,
@@ -269,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC81C222299771F00005B5B /* tabBar.storyboard in Resources */,
 				5E15B5E5229926F1002637C8 /* Messages.storyboard in Resources */,
 				FDC81C20229969EE00005B5B /* bluetooth_animation.json in Resources */,
 				5E8DEAFB22993612001AAB08 /* shoe.scn in Resources */,
@@ -360,11 +370,13 @@
 				5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */,
 				5E15B5EB2299299F002637C8 /* Messages.swift in Sources */,
 				5E15B5E122992609002637C8 /* HeatMap.swift in Sources */,
+				FDC81C2622997BA800005B5B /* BTViewController.swift in Sources */,
 				5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */,
 				5E16FA0D229938800054E3FD /* BluetoothInterface.swift in Sources */,
 				FDC81C1D22995CDD00005B5B /* SignUpViewController.swift in Sources */,
 				5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */,
 				FDF76A212299088F00905231 /* ViewController.swift in Sources */,
+				FDC81C2422997B5700005B5B /* ForgotPasswordViewController.swift in Sources */,
 				5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */,
 				FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */,
 				5E16FA1322993F900054E3FD /* Authentication.swift in Sources */,

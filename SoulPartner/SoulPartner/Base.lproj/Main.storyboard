@@ -241,16 +241,17 @@
                         <outlet property="phoneNumber_textField" destination="4aJ-8l-R1G" id="vOj-gr-zLb"/>
                         <outlet property="picker_outlet" destination="yuc-77-GWs" id="n1M-lc-EDs"/>
                         <outlet property="signUpButton_outlet" destination="9ow-i6-ph2" id="xcG-oI-CQc"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goBackidentifier" id="G27-hY-KVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYb-av-nKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="811.59420289855075" y="50.54347826086957"/>
         </scene>
-        <!--View Controller-->
+        <!--Forgot Password View Controller-->
         <scene sceneID="KBc-1K-tb1">
             <objects>
-                <viewController id="tPx-A5-C4R" sceneMemberID="viewController">
+                <viewController id="tPx-A5-C4R" customClass="ForgotPasswordViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xm1-Gj-04e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,6 +285,7 @@
                                 <state key="normal" title="Send Link"/>
                                 <connections>
                                     <action selector="passwordButton_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxg-XS-D8x"/>
+                                    <action selector="sendLinkButton:" destination="tPx-A5-C4R" eventType="touchUpInside" id="5Ro-Yq-85C"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not a member? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cr-B0-c7e">
@@ -310,6 +312,10 @@
                         <color key="backgroundColor" red="0.11764798310000001" green="0.1039657816" blue="0.182682544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="lts-SL-01S"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Hs1-zO-jSO" id="cFa-72-lGb"/>
+                        <outlet property="sendLinkOutlet" destination="HsZ-Gk-1Zf" id="hfZ-4q-qK9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtN-8p-aYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,7 +324,7 @@
         <!--View Controller-->
         <scene sceneID="IUc-qh-vFc">
             <objects>
-                <viewController id="a2e-CF-ADa" sceneMemberID="viewController">
+                <viewController id="a2e-CF-ADa" customClass="BTViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tgh-VF-IqV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,6 +335,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Pair Device"/>
                                 <connections>
+                                    <action selector="multiPurposeButtonAction:" destination="a2e-CF-ADa" eventType="touchUpInside" id="9s6-Of-Ey1"/>
                                     <action selector="passwordButton_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BKN-1a-Pgt"/>
                                     <action selector="signUpButton_action:" destination="dvd-n2-i5W" eventType="touchUpInside" id="3Qh-3e-MiC"/>
                                 </connections>
@@ -352,10 +359,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nAz-ZX-QUj"/>
                     </view>
+                    <connections>
+                        <outlet property="multipurposeButton_outlet" destination="xgM-Mr-sUk" id="lbo-Em-KB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kha-qC-QsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2487" y="49"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="sR1-EH-HNl">
+            <objects>
+                <viewControllerPlaceholder id="rBM-6a-1AN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYl-JV-TAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3254" y="62"/>
         </scene>
     </scenes>
     <resources>
@@ -363,6 +381,6 @@
         <image name="back" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GvW-Qw-OaZ"/>
+        <segue reference="uad-Jo-H8f"/>
     </inferredMetricsTieBreakers>
 </document>
