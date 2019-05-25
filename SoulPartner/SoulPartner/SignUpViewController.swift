@@ -29,6 +29,47 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     @IBOutlet weak var signUpButton_outlet: UIButton!
     @IBAction func signUpButton_action(_ sender: Any) {
+    
+        if let first_name = firstName_textField.text, let last_name = lastName_textField.text, let email = email_textField.text, let password = password_textField.text, let phone = phoneNumber_textField.text {
+            
+            let index = picker_outlet.selectedRow(inComponent: 0)
+            let userType = pickerData[index]
+            
+            User.instance.userId = UUID().uuidString
+            User.instance.firstName = first_name
+            User.instance.lastName = last_name
+            User.instance.email = email
+            User.instance.password = password
+            User.instance.phone = phone
+            User.instance.userType = userType
+            
+            User.instance.registerUser(success: {
+                // successful registration
+                User.instance.storeUserInfo(success: {
+                    // writing to database success
+                    let alert = UIAlertController(title: "Success", message: "New User successfully created.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                }, failure: {
+                    // writing to database failure
+                    let alert = UIAlertController(title: "Error", message: "Failed to create a new user.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                })
+            }) {
+                // user registration failure
+                let alert = UIAlertController(title: "Error", message: "Failed to create a new account.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
+        else{
+            // not all fields are entered
+            let alert = UIAlertController(title: "Error", message: "Make sure all of the textfield are not empty.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     @IBOutlet weak var picker_outlet: UIPickerView!
     @IBOutlet weak var password_textField: UITextField!
