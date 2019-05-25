@@ -102,53 +102,62 @@
                     </view>
                     <connections>
                         <outlet property="PressurePointView" destination="kce-GY-V7u" id="Fuu-nj-37l"/>
-                        <segue destination="Tj7-VT-FK4" kind="show" identifier="SettingSegue" id="xAw-TH-qUe"/>
+                        <segue destination="uJt-zc-T7Z" kind="show" identifier="SettingSegue" id="tPP-Bl-D99"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98.550724637681171" y="-245.08928571428569"/>
+            <point key="canvasLocation" x="-232" y="-245"/>
         </scene>
-        <!--Pattern Table View Controller-->
-        <scene sceneID="mwF-PN-qTP">
+        <!--Patterns View Controller-->
+        <scene sceneID="AZn-ee-Z1g">
             <objects>
-                <viewController id="Tj7-VT-FK4" customClass="PatternTableViewController" customModule="Vibration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Urj-i1-gVS">
+                <viewController id="uJt-zc-T7Z" customClass="PatternsViewController" customModule="Vibration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FbT-ho-BuE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uq-28-nhJ">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-T5-F3H">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Vibration Patterns" id="iaK-JX-oIl">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="hOC-fu-Gpg"/>
+                                    <navigationItem title="Vibration Patterns" id="FmS-iR-tRR">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="5iZ-xL-10H">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" id="IL4-mb-sWG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-E2-y6u">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Bl-8C-Eg9">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="gjn-x4-lub" customClass="PatternTableViewCell" customModule="Vibration" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="79"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PatternsTableViewCell" rowHeight="80" id="Eqo-B9-dzy" customClass="PatternsTableViewCell" customModule="Vibration" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gjn-x4-lub" id="eP8-7A-SeY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eqo-B9-dzy" id="LKg-FR-EhW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pW8-XN-WL8">
-                                                    <rect key="frame" x="39" y="14" width="246" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNk-1Q-bsS">
+                                                    <rect key="frame" x="25" y="15" width="364" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="hmT-Ss-KYA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iNk-1Q-bsS" secondAttribute="trailing" constant="5" id="Dou-dO-cbc"/>
+                                                <constraint firstItem="iNk-1Q-bsS" firstAttribute="leading" secondItem="LKg-FR-EhW" secondAttribute="leadingMargin" constant="5" id="ZfQ-Zo-fJF"/>
+                                                <constraint firstItem="iNk-1Q-bsS" firstAttribute="centerY" secondItem="LKg-FR-EhW" secondAttribute="centerY" id="fmA-m4-Ywy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="pattern" destination="pW8-XN-WL8" id="u6Z-Tf-lxh"/>
+                                            <outlet property="patternCell" destination="iNk-1Q-bsS" id="gTt-73-Q6Y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,19 +165,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3uq-28-nhJ" firstAttribute="top" secondItem="bzs-Rm-AdR" secondAttribute="top" id="Rhd-xS-e31"/>
-                            <constraint firstItem="3uq-28-nhJ" firstAttribute="leading" secondItem="Urj-i1-gVS" secondAttribute="leading" id="UzN-Vl-PrD"/>
-                            <constraint firstAttribute="trailing" secondItem="3uq-28-nhJ" secondAttribute="trailing" id="qRs-za-s1q"/>
+                            <constraint firstItem="1Bl-8C-Eg9" firstAttribute="top" secondItem="yRt-T5-F3H" secondAttribute="bottom" id="2gQ-Hf-Lis"/>
+                            <constraint firstItem="yRt-T5-F3H" firstAttribute="trailing" secondItem="71A-zD-k32" secondAttribute="trailing" id="50R-ZL-CyO"/>
+                            <constraint firstItem="yRt-T5-F3H" firstAttribute="top" secondItem="71A-zD-k32" secondAttribute="top" id="Qrn-jR-aCT"/>
+                            <constraint firstItem="1Bl-8C-Eg9" firstAttribute="leading" secondItem="71A-zD-k32" secondAttribute="leading" id="Vyk-Da-2nX"/>
+                            <constraint firstItem="1Bl-8C-Eg9" firstAttribute="trailing" secondItem="71A-zD-k32" secondAttribute="trailing" id="bjy-m9-fhd"/>
+                            <constraint firstItem="yRt-T5-F3H" firstAttribute="leading" secondItem="71A-zD-k32" secondAttribute="leading" id="n04-iu-gqi"/>
+                            <constraint firstAttribute="bottom" secondItem="1Bl-8C-Eg9" secondAttribute="bottom" id="slS-8w-ExE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bzs-Rm-AdR"/>
+                        <viewLayoutGuide key="safeArea" id="71A-zD-k32"/>
                     </view>
                     <connections>
-                        <segue destination="P65-OY-A1i" kind="show" identifier="CustomPattern" id="Wsf-BS-fB6"/>
+                        <outlet property="patternsTableView" destination="1Bl-8C-Eg9" id="N0D-nC-e6n"/>
+                        <segue destination="P65-OY-A1i" kind="show" identifier="CustomPattern" id="SSp-cH-pwz"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FsR-Dv-eNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ld-KT-GKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902.89855072463774" y="-245.08928571428569"/>
+            <point key="canvasLocation" x="739" y="-245"/>
         </scene>
         <!--Custom View Controller-->
         <scene sceneID="KVI-KA-QYg">
@@ -184,7 +198,7 @@
                                     <navigationItem title="Custom Pattern" id="q3d-zo-Ybk">
                                         <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="HhZ-kF-IcH">
                                             <connections>
-                                                <action selector="back:" destination="P65-OY-A1i" id="dQc-ek-EWr"/>
+                                                <segue destination="uJt-zc-T7Z" kind="presentation" identifier="" id="b6P-q7-K2G"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Select" id="ymi-co-2oc">
@@ -249,6 +263,7 @@
                     <connections>
                         <outlet property="startLabel" destination="aKd-Kf-2tJ" id="zjE-v5-l6e"/>
                         <outlet property="tapButton" destination="c79-Qx-C7D" id="3qC-hv-Waf"/>
+                        <segue destination="uJt-zc-T7Z" kind="show" identifier="back_to_vibration_pattern" id="qeq-oX-pby"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47C-8Z-WCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,4 +272,7 @@
             <point key="canvasLocation" x="1705.7971014492755" y="-245.08928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="b6P-q7-K2G"/>
+    </inferredMetricsTieBreakers>
 </document>
