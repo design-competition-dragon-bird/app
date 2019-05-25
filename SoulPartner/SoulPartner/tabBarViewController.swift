@@ -24,7 +24,7 @@ let tab_bar_color = [
     UIColor(red: (69/255), green: (28/255), blue: (37/255), alpha: 1)
 ]
 
-let tab_bar_titles = ["Gait", "Vibration", "3D Model"]
+let tab_bar_titles = ["Vibration", "Gait", "3D Model"]
 
 let tab_bar_selected_image = [
     UIImage(named: "vibration_tab copy")?.withRenderingMode(.alwaysOriginal),
