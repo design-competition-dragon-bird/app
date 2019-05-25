@@ -207,7 +207,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
-                                    <action selector="backButton_action:" destination="dvd-n2-i5W" eventType="touchUpInside" id="TUf-HA-hzZ"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="GvW-Qw-OaZ"/>
                                 </connections>
                             </button>
