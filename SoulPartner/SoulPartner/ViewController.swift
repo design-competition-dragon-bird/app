@@ -135,9 +135,9 @@ extension UIButton{
         self.layer.backgroundColor = UIColor(red: (211/255), green: (136/255), blue: CGFloat(61/255), alpha: 1.0).cgColor
         self.setTitleColor(UIColor.white, for: .normal)
         self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 2.0
+        self.layer.shadowRadius = 4.0
         self.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowColor = UIColor(red: (0/255), green: (0/255), blue: CGFloat(0/255), alpha: 1.0).cgColor
+        self.layer.shadowColor = UIColor(red: (61/255), green: (32/255), blue: CGFloat(43/255), alpha: 1.0).cgColor
     }
 }

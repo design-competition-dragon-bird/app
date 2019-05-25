@@ -8,11 +8,9 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    @IBAction func backButton_action(_ sender: Any) {
-    }
-    let pickerData = ["Doctor", "Patient", "Care Giver"]
+    let pickerData = ["Care Giver", "Patient", "Doctor"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -24,7 +22,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let string = pickerData[component]
+        let string = pickerData[row]
         return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
@@ -41,21 +39,71 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // to change view when keyboard appeards
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name:UIResponder.keyboardWillHideNotification, object: nil)
+        
         self.picker_outlet.delegate = self
         self.picker_outlet.dataSource = self
         
-        // Do any additional setup after loading the view.
+        self.password_textField.delegate = self
+        self.email_textField.delegate = self
+        self.phoneNumber_textField.delegate = self
+        self.lastName_textField.delegate = self
+        self.firstName_textField.delegate = self
+        
+        
+        password_textField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        email_textField.attributedPlaceholder = NSAttributedString(string: "Email",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        phoneNumber_textField.attributedPlaceholder = NSAttributedString(string: "Phone",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        lastName_textField.attributedPlaceholder = NSAttributedString(string: "Last Name",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        firstName_textField.attributedPlaceholder = NSAttributedString(string: "Fast Name",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        signUpButton_outlet.customize_button()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // touched anywhere on screen begain
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // touched anywhere on screen ended
+        self.view.endEditing(true)
     }
-    */
-
+    
+    // objective-c function for when keyboard appears
+    @objc func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y = -(self.view.frame.height * 0.1)
+    }
+    
+    // objective-c function for when keyboard disappear
+    @objc func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    // when hitting enter on the textfield
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == firstName_textField{
+            lastName_textField.becomeFirstResponder()
+        }
+        else if textField == lastName_textField{
+            phoneNumber_textField.becomeFirstResponder()
+        }
+        else if textField == phoneNumber_textField{
+            email_textField.becomeFirstResponder()
+        }
+        else if textField == email_textField{
+            password_textField.becomeFirstResponder()
+        }
+        else if textField == password_textField{
+            signUpButton_action(self)
+        }
+        return true
+    }
 }
