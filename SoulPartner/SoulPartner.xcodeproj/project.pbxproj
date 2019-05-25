@@ -15,6 +15,10 @@
 		5E15B5E72299283F002637C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E15B5E62299283F002637C8 /* GoogleService-Info.plist */; };
 		5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5E82299296A002637C8 /* MessagesViewController.swift */; };
 		5E15B5EB2299299F002637C8 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15B5EA2299299F002637C8 /* Messages.swift */; };
+		5E8DEAFB22993612001AAB08 /* shoe.scn in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFA22993612001AAB08 /* shoe.scn */; };
+		5E8DEAFD22993644001AAB08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFC22993644001AAB08 /* Model.swift */; };
+		5E8DEAFF22993679001AAB08 /* 3DModel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */; };
+		5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */; };
 		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A1E2299088F00905231 /* AppDelegate.swift */; };
 		FDF76A212299088F00905231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A202299088F00905231 /* ViewController.swift */; };
@@ -34,6 +38,10 @@
 		5E15B5E62299283F002637C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E15B5E82299296A002637C8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = SoulPartner/MessagesViewController.swift; sourceTree = SOURCE_ROOT; };
 		5E15B5EA2299299F002637C8 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Messages.swift; path = SoulPartner/Messages.swift; sourceTree = SOURCE_ROOT; };
+		5E8DEAFA22993612001AAB08 /* shoe.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = shoe.scn; path = ../../../graphic_test/shoe.scn; sourceTree = "<group>"; };
+		5E8DEAFC22993644001AAB08 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SoulPartner/Model.swift; sourceTree = SOURCE_ROOT; };
+		5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = 3DModel.storyboard; path = SoulPartner/3DModel.storyboard; sourceTree = SOURCE_ROOT; };
+		5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model3DViewController.swift; path = SoulPartner/Model3DViewController.swift; sourceTree = SOURCE_ROOT; };
 		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FDF76A1B2299088F00905231 /* SoulPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF76A1E2299088F00905231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +144,10 @@
 		FDF76A32229908C700905231 /* 3DModel */ = {
 			isa = PBXGroup;
 			children = (
+				5E8DEAFA22993612001AAB08 /* shoe.scn */,
+				5E8DEAFC22993644001AAB08 /* Model.swift */,
+				5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */,
+				5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */,
 			);
 			path = 3DModel;
 			sourceTree = "<group>";
@@ -229,9 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E15B5E5229926F1002637C8 /* Messages.storyboard in Resources */,
+				5E8DEAFB22993612001AAB08 /* shoe.scn in Resources */,
 				FDF76A292299089000905231 /* LaunchScreen.storyboard in Resources */,
 				5E15B5DD2299255B002637C8 /* HeatMap.storyboard in Resources */,
 				FDF76A262299089000905231 /* Assets.xcassets in Resources */,
+				5E8DEAFF22993679001AAB08 /* 3DModel.storyboard in Resources */,
 				5E15B5E322992690002637C8 /* dataPoints.json in Resources */,
 				FDF76A242299088F00905231 /* Main.storyboard in Resources */,
 				5E15B5E72299283F002637C8 /* GoogleService-Info.plist in Resources */,
@@ -308,10 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8DEAFD22993644001AAB08 /* Model.swift in Sources */,
 				5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */,
 				5E15B5EB2299299F002637C8 /* Messages.swift in Sources */,
 				5E15B5E122992609002637C8 /* HeatMap.swift in Sources */,
 				5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */,
+				5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */,
 				FDF76A212299088F00905231 /* ViewController.swift in Sources */,
 				FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */,
 			);
