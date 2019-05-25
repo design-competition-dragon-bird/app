@@ -30,6 +30,7 @@
 		FDC81C222299771F00005B5B /* tabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC81C212299771F00005B5B /* tabBar.storyboard */; };
 		FDC81C2422997B5700005B5B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */; };
 		FDC81C2622997BA800005B5B /* BTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC81C2522997BA800005B5B /* BTViewController.swift */; };
+		FDD3638D2299960F0061572B /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD3638C2299960F0061572B /* tabBarViewController.swift */; };
 		FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A1E2299088F00905231 /* AppDelegate.swift */; };
 		FDF76A212299088F00905231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A202299088F00905231 /* ViewController.swift */; };
 		FDF76A242299088F00905231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF76A222299088F00905231 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		FDC81C212299771F00005B5B /* tabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = tabBar.storyboard; sourceTree = "<group>"; };
 		FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FDC81C2522997BA800005B5B /* BTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTViewController.swift; sourceTree = "<group>"; };
+		FDD3638C2299960F0061572B /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		FDF76A1B2299088F00905231 /* SoulPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF76A1E2299088F00905231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDF76A202299088F00905231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				FDC81C2522997BA800005B5B /* BTViewController.swift */,
 				FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */,
 				FDC81C212299771F00005B5B /* tabBar.storyboard */,
+				FDD3638C2299960F0061572B /* tabBarViewController.swift */,
 				FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */,
 				FDF76A252299089000905231 /* Assets.xcassets */,
 				FDF76A272299089000905231 /* LaunchScreen.storyboard */,
@@ -368,6 +371,7 @@
 			files = (
 				5E16FA15229942D80054E3FD /* User.swift in Sources */,
 				5E8DEAFD22993644001AAB08 /* Model.swift in Sources */,
+				FDD3638D2299960F0061572B /* tabBarViewController.swift in Sources */,
 				5E16FA0F229938BA0054E3FD /* Parse.swift in Sources */,
 				5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */,
 				5E15B5EB2299299F002637C8 /* Messages.swift in Sources */,
