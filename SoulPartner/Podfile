@@ -6,6 +6,9 @@ target 'SoulPartner' do
   use_frameworks!
 
   # Pods for SoulPartner
-
-	pod 'Firebase/Core'
+  pod 'MessageKit'
+  pod  'MessageInputBar'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
 end
