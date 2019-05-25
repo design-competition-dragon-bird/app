@@ -10,6 +10,8 @@ import UIKit
 
 class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBAction func backButton_action(_ sender: Any) {
+    }
     let pickerData = ["Doctor", "Patient", "Care Giver"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
