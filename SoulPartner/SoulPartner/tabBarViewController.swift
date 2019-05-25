@@ -12,12 +12,12 @@ import UIKit
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global variables for tab bar control
 enum TAB_BAR:Int{
-    case GATE_PAGE = 0
-    case VIBRATION_PAGE = 1
+    case VIBRATION_PAGE = 0
+    case GATE_PAGE = 1
     case MODEL_3D_PAGE = 2
 }
 
-var current_tab = TAB_BAR.GATE_PAGE.rawValue
+var current_tab = TAB_BAR.VIBRATION_PAGE.rawValue
 let tab_bar_color = [
     UIColor(red: (0xff/255), green: (0xaa/255), blue: (0x00/255), alpha: 1),
     UIColor(red: (98/255), green: (211/255), blue: (68/255), alpha: 1),
@@ -27,14 +27,14 @@ let tab_bar_color = [
 let tab_bar_titles = ["Gait", "Vibration", "3D Model"]
 
 let tab_bar_selected_image = [
-    UIImage(named: "right_sole_icon_tab")?.withRenderingMode(.alwaysOriginal),
     UIImage(named: "vibration_tab copy")?.withRenderingMode(.alwaysOriginal),
+    UIImage(named: "right_sole_icon_tab")?.withRenderingMode(.alwaysOriginal),
     UIImage(named: "shoe_tab")?.withRenderingMode(.alwaysOriginal)
 ]
 
 let tab_bar_deselected_image = [
-    UIImage(named: "right_sole_icon_tab")?.withRenderingMode(.alwaysOriginal),
     UIImage(named: "vibration_tab copy")?.withRenderingMode(.alwaysOriginal),
+    UIImage(named: "right_sole_icon_tab")?.withRenderingMode(.alwaysOriginal),
     UIImage(named: "shoe_tab")?.withRenderingMode(.alwaysOriginal)
 ]
 
