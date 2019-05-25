@@ -63,6 +63,7 @@ class Parse {
     
     private func decodeData() {
         //parse the data string into corresponding data type for each sensor
+        
     }
     
     private var end_of_packet: Bool!

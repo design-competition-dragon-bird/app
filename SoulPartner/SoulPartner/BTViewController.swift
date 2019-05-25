@@ -9,11 +9,21 @@
 import UIKit
 import Lottie
 
-class BTViewController: UIViewController {
-
+class BTViewController: UIViewController, BT_Connection_Observer {
+    func update(value: String) {
+        status_label.text = value
+        
+        if value == "Connected" {
+            self.performSegue(withIdentifier: "to_tab_bar", sender: self)
+        }
+    }
+    
+    @IBOutlet weak var status_label: UILabel!
+    
     var lottie_animation: AnimationView!
     @IBAction func multiPurposeButtonAction(_ sender: Any) {
-        
+        bt_interface = BluetoothInterface()
+        bt_interface.addBTConnectionObserver(observer: self)
     }
     
     var bt_interface: BluetoothInterface!
@@ -27,7 +37,6 @@ class BTViewController: UIViewController {
         let ratio: CGFloat = 0.5
         let origin = CGPoint(x: width * (ratio - 0.1) / 2, y: height * ratio / 3)
         
-        bt_interface = BluetoothInterface()
         multipurposeButton_outlet.customize_button()
         
         // for lottie animations
