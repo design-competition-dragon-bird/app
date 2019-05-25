@@ -20,8 +20,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[component]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let string = pickerData[component]
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
 
@@ -39,7 +41,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         self.picker_outlet.delegate = self
         self.picker_outlet.dataSource = self
-        picker_outlet.backgroundColor = UIColor(named: "white")
         
         // Do any additional setup after loading the view.
     }
