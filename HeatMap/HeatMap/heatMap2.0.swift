@@ -30,6 +30,9 @@ class HeatMap_2_0: UIViewController{
     var p1: Point_3D!
     var p2: Point_3D!
     
+    /** K used for KNN*/
+    let K = 10
+    
     let NOT_INSIDE_BOUNDARY = -1
     
     let num_Rows = 14
@@ -37,6 +40,8 @@ class HeatMap_2_0: UIViewController{
     
     var image_width = 0
     var image_height = 0
+    
+    var distanceMatrix: [[[Int]]]!
     
     /**
         Matrix of pixel values for the heat map. Size 82 x 199
@@ -84,9 +89,8 @@ class HeatMap_2_0: UIViewController{
          * convert the pixel array into an image
          */
         right_sole_icon.image = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
-        
+    
         print("done!!")
-        
     }
     
     /**
@@ -143,11 +147,14 @@ class HeatMap_2_0: UIViewController{
      Randomly assigns each pressure point a value
      */
     func randomly_fill_pressure_data() {
-        
+        var count: Double = 0
         for j in 0..<num_Rows {
             for i in 0..<num_Cols {
                 let randomInt = Int.random(in: 0..<100)
                 pressure_Data[j][i] = randomInt
+                pressure_Data[j][i] = Int(count / Double(num_Rows * num_Cols) * 100)
+                
+                count += 1
             }
         }
     }
@@ -178,6 +185,7 @@ class HeatMap_2_0: UIViewController{
                     if trigger {
                         // set pressure to 'inside boundary'
                         pressureMatrix[j][i] = get_pressure_value_for_pixel(row: j, col: i)
+//                        exit(-1)
                     }
                     else {
                         // set pressure to 'outside boundary'
@@ -205,8 +213,59 @@ class HeatMap_2_0: UIViewController{
      */
     func get_pressure_value_for_pixel(row: Int, col: Int) -> Int{
         //TODO: algorithm to find pressure value based on distance
-        return Int.random(in: 0..<100)
+
+        var dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
+        var k_array = [Int](repeating: 1000000, count: self.K)
+        var k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
+        
+        // KNN algorithm
+        // finding distance to each PP
+        var count = 0
+        for k in indexMatrix{
+            let x = k[0]
+            let y = k[1]
+            
+            let dist = abs(x - row) + abs(y - col)
+//            print(dist)
+            dist_array[count] = dist
+            count += 1
+        }
+        
+        // finding the k-nearest PP
+        for i in 0..<dist_array.count {
+            let max_in_k = k_array.max()!
+            if dist_array[i] < max_in_k {
+                let max_index = k_array.firstIndex(of: max_in_k)!
+                k_array[max_index] = dist_array[i]
+                k_array_index[max_index][0] = i / 5
+                k_array_index[max_index][1] = i % 5
+            }
+        }
+
+        // calculate pressure based on k-neareast PP
+        let totalDistance = k_array.reduce(0, +)
+        
+        if totalDistance == 0{
+            return self.pressure_Data[k_array_index[0][0]][k_array_index[0][1]]
+        }
+        
+        var pressureVal: Double = 0
+
+        for i in 0..<self.K{
+            let pressure_row = k_array_index[i][0]
+            let pressure_col = k_array_index[i][1]
+            let pressure = self.pressure_Data[pressure_row][pressure_col]
+            pressureVal += Double(pressure) * (Double(k_array[i]) / Double(totalDistance))
+        }
+        
+//        print("total distance = ", totalDistance)
+//        print("row: \(row), col: \(col)")
+//        print("pRow: \(indexMatrix[0][0]), pCol: \(indexMatrix[0][1])")
+        return Int(pressureVal)
+//        return Int.random(in: 0..<100)
     }
+    
+    
     
     /**
         Renders the map with the location of the 70 pressure points
@@ -249,6 +308,7 @@ class HeatMap_2_0: UIViewController{
         
         return pFinal
     }
+    
 }
 
 extension HeatMap_2_0{
