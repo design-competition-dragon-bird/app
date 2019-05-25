@@ -13,7 +13,6 @@ class HeatMapViewController: UIViewController, Observer {
     func update(value: [Character : String]) {
         // do nothing
     }
-    
     @IBOutlet weak var right_sole_icone: UIImageView!
     
     var heatMap: HeatMap!
