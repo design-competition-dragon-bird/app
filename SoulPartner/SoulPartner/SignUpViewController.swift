@@ -79,7 +79,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // objective-c function for when keyboard appears
     @objc func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y = -(self.view.frame.height * 0.22)
+        self.view.frame.origin.y = -(self.view.frame.height * 0.1)
     }
     
     // objective-c function for when keyboard disappear
