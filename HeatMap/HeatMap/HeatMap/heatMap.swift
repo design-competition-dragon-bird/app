@@ -1,11 +1,12 @@
 //
-//  heatMap2.0.swift
+//  heatMap.swift
 //  HeatMap
 //
-//  Created by Ravi Patel on 5/18/19.
+//  Created by Saikiran Komatineni on 5/24/19.
 //  Copyright © 2019 Design Comeptition. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreGraphics
 
@@ -22,74 +23,41 @@ public struct PixelData {
     var b: UInt8
 }
 
-class HeatMap_2_0: UIViewController{
+class HeatMap {
     
-    @IBOutlet weak var right_sole_icon: UIImageView!
-    
-    var p0: Point_3D!
-    var p1: Point_3D!
-    var p2: Point_3D!
-    
-    /** K used for KNN*/
-    let K = 10
-    
-    let NOT_INSIDE_BOUNDARY = -1
-    
-    let num_Rows = 14
-    let num_Cols = 5
-    
-    var image_width = 0
-    var image_height = 0
-    
-    var distanceMatrix: [[[Int]]]!
-    
-    /**
-        Matrix of pixel values for the heat map. Size 82 x 199
-     */
-    var pixelMatrix = [[PixelData]]()
-    
-    /**
-        Raw data from sensors. Values between 0 and 99. Size 14 x 5
-     */
-    var pressure_Data = [[Int]](repeating: [Int](repeating: 0, count: 5), count: 14)
-    
-    /**
-     Matrix of pressure values for the heat map. Size 82 x 199
-     */
-    var pressureMatrix: [[Int]]!
-
-    
-    /**
-        Contains the x and y location for all 70 pressure points
-     */
-    var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        p0 = Point_3D(x: 0, y: 0, z: 1)
-        p1 = Point_3D(x: 0, y: 1, z: 0)
-        p2 = Point_3D(x: 1, y: 0, z: 0)
-
-        let soleImage: UIImage = UIImage(named: "right_sole_icon")!
-        
-        let pixelData = soleImage.pixelData()
-        self.image_width = Int(soleImage.size.width)            // 82
-        self.image_height = Int(soleImage.size.height)
-        
+    func performSetup(_ pixelData: [PixelData]?) {
         copy_outline(pixelData)
         get_PP_location()
         randomly_fill_pressure_data() //random set of pressure data
         pressureMatrix = fill_pressure_values_for_image(pixelMatrix)
-        update_map_with_pressure_points()
         color_map()
         
         
         /*
          * convert the pixel array into an image
          */
-        right_sole_icon.image = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
+        right_sole_icon = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
+    }
     
+    init() {
+        
+        self.p0 = Point_3D(x: 0, y: 0, z: 1)
+        self.p1 = Point_3D(x: 0, y: 1, z: 0)
+        self.p2 = Point_3D(x: 1, y: 0, z: 0)
+        
+        let soleImage: UIImage = UIImage(named: "right_sole_icon")!
+        
+        let pixelData = soleImage.pixelData()
+        self.image_width = Int(soleImage.size.width)            // 82
+        self.image_height = Int(soleImage.size.height)
+        
+        self.right_sole_icon = soleImage
+        
+        self.pressureMatrix = [[Int]](repeating: [Int](repeating: 0, count: self.image_width), count: self.image_height)
+        
+        
+        performSetup(pixelData)
+        
         print("done!!")
     }
     
@@ -101,7 +69,7 @@ class HeatMap_2_0: UIViewController{
         for j in 0..<self.image_height{
             var pixArray = [PixelData]()
             for i in 0..<self.image_width{
-                let one_d_rep = j*Int(image_width) + i
+                let one_d_rep = j*Int(self.image_width) + i
                 if let pix = pixelData?[one_d_rep]{//get corresponding pixel value from shoe outline matrix
                     if pix.r == 0 && pix.g == 0 && pix.b == 0 {
                         //if pixel belongs to outline, keep it
@@ -160,7 +128,7 @@ class HeatMap_2_0: UIViewController{
     }
     
     /**
-        Assign each pixel whether it's inside or outside boundary
+     Assign each pixel whether it's inside or outside boundary
      */
     func fill_pressure_values_for_image(_ pixelMatrix: [[PixelData]]) -> [[Int]] {
         
@@ -183,9 +151,16 @@ class HeatMap_2_0: UIViewController{
                 else{
                     //white pixel
                     if trigger {
-                        // set pressure to 'inside boundary'
+                        //                        if let index = indexMatrix.firstIndex(of: [j,i]){
+                        //                            pressureMatrix[j][i] = pressure_Data[index/5][index%5]
+                        //                        }
+                        //
+                        //                        else{
+                        //                            // set pressure to 'inside boundary'
+                        //                            pressureMatrix[j][i] = get_pressure_value_for_pixel(row: j, col: i)
+                        //                        }
                         pressureMatrix[j][i] = get_pressure_value_for_pixel(row: j, col: i)
-//                        exit(-1)
+                        
                     }
                     else {
                         // set pressure to 'outside boundary'
@@ -209,11 +184,11 @@ class HeatMap_2_0: UIViewController{
     }
     
     /**
-        Algorithm to find pressure value based on distance
+     Algorithm to find pressure value based on distance
      */
     func get_pressure_value_for_pixel(row: Int, col: Int) -> Int{
         //TODO: algorithm to find pressure value based on distance
-
+        
         var dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
         var k_array = [Int](repeating: 1000000, count: self.K)
         var k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
@@ -225,9 +200,10 @@ class HeatMap_2_0: UIViewController{
             let x = k[0]
             let y = k[1]
             
-            let dist = abs(x - row) + abs(y - col)
-//            print(dist)
-            dist_array[count] = dist
+            //            let dist = abs(x - row) + abs(y - col)
+            let dist = sqrt(pow((CGFloat(x-row)),2) + pow((CGFloat(y - col)),2))
+            //            print(dist)
+            dist_array[count] = Int(dist)
             count += 1
         }
         
@@ -241,7 +217,7 @@ class HeatMap_2_0: UIViewController{
                 k_array_index[max_index][1] = i % 5
             }
         }
-
+        
         // calculate pressure based on k-neareast PP
         let totalDistance = k_array.reduce(0, +)
         
@@ -250,28 +226,16 @@ class HeatMap_2_0: UIViewController{
         }
         
         var pressureVal: Double = 0
-
+        
         for i in 0..<self.K{
             let pressure_row = k_array_index[i][0]
             let pressure_col = k_array_index[i][1]
             let pressure = self.pressure_Data[pressure_row][pressure_col]
             pressureVal += Double(pressure) * (Double(k_array[i]) / Double(totalDistance))
         }
-
+        
         return Int(pressureVal)
-
-    }
-    
-    
-    
-    /**
-        Renders the map with the location of the 70 pressure points
-     */
-    func update_map_with_pressure_points() {
-        for j in 0..<(num_Cols*num_Rows) {
-            var point = indexMatrix[j]
-            pressureMatrix[point[0]][point[1]] = pressure_Data[j / 14][j % 5]
-        }
+        
     }
     
     func color_map(){
@@ -306,9 +270,48 @@ class HeatMap_2_0: UIViewController{
         return pFinal
     }
     
+    private var p0: Point_3D!
+    private var p1: Point_3D!
+    private var p2: Point_3D!
+    
+    /** K used for KNN*/
+    private let K = 8
+    
+    private let NOT_INSIDE_BOUNDARY = -1
+    
+    private let num_Rows = 14
+    private let num_Cols = 5
+    
+    private var image_width = 0
+    private var image_height = 0
+    
+    public var right_sole_icon: UIImage?
+    
+    
+    /**
+     Matrix of pixel values for the heat map. Size 82 x 199
+     */
+    private var pixelMatrix = [[PixelData]]()
+    
+    /**
+     Raw data from sensors. Values between 0 and 99. Size 14 x 5
+     */
+    private var pressure_Data = [[Int]](repeating: [Int](repeating: 0, count: 5), count: 14)
+    
+    /**
+     Matrix of pressure values for the heat map. Size 82 x 199
+     */
+    private var pressureMatrix: [[Int]]!
+    
+    
+    /**
+     Contains the x and y location for all 70 pressure points
+     */
+    private var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)
+    
 }
 
-extension HeatMap_2_0{
+extension HeatMap{
     func imageFromARGB32Bitmap(pixels: [[PixelData]], width: Int, height: Int) -> UIImage? {
         guard width > 0 && height > 0 else { return nil }
         guard (pixels.flatMap{$0}.count) == width * height else { return nil }
@@ -329,7 +332,7 @@ extension HeatMap_2_0{
         
         var data = temp_pixels // Copy to mutable []
         guard let providerRef = CGDataProvider(data: NSData(bytes: &data,
-                length: data.count * MemoryLayout<PixelData>.size)
+                                                            length: data.count * MemoryLayout<PixelData>.size)
             )
             else {
                 print("provider ref failed")
@@ -387,3 +390,4 @@ extension UIImage {
         return pixelData2
     }
 }
+

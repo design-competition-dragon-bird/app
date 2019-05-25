@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E2354E2226BBECB00B4E21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2354E1226BBECB00B4E21C /* AppDelegate.swift */; };
-		5E2354E4226BBECB00B4E21C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2354E3226BBECB00B4E21C /* ViewController.swift */; };
-		5E2354E7226BBECB00B4E21C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2354E5226BBECB00B4E21C /* Main.storyboard */; };
 		5E2354E9226BBECC00B4E21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2354E8226BBECC00B4E21C /* Assets.xcassets */; };
 		5E2354EC226BBECC00B4E21C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2354EA226BBECC00B4E21C /* LaunchScreen.storyboard */; };
-		5E2354F4226BC50900B4E21C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2354F3226BC50900B4E21C /* CustomView.swift */; };
-		5EB23923227D2745006225E3 /* viabration_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB23922227D2745006225E3 /* viabration_info.swift */; };
 		5EC9388122989555001080E9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC9388022989555001080E9 /* opencv2.framework */; };
 		5EC93885229899BA001080E9 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EC93884229899BA001080E9 /* OpenCVWrapper.mm */; };
 		5EE5D6AF228F9C76000AFCE8 /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5D6AE228F9C76000AFCE8 /* Messages.storyboard */; };
@@ -24,18 +20,15 @@
 		D220340A9AEBFBCA5C5A9274 /* Pods_HeatMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955B71AEEEFB1845B552F7CB /* Pods_HeatMap.framework */; };
 		FD7A573D2290E77100AF9F56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */; };
 		FDA28D06229128BC00A6BDC3 /* dataPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = FDA28D05229128BC00A6BDC3 /* dataPoints.json */; };
+		FDF76A0E2298F98B00905231 /* heatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF76A0D2298F98B00905231 /* heatMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E2354DE226BBECB00B4E21C /* HeatMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeatMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2354E1226BBECB00B4E21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E2354E3226BBECB00B4E21C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5E2354E6226BBECB00B4E21C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E2354E8226BBECC00B4E21C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E2354EB226BBECC00B4E21C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E2354ED226BBECC00B4E21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E2354F3226BC50900B4E21C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		5EB23922227D2745006225E3 /* viabration_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viabration_info.swift; sourceTree = "<group>"; };
 		5EC9388022989555001080E9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../../Downloads/opencv2.framework; sourceTree = "<group>"; };
 		5EC93882229899B9001080E9 /* HeatMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeatMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EC93883229899BA001080E9 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
@@ -50,7 +43,8 @@
 		955B71AEEEFB1845B552F7CB /* Pods_HeatMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeatMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE2CF7B8CC1CCEB65BC06B /* Pods-HeatMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeatMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeatMap/Pods-HeatMap.release.xcconfig"; sourceTree = "<group>"; };
 		FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FDA28D05229128BC00A6BDC3 /* dataPoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dataPoints.json; path = ../../Images/dataPoints.json; sourceTree = "<group>"; };
+		FDA28D05229128BC00A6BDC3 /* dataPoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dataPoints.json; sourceTree = "<group>"; };
+		FDF76A0D2298F98B00905231 /* heatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heatMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,26 +100,47 @@
 			isa = PBXGroup;
 			children = (
 				5E2354E1226BBECB00B4E21C /* AppDelegate.swift */,
-				5E2354E3226BBECB00B4E21C /* ViewController.swift */,
-				5E2354E5226BBECB00B4E21C /* Main.storyboard */,
-				5E2354F3226BC50900B4E21C /* CustomView.swift */,
-				5EE5D6AE228F9C76000AFCE8 /* Messages.storyboard */,
-				5EE5D6B0228F9CB3000AFCE8 /* MessagesViewController.swift */,
-				5EE5D6B2228F9ED8000AFCE8 /* Message.swift */,
 				5E2354E8226BBECC00B4E21C /* Assets.xcassets */,
 				5E2354EA226BBECC00B4E21C /* LaunchScreen.storyboard */,
 				5E2354ED226BBECC00B4E21C /* Info.plist */,
-				5EB23922227D2745006225E3 /* viabration_info.swift */,
 				FD7A573C2290E77100AF9F56 /* GoogleService-Info.plist */,
-				5EE5D6B62290AD36000AFCE8 /* heatMap2.0.swift */,
-				5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */,
-				FDA28D05229128BC00A6BDC3 /* dataPoints.json */,
+				FDF76A112299073000905231 /* Messages */,
+				FDF76A10229906DD00905231 /* HeatMap */,
+				FDF76A0F2299025900905231 /* OpenCV */,
+			);
+			path = HeatMap;
+			sourceTree = "<group>";
+		};
+		FDF76A0F2299025900905231 /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
 				5EC93883229899BA001080E9 /* OpenCVWrapper.h */,
 				5EC93884229899BA001080E9 /* OpenCVWrapper.mm */,
 				5EC93882229899B9001080E9 /* HeatMap-Bridging-Header.h */,
 				5EC9388622989A44001080E9 /* PrefixHeader.pch */,
 			);
+			path = OpenCV;
+			sourceTree = "<group>";
+		};
+		FDF76A10229906DD00905231 /* HeatMap */ = {
+			isa = PBXGroup;
+			children = (
+				5EE5D6B62290AD36000AFCE8 /* heatMap2.0.swift */,
+				FDF76A0D2298F98B00905231 /* heatMap.swift */,
+				5EE5D6B82290AD4F000AFCE8 /* heatMap2.0.storyboard */,
+				FDA28D05229128BC00A6BDC3 /* dataPoints.json */,
+			);
 			path = HeatMap;
+			sourceTree = "<group>";
+		};
+		FDF76A112299073000905231 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				5EE5D6AE228F9C76000AFCE8 /* Messages.storyboard */,
+				5EE5D6B0228F9CB3000AFCE8 /* MessagesViewController.swift */,
+				5EE5D6B2228F9ED8000AFCE8 /* Message.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +209,6 @@
 				5E2354E9226BBECC00B4E21C /* Assets.xcassets in Resources */,
 				5EE5D6AF228F9C76000AFCE8 /* Messages.storyboard in Resources */,
 				FDA28D06229128BC00A6BDC3 /* dataPoints.json in Resources */,
-				5E2354E7226BBECB00B4E21C /* Main.storyboard in Resources */,
 				FD7A573D2290E77100AF9F56 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,10 +285,8 @@
 			files = (
 				5EE5D6B72290AD36000AFCE8 /* heatMap2.0.swift in Sources */,
 				5EE5D6B1228F9CB3000AFCE8 /* MessagesViewController.swift in Sources */,
-				5E2354F4226BC50900B4E21C /* CustomView.swift in Sources */,
-				5E2354E4226BBECB00B4E21C /* ViewController.swift in Sources */,
+				FDF76A0E2298F98B00905231 /* heatMap.swift in Sources */,
 				5EE5D6B3228F9ED8000AFCE8 /* Message.swift in Sources */,
-				5EB23923227D2745006225E3 /* viabration_info.swift in Sources */,
 				5EC93885229899BA001080E9 /* OpenCVWrapper.mm in Sources */,
 				5E2354E2226BBECB00B4E21C /* AppDelegate.swift in Sources */,
 			);
@@ -283,14 +295,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5E2354E5226BBECB00B4E21C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E2354E6226BBECB00B4E21C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5E2354EA226BBECC00B4E21C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -445,7 +449,7 @@
 					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
 					"\"../\"",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/HeatMap/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HeatMap/OpenCV/PrefixHeader.pch";
 				INFOPLIST_FILE = HeatMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,7 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wefg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HeatMap/HeatMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HeatMap/OpenCV/HeatMap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,7 +491,7 @@
 					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
 					"\"../\"",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/HeatMap/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HeatMap/OpenCV/PrefixHeader.pch";
 				INFOPLIST_FILE = HeatMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,7 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wefg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HeatMap/HeatMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HeatMap/OpenCV/HeatMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
