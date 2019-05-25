@@ -15,7 +15,7 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
         super.init()
         print("Stella Manager init")
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        initVar()
+//        initVar()
     }
     
     func initVar() {
@@ -33,11 +33,13 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
             startScan()
         }
         else {
-            print("Turn on Bluetooth on phone and Stella")
+            print("Turn on Bluetooth on phone.")
+            notifyBTConnectionObservers(value: "Bluetooth connection could not be established. Make the the bluetooth on phone is ON.")
         }
     }
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         //        print(peripheral.name ?? "nil")
+        notifyBTConnectionObservers(value: "Searching for nearby compatable bluetooth devices.")
         if  peripheral_Name == peripheral.name {
             if self.peripheral == nil {
                 self.peripheral = peripheral
@@ -48,9 +50,11 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         self.centralManager?.stopScan()
+        notifyBTConnectionObservers(value: "Nearby bluetooth device found.")
         if nil == self.connectedPeripheral {
             self.connectedPeripheral = peripheral
-            self.connectedPeripheral.delegate = self        //Allowing the peripheral to discover services
+            self.connectedPeripheral.delegate = self    //Allowing the peripheral to discover services
+            notifyBTConnectionObservers(value: "Connected")
             print("connected to: \(peripheral.name!)")
             self.connectedPeripheral.discoverServices(nil)      //look for services for the specified peripheral
         }
@@ -108,7 +112,19 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
         connectedPeripheral?.writeValue(data, for: characteristic, type: .withoutResponse)
     }
     
+    func addBTConnectionObserver(observer: BT_Connection_Observer){
+        bt_connection_observers.append(observer)
+        initVar()
+    }
+    
+    private func notifyBTConnectionObservers(value: String){
+        for i in bt_connection_observers{
+            i.update(value: value)
+        }
+    }
+    
     private func startScan() {
+        notifyBTConnectionObservers(value: "Starting scan...")
         centralManager?.stopScan()
         centralManager?.scanForPeripherals(withServices: nil, options: nil)
     }
@@ -120,5 +136,5 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralManage
     private var centralManager: CBCentralManager!
     private var peripheral: CBPeripheral!
     private var serviceDictionary: [CBService: [CBCharacteristic]]!
-    
+    private var bt_connection_observers = [BT_Connection_Observer]()
 }

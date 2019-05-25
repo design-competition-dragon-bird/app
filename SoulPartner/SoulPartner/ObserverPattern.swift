@@ -11,3 +11,7 @@ import Foundation
 protocol Observer {
     func update(value: [Character: String])
 }
+
+protocol BT_Connection_Observer{
+    func update(value: String)
+}
