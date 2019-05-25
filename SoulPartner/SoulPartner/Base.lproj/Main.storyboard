@@ -120,6 +120,7 @@
                         <outlet property="logInButton_outlet" destination="JEH-SC-mkf" id="x3G-o8-NZd"/>
                         <outlet property="passwordButton_outlet" destination="Yhf-AH-M5Z" id="sJ9-hu-9ay"/>
                         <outlet property="passwordTextField" destination="UHx-MD-Gqo" id="nbb-qk-IX0"/>
+                        <segue destination="a2e-CF-ADa" kind="show" identifier="to_bt_connection" id="v29-ey-137"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se0-il-iE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtN-8p-aYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626.0869565217392" y="50.54347826086957"/>
+            <point key="canvasLocation" x="1887" y="51"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IUc-qh-vFc">
@@ -333,8 +334,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status will be printeed here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-WL-vxx">
-                                <rect key="frame" x="20" y="551" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status will be printeed here..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-WL-vxx">
+                                <rect key="frame" x="20" y="537" width="374" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="9RS-Gt-CPj"/>
                                 </constraints>
@@ -370,19 +371,21 @@
                     </view>
                     <connections>
                         <outlet property="multipurposeButton_outlet" destination="xgM-Mr-sUk" id="lbo-Em-KB0"/>
+                        <outlet property="status_label" destination="ARk-WL-vxx" id="tsy-rL-Htx"/>
+                        <segue destination="rBM-6a-1AN" kind="show" identifier="to_tab_bar" id="GOd-Jg-bR1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kha-qC-QsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486.9565217391305" y="48.913043478260875"/>
+            <point key="canvasLocation" x="50.724637681159422" y="780.97826086956525"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--tabBar-->
         <scene sceneID="sR1-EH-HNl">
             <objects>
-                <viewControllerPlaceholder id="rBM-6a-1AN" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="tabBar" id="rBM-6a-1AN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYl-JV-TAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="62"/>
+            <point key="canvasLocation" x="812" y="781"/>
         </scene>
     </scenes>
     <resources>
@@ -390,7 +393,6 @@
         <image name="back" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="os0-h0-uTd"/>
         <segue reference="Y1L-vQ-v3S"/>
         <segue reference="uad-Jo-H8f"/>
     </inferredMetricsTieBreakers>
