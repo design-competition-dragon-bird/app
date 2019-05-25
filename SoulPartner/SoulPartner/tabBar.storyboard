@@ -59,9 +59,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" sceneName="shoe.scn" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-lQ-BK8">
+                            <sceneKitView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" sceneName="shoe.scn" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-lQ-BK8">
                                 <rect key="frame" x="20" y="54" width="374" height="369"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16643648688231782" green="0.14677275343949112" blue="0.26080754399299622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.1039657816" blue="0.182682544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
