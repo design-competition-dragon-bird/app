@@ -17,31 +17,19 @@ class Model3DViewController: UIViewController, Observer {
     
 
     private var shoeNode : SCNNode?
+    
     @IBOutlet weak var sceneView: SCNView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
          shoeNode = sceneView.scene?.rootNode.childNode(withName: "shoe", recursively: false)
+        for i in 0...5 {
+            sceneView.scene?.rootNode.isPaused = false
+            let rotateOne = SCNAction.rotateBy(x: CGFloat(i), y: 0, z: 0, duration: 0.5)
+            shoeNode?.runAction(rotateOne)
+        }
     }
-    
-    @IBAction func rotateButton(_ sender: Any) {
-        sceneView.scene?.rootNode.isPaused = false
-        let rotateOne = SCNAction.rotateBy(x: 1, y: 0, z: 0, duration: 0.5)
-        shoeNode?.runAction(rotateOne)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -29,7 +29,7 @@
         <!--Gait-->
         <scene sceneID="ScA-34-7CN">
             <objects>
-                <viewController id="e8B-ik-k3C" sceneMemberID="viewController">
+                <viewController id="e8B-ik-k3C" customClass="HeatMapViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZR7-Bf-MU8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,18 +45,27 @@
         <!--3D Model-->
         <scene sceneID="bmh-Oo-3jK">
             <objects>
-                <viewController id="iEb-SI-17r" sceneMemberID="viewController">
+                <viewController id="iEb-SI-17r" customClass="Model3DViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ej-NL-Gyi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" sceneName="shoe.scn" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-lQ-BK8">
+                                <rect key="frame" x="20" y="54" width="374" height="369"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1039657816" blue="0.182682544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DKH-Uw-CiG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="3D Model" image="shoe_tab" id="kl9-G6-Yhb"/>
+                    <connections>
+                        <outlet property="sceneView" destination="zNm-lQ-BK8" id="csz-bu-elS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAG-v9-HT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2190" y="-611"/>
+            <point key="canvasLocation" x="-2191.304347826087" y="-611.41304347826087"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="XsE-nN-LI6">
