@@ -295,7 +295,7 @@
         <!--3D Model-->
         <scene sceneID="bmh-Oo-3jK">
             <objects>
-                <viewController storyboardIdentifier="gyroModel" id="iEb-SI-17r" customClass="Model3DViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gyroModel" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iEb-SI-17r" customClass="Model3DViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ej-NL-Gyi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

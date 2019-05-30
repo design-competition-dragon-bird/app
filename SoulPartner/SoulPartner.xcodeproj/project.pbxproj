@@ -24,8 +24,6 @@
 		5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA10229938E00054E3FD /* ObserverPattern.swift */; };
 		5E16FA1322993F900054E3FD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA1222993F900054E3FD /* Authentication.swift */; };
 		5E16FA15229942D80054E3FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA14229942D80054E3FD /* User.swift */; };
-		5E8DEAFD22993644001AAB08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFC22993644001AAB08 /* Model.swift */; };
-		5E8DEAFF22993679001AAB08 /* 3DModel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */; };
 		5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */; };
 		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FD3B68F122999C2B003A305C /* shoe.scn in Resources */ = {isa = PBXBuildFile; fileRef = FD3B68F022999C2B003A305C /* shoe.scn */; };
@@ -62,8 +60,6 @@
 		5E16FA10229938E00054E3FD /* ObserverPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ObserverPattern.swift; path = SoulPartner/ObserverPattern.swift; sourceTree = SOURCE_ROOT; };
 		5E16FA1222993F900054E3FD /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = SoulPartner/Authentication.swift; sourceTree = SOURCE_ROOT; };
 		5E16FA14229942D80054E3FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = SoulPartner/User.swift; sourceTree = SOURCE_ROOT; };
-		5E8DEAFC22993644001AAB08 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SoulPartner/Model.swift; sourceTree = SOURCE_ROOT; };
-		5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = 3DModel.storyboard; path = SoulPartner/3DModel.storyboard; sourceTree = SOURCE_ROOT; };
 		5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model3DViewController.swift; path = SoulPartner/Model3DViewController.swift; sourceTree = SOURCE_ROOT; };
 		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FD3B68F022999C2B003A305C /* shoe.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = shoe.scn; sourceTree = "<group>"; };
@@ -193,8 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				FD3B68F022999C2B003A305C /* shoe.scn */,
-				5E8DEAFE22993679001AAB08 /* 3DModel.storyboard */,
-				5E8DEAFC22993644001AAB08 /* Model.swift */,
 				5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */,
 			);
 			path = 3DModel;
@@ -300,7 +294,6 @@
 				FDF76A292299089000905231 /* LaunchScreen.storyboard in Resources */,
 				5E15B5DD2299255B002637C8 /* HeatMap.storyboard in Resources */,
 				FDF76A262299089000905231 /* Assets.xcassets in Resources */,
-				5E8DEAFF22993679001AAB08 /* 3DModel.storyboard in Resources */,
 				5E15B5E322992690002637C8 /* dataPoints.json in Resources */,
 				FDF76A242299088F00905231 /* Main.storyboard in Resources */,
 				5E15B5E72299283F002637C8 /* GoogleService-Info.plist in Resources */,
@@ -383,7 +376,6 @@
 			files = (
 				5E16FA15229942D80054E3FD /* User.swift in Sources */,
 				4B1411E52299C66E00C683C3 /* VibrationViewController.swift in Sources */,
-				5E8DEAFD22993644001AAB08 /* Model.swift in Sources */,
 				FDD3638D2299960F0061572B /* tabBarViewController.swift in Sources */,
 				5E16FA0F229938BA0054E3FD /* Parse.swift in Sources */,
 				5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */,

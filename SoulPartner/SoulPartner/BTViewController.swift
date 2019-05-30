@@ -22,8 +22,6 @@ class BTViewController: UIViewController, BT_Connection_Observer {
     
     var lottie_animation: AnimationView!
     @IBAction func multiPurposeButtonAction(_ sender: Any) {
-//        bt_interface = BluetoothInterface()
-//        bt_interface.addBTConnectionObserver(observer: self)
         BluetoothInterface.bt_instance.addBTConnectionObserver(observer: self)
     }
     

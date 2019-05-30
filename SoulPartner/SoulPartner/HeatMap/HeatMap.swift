@@ -23,21 +23,38 @@ public struct PixelData {
     var b: UInt8
 }
 
+let num_Rows = 14
+let num_Cols = 5
+
 class HeatMap {
     
-    func performSetup(_ pixelData: [PixelData]?) {
-        copy_outline(pixelData)
-        get_PP_location()
-        randomly_fill_pressure_data() //random set of pressure data
+    func updateHeatMap(pressureData: [[Int]]) {
+        copy_outline(self.pixelData)
+//        get_PP_location()
+        self.pressure_Data = pressureData
         pressureMatrix = fill_pressure_values_for_image(pixelMatrix)
         color_map()
-        
         
         /*
          * convert the pixel array into an image
          */
         right_sole_icon = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
     }
+    
+    func performSetup(_ pixelData: [PixelData]?) {
+        copy_outline(pixelData)
+        get_PP_location()
+
+        pressureMatrix = fill_pressure_values_for_image(pixelMatrix)
+        color_map()
+        
+        /*
+         * convert the pixel array into an image
+         */
+        right_sole_icon = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
+    }
+    
+    private var pixelData: [PixelData]
     
     init() {
         
@@ -47,7 +64,7 @@ class HeatMap {
         
         let soleImage: UIImage = UIImage(named: "right_sole_icon")!
         
-        let pixelData = soleImage.pixelData()
+        self.pixelData = soleImage.pixelData()!
         self.image_width = Int(soleImage.size.width)            // 82
         self.image_height = Int(soleImage.size.height)
         
@@ -55,8 +72,9 @@ class HeatMap {
         
         self.pressureMatrix = [[Int]](repeating: [Int](repeating: 0, count: self.image_width), count: self.image_height)
         
+        randomly_fill_pressure_data() //random set of pressure data
         
-        performSetup(pixelData)
+        performSetup(self.pixelData)
         
         print("done!!")
     }
@@ -121,7 +139,6 @@ class HeatMap {
                 let randomInt = Int.random(in: 0..<100)
                 pressure_Data[j][i] = randomInt
                 pressure_Data[j][i] = Int(count / Double(num_Rows * num_Cols) * 100)
-                
                 count += 1
             }
         }
@@ -139,10 +156,10 @@ class HeatMap {
             for i in 0..<self.image_width-1{
                 let pix = pixelMatrix[j][i]
                 let next_pix = pixelMatrix[j][i+1]
-                if pix.r == 0 && pix.g == 0 && pix.b == 0 {
+                if (pix.r == 0 && pix.g == 0 && pix.b == 0) || pix.a == 0 {
                     // set pressure to 'on boundary'
                     pressureMatrix[j][i] = NOT_INSIDE_BOUNDARY
-                    if next_pix.r == 0 && next_pix.g == 0 && next_pix.b == 0 {
+                    if (next_pix.r == 0 && next_pix.g == 0 && next_pix.b == 0) || next_pix.a == 0 {
                         continue
                     }
                     
@@ -190,7 +207,7 @@ class HeatMap {
         //TODO: algorithm to find pressure value based on distance
         
         if self.dist_array == nil{
-            self.dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
+            self.dist_array = [Int](repeating: 0, count: num_Cols * num_Rows)
             self.k_array = [Int](repeating: 1000000, count: self.K)
             self.k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
             
@@ -223,7 +240,7 @@ class HeatMap {
             
         }
         
-        dist_array = [Int](repeating: 0, count: self.num_Cols * self.num_Rows)
+        dist_array = [Int](repeating: 0, count: num_Cols * num_Rows)
         k_array = [Int](repeating: 1000000, count: self.K)
         k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
         
@@ -281,7 +298,9 @@ class HeatMap {
                 }
                 else{
 //                    1E1B2F
-                    pixelMatrix[j][i] = PixelData(a: 1, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
+//                    pixelMatrix[j][i] = PixelData(a: 1, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
+                      pixelMatrix[j][i] = PixelData(a: 0, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
+
                 }
             }
         }
@@ -335,9 +354,6 @@ class HeatMap {
     private let K = 8
     
     private let NOT_INSIDE_BOUNDARY = -1
-    
-    private let num_Rows = 14
-    private let num_Cols = 5
     
     private var image_width = 0
     private var image_height = 0

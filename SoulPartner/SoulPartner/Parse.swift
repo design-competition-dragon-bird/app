@@ -37,7 +37,7 @@ class Parse {
             decodeStruct()
             end_of_packet = false
             tempString = ""
-            print("package recieved: ", packetDict)
+//            print("package recieved: ", packetDict)
 //            decodeData()
             notify(value: packetDict)
         }
@@ -64,14 +64,14 @@ class Parse {
     }
     
     func attachObserver(observer: Observer){
-        observerArray.append(observer)
+        Parse.observerArray.append(observer)
     }
     
     private func notify(value: [Character: String]){
 //        print("notifyig ovserasf")
         
         
-        for observer in observerArray{
+        for observer in Parse.observerArray{
             observer.update(value: value)
         }
     }
@@ -86,7 +86,7 @@ class Parse {
     private var end_of_packet: Bool!
     private var packetDict = [Character: String]()
     private var tempString: String!
-    private var observerArray = [Observer]()
+    static var observerArray = [Observer]()
     
     var dataStruct: DataStruct!
     
