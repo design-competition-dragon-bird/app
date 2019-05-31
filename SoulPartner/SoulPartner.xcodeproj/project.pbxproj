@@ -27,6 +27,8 @@
 		5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */; };
 		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FD3B68F122999C2B003A305C /* shoe.scn in Resources */ = {isa = PBXBuildFile; fileRef = FD3B68F022999C2B003A305C /* shoe.scn */; };
+		FD8454DE22A1CFB300B4A420 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8454DD22A1CFB300B4A420 /* History.storyboard */; };
+		FD8454E122A1D01E00B4A420 /* Heatmap_HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8454E022A1D01E00B4A420 /* Heatmap_HistoryViewController.swift */; };
 		FDC81C1D22995CDD00005B5B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */; };
 		FDC81C20229969EE00005B5B /* bluetooth_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = FDC81C1F229969EE00005B5B /* bluetooth_animation.json */; };
 		FDC81C222299771F00005B5B /* tabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC81C212299771F00005B5B /* tabBar.storyboard */; };
@@ -63,6 +65,8 @@
 		5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model3DViewController.swift; path = SoulPartner/Model3DViewController.swift; sourceTree = SOURCE_ROOT; };
 		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FD3B68F022999C2B003A305C /* shoe.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = shoe.scn; sourceTree = "<group>"; };
+		FD8454DD22A1CFB300B4A420 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		FD8454E022A1D01E00B4A420 /* Heatmap_HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heatmap_HistoryViewController.swift; sourceTree = "<group>"; };
 		FDC81C1C22995CDD00005B5B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FDC81C1F229969EE00005B5B /* bluetooth_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bluetooth_animation.json; path = ../../../Images/bluetooth_animation.json; sourceTree = "<group>"; };
 		FDC81C212299771F00005B5B /* tabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = tabBar.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FD8454DF22A1CFF000B4A420 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FD8454E022A1D01E00B4A420 /* Heatmap_HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		FDC81C1E229969DD00005B5B /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 		FDF76A1D2299088F00905231 /* SoulPartner */ = {
 			isa = PBXGroup;
 			children = (
+				FD8454DF22A1CFF000B4A420 /* History */,
 				FDC81C1E229969DD00005B5B /* Animations */,
 				FDF76A362299094E00905231 /* Database */,
 				FDF76A352299092500905231 /* Bluetooth */,
@@ -160,6 +173,7 @@
 				FDF76A272299089000905231 /* LaunchScreen.storyboard */,
 				FDF76A2A2299089000905231 /* Info.plist */,
 				5E15B5E62299283F002637C8 /* GoogleService-Info.plist */,
+				FD8454DD22A1CFB300B4A420 /* History.storyboard */,
 			);
 			path = SoulPartner;
 			sourceTree = "<group>";
@@ -290,6 +304,7 @@
 				FD3B68F122999C2B003A305C /* shoe.scn in Resources */,
 				FDC81C222299771F00005B5B /* tabBar.storyboard in Resources */,
 				5E15B5E5229926F1002637C8 /* Messages.storyboard in Resources */,
+				FD8454DE22A1CFB300B4A420 /* History.storyboard in Resources */,
 				FDC81C20229969EE00005B5B /* bluetooth_animation.json in Resources */,
 				FDF76A292299089000905231 /* LaunchScreen.storyboard in Resources */,
 				5E15B5DD2299255B002637C8 /* HeatMap.storyboard in Resources */,
@@ -392,6 +407,7 @@
 				FDF76A212299088F00905231 /* ViewController.swift in Sources */,
 				FDC81C2422997B5700005B5B /* ForgotPasswordViewController.swift in Sources */,
 				5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */,
+				FD8454E122A1D01E00B4A420 /* Heatmap_HistoryViewController.swift in Sources */,
 				FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */,
 				5E16FA1322993F900054E3FD /* Authentication.swift in Sources */,
 			);
