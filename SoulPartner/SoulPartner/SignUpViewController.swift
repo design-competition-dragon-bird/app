@@ -35,7 +35,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             let index = picker_outlet.selectedRow(inComponent: 0)
             let userType = pickerData[index]
             
-            User.instance.userId = UUID().uuidString
+//            User.instance.userId = UUID().uuidString
+//            User.instance.userId = "Random String"
             User.instance.firstName = first_name
             User.instance.lastName = last_name
             User.instance.email = email
@@ -55,13 +56,13 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     
                 }, failure: {
                     // writing to database failure
-                    let alert = UIAlertController(title: "Error", message: "Failed to create a new user.", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error", message: "Failed to access database.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
                     self.present(alert, animated: true)
                 })
             }) {
                 // user registration failure
-                let alert = UIAlertController(title: "Error", message: "Failed to create a new account.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Failed to register a new account.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
                 self.present(alert, animated: true)
             }

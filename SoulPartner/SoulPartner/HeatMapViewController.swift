@@ -15,30 +15,10 @@ class HeatMapViewController: UIViewController, Observer {
     @IBOutlet weak var spectrum_view: UIView!
     
     func update(value: [Character : String]) {
-//        if let data = value["P"] {
-//            var dataArray = data.components(separatedBy: " ")
-//            var intArray = [Int]()
-//            for i in dataArray {
-//                intArray.append(Int(i) as! Int)
-//            }
-////            print("float Array", intArray)
-//
-//            //update the pressure_data 2D matrix in heatmap
-//            var pressureData = [[Int]](repeating: [Int](repeating: 0, count: 5), count: 14)
-//            var counter: Double = 0
-//
-//            for j in 0..<num_Rows {
-//                for i in 0..<num_Cols {
-//                    pressureData[j][i] = intArray[j*5 + i]
-//                    counter += 1
-//                }
-//            }
-//            print("pressure data sent: ", pressureData)
-//            heatMap.updateHeatMap(pressureData: pressureData) //call updateHeatMap and pass in the 2D pressure data
             
             DispatchQueue.main.async {
                 if let data = value["P"] {
-                    var dataArray = data.components(separatedBy: " ")
+                    let dataArray = data.components(separatedBy: " ")
                     var intArray = [Int]()
                     for i in dataArray {
                         intArray.append(Int(i) as! Int)
@@ -58,7 +38,15 @@ class HeatMapViewController: UIViewController, Observer {
                     
                 self.right_sole_icone.image = self.heatMap.updateHeatMap(pressureData: pressureData)
                 self.right_sole_icone.setNeedsDisplay()
-                
+                    User.instance.storePressureData(intArray: intArray, success: {
+                        // success
+                        // do nothing for now
+                        print("Heatmap data saved successfully")
+                    }, failure: {
+                        // failure
+                        // do nothing for now
+                        print("Unable to save heatmap data...")
+                    })
             }
             
         }
@@ -85,13 +73,6 @@ class HeatMapViewController: UIViewController, Observer {
 
         generateSpectrum()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        print("view did appear")
-////        heatMap.randomize_data()
-////        right_sole_icone.image = heatMap.right_sole_icon
-//    }
 
     func generateSpectrum(){
         

@@ -9,6 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBAction func button_clicked(_ sender: Any) {
+        Authenticate.instance.authenticate_user_login(email: "rap004@ucsd.edu", passWord: "password1", success: {
+            // perform segue
+            self.performSegue(withIdentifier: "to_bt_connection", sender: self)
+        }) {
+            // show error
+            print("failed login...")
+            let alert = UIAlertController(title: "Error", message: "Incorrect email or password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    
 
     @IBOutlet weak var forgotButton_outlet: UIButton!
     @IBOutlet weak var passwordButton_outlet: UIButton!
@@ -32,7 +47,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Authenticate.instance.authenticate_user_login(email: email, passWord: password, success: {
                 // perform segue
-//                self.performSegue(withIdentifier: "main_to_tab_bar_controller", sender: self)
                 self.performSegue(withIdentifier: "to_bt_connection", sender: self)
             }) {
                 // show error
