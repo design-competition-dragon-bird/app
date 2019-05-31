@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_sole_icon" translatesAutoresizingMaskIntoConstraints="NO" id="KHz-JT-nrl">
-                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="right_sole_icon" translatesAutoresizingMaskIntoConstraints="NO" id="KHz-JT-nrl">
+                                <rect key="frame" x="0.0" y="81" width="414" height="606"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHx-Mk-40L">
                                 <rect key="frame" x="102" y="190.66666666666666" width="30" height="55"/>
@@ -71,6 +71,29 @@
                                     <action selector="PP5:" destination="qUz-3a-vBb" eventType="touchUpInside" id="HIg-vC-jg0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ZN-GD-wMv">
+                                <rect key="frame" x="0.0" y="20" width="414" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYT-ih-fs1">
+                                        <rect key="frame" x="8" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="Hamburger_icon"/>
+                                        <connections>
+                                            <action selector="hamburger_menu_clicked:" destination="qUz-3a-vBb" eventType="touchUpInside" id="kNr-8h-7FC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dco-68-PNk">
+                                        <rect key="frame" x="374" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="messages"/>
+                                        <connections>
+                                            <action selector="message_button_clicked:" destination="qUz-3a-vBb" eventType="touchUpInside" id="ekM-CM-uUS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.1058823529" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -98,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GnH-aX-ztP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-172" y="37"/>
+            <point key="canvasLocation" x="-172.46376811594203" y="36.684782608695656"/>
         </scene>
         <!--Patterns View Controller-->
         <scene sceneID="UsH-eD-GRa">
@@ -172,6 +195,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46N-Jr-mFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="635" y="37"/>
+        </scene>
+        <!--Hamburger Menu View Controller-->
+        <scene sceneID="bj0-gu-EXr">
+            <objects>
+                <viewController storyboardIdentifier="hamburger_view_controller" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SBH-Fr-aPX" customClass="HamburgerMenuViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2x-Su-Clp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LkS-B2-mIu">
+                                <rect key="frame" x="0.0" y="0.0" width="277" height="755"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <viewLayoutGuide key="safeArea" id="Kbi-ka-v96"/>
+                    </view>
+                    <connections>
+                        <outlet property="menu_view" destination="LkS-B2-mIu" id="WFc-P4-dMQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXB-6E-H74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="-611"/>
         </scene>
         <!--Custom View Controller-->
         <scene sceneID="IJA-fm-tbx">
@@ -292,6 +340,29 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTb-pI-wn9">
+                                <rect key="frame" x="0.0" y="20" width="414" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzO-Is-m4a">
+                                        <rect key="frame" x="8" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="Hamburger_icon"/>
+                                        <connections>
+                                            <action selector="hamburger_menu_clicked:" destination="e8B-ik-k3C" eventType="touchUpInside" id="1Ez-da-zco"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFg-aK-sjB">
+                                        <rect key="frame" x="374" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="messages"/>
+                                        <connections>
+                                            <action selector="message_button_clicked:" destination="e8B-ik-k3C" eventType="touchUpInside" id="F1G-qH-jAC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tOL-rH-Y44"/>
@@ -319,6 +390,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16643648688231782" green="0.14677275343949112" blue="0.26080754399299622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </sceneKitView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfZ-zV-Ih9">
+                                <rect key="frame" x="0.0" y="20" width="414" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pem-ge-NS6">
+                                        <rect key="frame" x="8" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="Hamburger_icon"/>
+                                        <connections>
+                                            <action selector="hamburger_menu_clicked:" destination="iEb-SI-17r" eventType="touchUpInside" id="mxK-MV-DFV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpb-9R-WWE">
+                                        <rect key="frame" x="374" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="messages"/>
+                                        <connections>
+                                            <action selector="message_button_clicked:" destination="iEb-SI-17r" eventType="touchUpInside" id="YUb-Wb-Ax2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DKH-Uw-CiG"/>
@@ -343,7 +437,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="XsE-nN-LI6">
             <objects>
-                <tabBarController id="oOb-Yf-dGV" customClass="tabBarViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tab_bar_controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oOb-Yf-dGV" customClass="tabBarViewController" customModule="SoulPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Nn8-T2-XSL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -362,6 +456,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Hamburger_icon" width="220" height="220"/>
+        <image name="messages" width="512" height="512"/>
         <image name="right_sole_icon" width="82" height="199"/>
         <image name="right_sole_icon_tab" width="64" height="26"/>
         <image name="shoe_tab" width="64" height="64"/>

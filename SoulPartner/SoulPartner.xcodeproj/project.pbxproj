@@ -24,6 +24,9 @@
 		5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA10229938E00054E3FD /* ObserverPattern.swift */; };
 		5E16FA1322993F900054E3FD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA1222993F900054E3FD /* Authentication.swift */; };
 		5E16FA15229942D80054E3FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16FA14229942D80054E3FD /* User.swift */; };
+		5E52121B22A1CFBE003B606D /* HamburgerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52121A22A1CFBE003B606D /* HamburgerMenuViewController.swift */; };
+		5E52121D22A1D522003B606D /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52121C22A1D522003B606D /* MessagesTableViewController.swift */; };
+		5E52121F22A1DD02003B606D /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52121E22A1DD02003B606D /* MessageTableViewCell.swift */; };
 		5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */; };
 		BE66849A67BE0136AE643DB0 /* Pods_SoulPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8CCD808E6E95BD0E09DC5A /* Pods_SoulPartner.framework */; };
 		FD3B68F122999C2B003A305C /* shoe.scn in Resources */ = {isa = PBXBuildFile; fileRef = FD3B68F022999C2B003A305C /* shoe.scn */; };
@@ -60,6 +63,9 @@
 		5E16FA10229938E00054E3FD /* ObserverPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ObserverPattern.swift; path = SoulPartner/ObserverPattern.swift; sourceTree = SOURCE_ROOT; };
 		5E16FA1222993F900054E3FD /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = SoulPartner/Authentication.swift; sourceTree = SOURCE_ROOT; };
 		5E16FA14229942D80054E3FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = SoulPartner/User.swift; sourceTree = SOURCE_ROOT; };
+		5E52121A22A1CFBE003B606D /* HamburgerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewController.swift; sourceTree = "<group>"; };
+		5E52121C22A1D522003B606D /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessagesTableViewController.swift; path = SoulPartner/MessagesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		5E52121E22A1DD02003B606D /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageTableViewCell.swift; path = SoulPartner/MessageTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model3DViewController.swift; path = SoulPartner/Model3DViewController.swift; sourceTree = SOURCE_ROOT; };
 		90E83A164EA7DA07DED26138 /* Pods-SoulPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoulPartner/Pods-SoulPartner.release.xcconfig"; sourceTree = "<group>"; };
 		FD3B68F022999C2B003A305C /* shoe.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = shoe.scn; sourceTree = "<group>"; };
@@ -139,8 +145,6 @@
 				FDC81C1E229969DD00005B5B /* Animations */,
 				FDF76A362299094E00905231 /* Database */,
 				FDF76A352299092500905231 /* Bluetooth */,
-				FDF76A34229908FD00905231 /* VibrationPatterns */,
-				FDF76A33229908F100905231 /* LaunchScreen */,
 				FDF76A32229908C700905231 /* 3DModel */,
 				FDF76A31229908C200905231 /* Messages */,
 				FDF76A30229908B900905231 /* HeatMap */,
@@ -152,6 +156,7 @@
 				FDC81C2322997B5700005B5B /* ForgotPasswordViewController.swift */,
 				FDC81C212299771F00005B5B /* tabBar.storyboard */,
 				FDD3638C2299960F0061572B /* tabBarViewController.swift */,
+				5E52121A22A1CFBE003B606D /* HamburgerMenuViewController.swift */,
 				4B1411EE2299CA2200C683C3 /* PatternsViewController.swift */,
 				4B1411E42299C66E00C683C3 /* VibrationViewController.swift */,
 				4B1411E82299C69B00C683C3 /* PatternsTableViewCell.swift */,
@@ -181,6 +186,8 @@
 				5E15B5E4229926F1002637C8 /* Messages.storyboard */,
 				5E15B5E82299296A002637C8 /* MessagesViewController.swift */,
 				5E15B5EA2299299F002637C8 /* Messages.swift */,
+				5E52121C22A1D522003B606D /* MessagesTableViewController.swift */,
+				5E52121E22A1DD02003B606D /* MessageTableViewCell.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -192,20 +199,6 @@
 				5E8DEB02229936AB001AAB08 /* Model3DViewController.swift */,
 			);
 			path = 3DModel;
-			sourceTree = "<group>";
-		};
-		FDF76A33229908F100905231 /* LaunchScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LaunchScreen;
-			sourceTree = "<group>";
-		};
-		FDF76A34229908FD00905231 /* VibrationPatterns */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VibrationPatterns;
 			sourceTree = "<group>";
 		};
 		FDF76A352299092500905231 /* Bluetooth */ = {
@@ -377,6 +370,7 @@
 				5E16FA15229942D80054E3FD /* User.swift in Sources */,
 				4B1411E52299C66E00C683C3 /* VibrationViewController.swift in Sources */,
 				FDD3638D2299960F0061572B /* tabBarViewController.swift in Sources */,
+				5E52121D22A1D522003B606D /* MessagesTableViewController.swift in Sources */,
 				5E16FA0F229938BA0054E3FD /* Parse.swift in Sources */,
 				5E15B5E92299296A002637C8 /* MessagesViewController.swift in Sources */,
 				5E15B5EB2299299F002637C8 /* Messages.swift in Sources */,
@@ -384,6 +378,7 @@
 				FDC81C2622997BA800005B5B /* BTViewController.swift in Sources */,
 				4B1411EF2299CA2200C683C3 /* PatternsViewController.swift in Sources */,
 				5E15B5DF229925DD002637C8 /* HeatMapViewController.swift in Sources */,
+				5E52121B22A1CFBE003B606D /* HamburgerMenuViewController.swift in Sources */,
 				5E16FA0D229938800054E3FD /* BluetoothInterface.swift in Sources */,
 				FDC81C1D22995CDD00005B5B /* SignUpViewController.swift in Sources */,
 				5E8DEB03229936AB001AAB08 /* Model3DViewController.swift in Sources */,
@@ -391,6 +386,7 @@
 				4B1411EB2299C6B800C683C3 /* CustomViewController.swift in Sources */,
 				FDF76A212299088F00905231 /* ViewController.swift in Sources */,
 				FDC81C2422997B5700005B5B /* ForgotPasswordViewController.swift in Sources */,
+				5E52121F22A1DD02003B606D /* MessageTableViewCell.swift in Sources */,
 				5E16FA11229938E00054E3FD /* ObserverPattern.swift in Sources */,
 				FDF76A1F2299088F00905231 /* AppDelegate.swift in Sources */,
 				5E16FA1322993F900054E3FD /* Authentication.swift in Sources */,

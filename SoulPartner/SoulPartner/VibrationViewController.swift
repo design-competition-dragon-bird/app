@@ -11,6 +11,22 @@ import UIKit
 class VibrationViewController: UIViewController {
     var selected_button: String!
     
+    @IBAction func message_button_clicked(_ sender: Any) {
+        current_tab = TAB_BAR.VIBRATION_PAGE.rawValue
+        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "messages_navigation_controller")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func hamburger_menu_clicked(_ sender: Any) {
+        current_tab = TAB_BAR.VIBRATION_PAGE.rawValue
+        let storyboard = UIStoryboard(name: "tabBar", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "hamburger_view_controller")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

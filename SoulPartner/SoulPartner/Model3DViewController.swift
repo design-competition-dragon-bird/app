@@ -11,6 +11,22 @@ import SceneKit
 
 class Model3DViewController: UIViewController, Observer {
     
+    @IBAction func message_button_clicked(_ sender: Any) {
+        current_tab = TAB_BAR.MODEL_3D_PAGE.rawValue
+        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "messages_navigation_controller")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func hamburger_menu_clicked(_ sender: Any) {
+        current_tab = TAB_BAR.MODEL_3D_PAGE.rawValue
+        let storyboard = UIStoryboard(name: "tabBar", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "hamburger_view_controller")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
     func update(value: [Character : String]) {
 //        print("update in gyro stuff")
         if let data = value["G"] {
@@ -35,13 +51,13 @@ class Model3DViewController: UIViewController, Observer {
             self.roll = roll
             self.yaw = yaw
             
-            User.instance.storeGyroData(pitch: pitch, roll: roll, yaw: yaw, success: {
-                // success
-                print("Gyro data save succesfully")
-            }) {
-                // failure
-                print("Unable to save gyro data...")
-            }
+//            User.instance.storeGyroData(pitch: pitch, roll: roll, yaw: yaw, success: {
+//                // success
+//                print("Gyro data save succesfully")
+//            }) {
+//                // failure
+//                print("Unable to save gyro data...")
+//            }
             
         }
     }

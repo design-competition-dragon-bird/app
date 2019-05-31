@@ -10,6 +10,23 @@ import UIKit
 
 class HeatMapViewController: UIViewController, Observer {
     
+    @IBAction func message_button_clicked(_ sender: Any) {
+        current_tab = TAB_BAR.GATE_PAGE.rawValue
+        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "messages_navigation_controller")
+        self.present(viewController, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func hamburger_menu_clicked(_ sender: Any) {
+        current_tab = TAB_BAR.GATE_PAGE.rawValue
+        let storyboard = UIStoryboard(name: "tabBar", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "hamburger_view_controller")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
     let count = 100
 
     @IBOutlet weak var spectrum_view: UIView!
@@ -36,17 +53,18 @@ class HeatMapViewController: UIViewController, Observer {
                         }
                     }
                     
-                self.right_sole_icone.image = self.heatMap.updateHeatMap(pressureData: pressureData)
+                self.right_sole_icone.image = HeatMap.instance.updateHeatMap(pressureData: pressureData)
                 self.right_sole_icone.setNeedsDisplay()
-                    User.instance.storePressureData(intArray: intArray, success: {
-                        // success
-                        // do nothing for now
-                        print("Heatmap data saved successfully")
-                    }, failure: {
-                        // failure
-                        // do nothing for now
-                        print("Unable to save heatmap data...")
-                    })
+                    
+//                User.instance.storePressureData(intArray: intArray, success: {
+//                        // success
+//                        // do nothing for now
+//                    print("Heatmap data saved successfully")
+//                }, failure: {
+//                    // failure
+//                    // do nothing for now
+//                    print("Unable to save heatmap data...")
+//                })
             }
             
         }
@@ -63,9 +81,8 @@ class HeatMapViewController: UIViewController, Observer {
         
         parser = Parse()
         parser.attachObserver(observer: self)
-        
-        heatMap = HeatMap()
-        right_sole_icone.image = heatMap.right_sole_icon
+ 
+        right_sole_icone.image = HeatMap.instance.right_sole_icon
         
         for _ in 0..<count{
             view_array.append(UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1)))
@@ -87,7 +104,7 @@ class HeatMapViewController: UIViewController, Observer {
         
         for i in 0..<count{
             let start_x = width * (CGFloat(i) / CGFloat(count)) + min_x
-            let color = heatMap.get_color_from_pressure_data(p0: p0, p1: p1, p2: p2, t: CGFloat(i) / CGFloat(count))
+            let color = HeatMap.instance.get_color_from_pressure_data(p0: p0, p1: p1, p2: p2, t: CGFloat(i) / CGFloat(count))
             let frame = CGRect(x: start_x, y: start_y, width: temp_width, height: height)
             let uiColor = UIColor(red: color.x, green: color.y, blue: color.z, alpha: 1)
             view_array[i].frame = frame
