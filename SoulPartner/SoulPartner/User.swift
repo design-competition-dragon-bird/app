@@ -67,36 +67,27 @@ class User{
     }
     
     func storePressureData(intArray: [Int], success: @escaping () -> (), failure: @escaping () -> ()){
-        self.db.collection("User").document(self.userId).collection("Pressure Data").document(self.get_current_time()).setData([
+        let current = self.get_current_time()
+        self.db.collection("User").document(self.userId).collection("Pressure Data").document(current[0]).collection(current[1]).document(current[2]).collection(current[3]).addDocument(data: [
             "Data": intArray
-        ], merge: true) { (err) in
-            // check for error
-            if err != nil{
-                failure()
-            }
-            success()
+            ]) { (err) in
+            //check for error
+                if err != nil{
+                    failure()
+                }
+                success()
         }
     }
     
-    func getPressureData(success: @escaping () -> (), failure: @escaping () -> ()){
-        self.db.collection("User").document(self.userId).collection("Pressure Data").getDocuments { (querySnapshot, err) in
+    func getPressureData(success: @escaping () -> (), failure: @escaping () -> [Int : [[Int]]]){
+        let current = self.get_current_time()
+        self.db.collection("User").document(self.userId).collection("Pressure Data").document(current[0]).collection(current[1]).getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                for document in querySnapshot!.documents {
-                    //get that day's data
-                    document.documentID
-                    let today_Data = self.get_current_time()
-                    var found = false
-                    for i in 0...9 {
-                        if today_Data.index(today_Data.startIndex, offsetBy: i) != document.documentID.index(document.documentID.startIndex, offsetBy: i) {
-                            break
-                        }
-                        else if i == 9 {
-                            found = true
-                        }
-                    }
-                    if found {
+                for document in querySnapshot!.documents {//year
+                    if document.documentID == current[2] {
+                        //got date
                         
                     }
                     
@@ -107,12 +98,14 @@ class User{
     }
 
     func storeGyroData(pitch: Float, roll: Float, yaw: Float, success: @escaping () -> (), failure: @escaping () -> ()){
-        self.db.collection("User").document(self.userId).collection("Gyro Data").document(self.get_current_time()).setData([
+        
+        let current = self.get_current_time()
+        self.db.collection("User").document(self.userId).collection("Gyro Data").document(current[0]).collection(current[1]).document(current[2]).collection(current[3]).addDocument(data: [
             "Pitch": pitch,
             "Roll": roll,
             "yaw": yaw
-        ], merge: true) { (err) in
-            // check for error
+        ]) { (err) in
+            //check for error
             if err != nil{
                 failure()
             }
@@ -120,7 +113,7 @@ class User{
         }
     }
     
-    func get_current_time() -> String {
+    func get_current_time() -> [String] {
         let date = Date()
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
@@ -156,6 +149,6 @@ class User{
             current_time = current_time + " AM"
         }
         
-        return current_time
+        return [String(year), String(current_month), String(current_day), current_time]
     }
 }
