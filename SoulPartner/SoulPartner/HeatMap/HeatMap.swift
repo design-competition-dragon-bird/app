@@ -28,6 +28,8 @@ let num_Cols = 5
 
 class HeatMap {
     
+    static let instance = HeatMap()
+    
     func updateHeatMap(pressureData: [[Int]]) -> UIImage{
         self.pressure_Data = pressureData
         
