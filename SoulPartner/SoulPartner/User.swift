@@ -78,6 +78,34 @@ class User{
         }
     }
     
+    func getPressureData(success: @escaping () -> (), failure: @escaping () -> ()){
+        self.db.collection("User").document(self.userId).collection("Pressure Data").getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //get that day's data
+                    document.documentID
+                    let today_Data = self.get_current_time()
+                    var found = false
+                    for i in 0...9 {
+                        if today_Data.index(today_Data.startIndex, offsetBy: i) != document.documentID.index(document.documentID.startIndex, offsetBy: i) {
+                            break
+                        }
+                        else if i == 9 {
+                            found = true
+                        }
+                    }
+                    if found {
+                        
+                    }
+                    
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
+
     func storeGyroData(pitch: Float, roll: Float, yaw: Float, success: @escaping () -> (), failure: @escaping () -> ()){
         self.db.collection("User").document(self.userId).collection("Gyro Data").document(self.get_current_time()).setData([
             "Pitch": pitch,
@@ -107,7 +135,7 @@ class User{
         if hour < 10 {
             current_hour = String("0") + String(hour)
         }
-        else if hour > 12 {
+        else if hour > 12 {//Converts to 12 hour format
             current_hour = String(hour - 12)
         }
         else{
