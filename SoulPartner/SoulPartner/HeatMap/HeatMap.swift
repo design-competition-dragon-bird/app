@@ -30,10 +30,9 @@ class HeatMap {
     
     func updateHeatMap(pressureData: [[Int]]) -> UIImage{
         self.pressure_Data = pressureData
-//        print("pressure Data: ", self.pressure_Data)
+        
         self.pressureMatrix = fill_pressure_values_for_image()
-//        print("pixel matrix: ", pixelMatrix)
-//        print("pressure matrix: ", pressureMatrix)
+//        print("pressure matrix = ", self.pressureMatrix)
         color_map()
         
         /*
@@ -74,7 +73,12 @@ class HeatMap {
         
         self.pressureMatrix = [[Int]](repeating: [Int](repeating: 0, count: self.image_width), count: self.image_height)
         
+//        self.k_array_index_for_image = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: 0, count: 2), count: self.K), count: self.image_width * self.image_height)
+//        self.k_array_for_image = [[Int]](repeating: [Int](repeating: 0, count: self.K), count: self.image_width * self.image_height)
+        
         randomly_fill_pressure_data() //random set of pressure data
+        
+        
         
         performSetup(self.pixelData)
         
@@ -154,7 +158,7 @@ class HeatMap {
         for j in 0..<self.image_height{
             for i in 0..<self.image_width-1{
                 if pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
-                    pressureMatrix[j][i] = get_pressure_value_for_pixel(row: j, col: i)
+                    pressureMatrix[j][i] = get_pressure_value_for_pixel_2(row: j, col: i)
                 }
             }
         }
@@ -221,46 +225,48 @@ class HeatMap {
     /**
      Algorithm to find pressure value based on distance
      */
+    func get_pressure_value_for_pixel_2(row: Int, col: Int) -> Int{
+        //TODO: algorithm to find pressure value based on distance
+        
+        let k_array = k_array_for_image[row * col]
+        let k_array_index = k_array_index_for_image[row * col]
+        
+        // calculate pressure based on k-neareast PP
+        let totalDistance = k_array.reduce(0, +)
+        
+//        print("totalDistance = ", k_array)
+        
+        if totalDistance == 0{
+            return self.pressure_Data[k_array_index[0][0]][k_array_index[0][1]]
+        }
+        
+        var pressureVal: Double = 0
+        
+        for i in 0..<self.K{
+            let pressure_row = k_array_index[i][0]
+            let pressure_col = k_array_index[i][1]
+            let pressure = self.pressure_Data[pressure_row][pressure_col]
+            pressureVal += Double(pressure) * (Double(k_array[i]) / Double(totalDistance))
+        }
+        
+        return Int(pressureVal)
+        
+    }
+    
+    /**
+     Algorithm to find pressure value based on distance
+     */
     func get_pressure_value_for_pixel(row: Int, col: Int) -> Int{
         //TODO: algorithm to find pressure value based on distance
         
-        if self.dist_array == nil{
-            self.dist_array = [Int](repeating: 0, count: num_Cols * num_Rows)
-            self.k_array = [Int](repeating: 1000000, count: self.K)
-            self.k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
-            
-//            // KNN algorithm
-//            // finding distance to each PP
-//            var count = 0
-//            for k in indexMatrix{
-//                let x = k[0]
-//                let y = k[1]
-//
-//                //            let dist = abs(x - row) + abs(y - col)
-//                let dist = sqrt(pow((CGFloat(x-row)),2) + pow((CGFloat(y - col)),2))
-//                //            print(dist)
-//                dist_array![count] = Int(dist)
-//                count += 1
-//            }
-//
-//            // finding the k-nearest PP
-//            for i in 0..<dist_array!.count {
-//                let max_in_k = k_array!.max()!
-//                if dist_array![i] < max_in_k {
-//                    let max_index = k_array!.firstIndex(of: max_in_k)!
-//                    k_array![max_index] = dist_array![i]
-//                    k_array_index![max_index][0] = i / 5
-//                    k_array_index![max_index][1] = i % 5
-//                }
-//            }
-        }
-        else{
-            
-        }
+        /** Distance to each pressure points */
+        var dist_array = [Int](repeating: 0, count: num_Cols * num_Rows)
         
-        dist_array = [Int](repeating: 0, count: num_Cols * num_Rows)
-        k_array = [Int](repeating: 1000000, count: self.K)
-        k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: K)
+        /** K closest distance value */
+        var k_array = [Int](repeating: 1000000, count: self.K)
+        
+        /** K closest indexes */
+        var k_array_index = [[Int]](repeating: [Int](repeating: 0, count: 2), count: self.K)
         
         // KNN algorithm
         // finding distance to each PP
@@ -272,36 +278,39 @@ class HeatMap {
             //            let dist = abs(x - row) + abs(y - col)
             let dist = sqrt(pow((CGFloat(x-row)),2) + pow((CGFloat(y - col)),2))
             //            print(dist)
-            dist_array![count] = Int(dist)
+            dist_array[count] = Int(dist)
             count += 1
         }
 
         // finding the k-nearest PP
-        for i in 0..<dist_array!.count {
-            let max_in_k = k_array!.max()!
-            if dist_array![i] < max_in_k {
-                let max_index = k_array!.firstIndex(of: max_in_k)!
-                k_array![max_index] = dist_array![i]
-                k_array_index![max_index][0] = i / 5
-                k_array_index![max_index][1] = i % 5
+        for i in 0..<dist_array.count {
+            let max_in_k = k_array.max()!
+            if dist_array[i] < max_in_k {
+                let max_index = k_array.firstIndex(of: max_in_k)!
+                k_array[max_index] = dist_array[i]
+                k_array_index[max_index][0] = i / 5
+                k_array_index[max_index][1] = i % 5
             }
         }
         
         // calculate pressure based on k-neareast PP
-        let totalDistance = k_array!.reduce(0, +)
+        let totalDistance = k_array.reduce(0, +)
         
         if totalDistance == 0{
-            return self.pressure_Data[k_array_index![0][0]][k_array_index![0][1]]
+            return self.pressure_Data[k_array_index[0][0]][k_array_index[0][1]]
         }
         
         var pressureVal: Double = 0
         
         for i in 0..<self.K{
-            let pressure_row = k_array_index![i][0]
-            let pressure_col = k_array_index![i][1]
+            let pressure_row = k_array_index[i][0]
+            let pressure_col = k_array_index[i][1]
             let pressure = self.pressure_Data[pressure_row][pressure_col]
-            pressureVal += Double(pressure) * (Double(k_array![i]) / Double(totalDistance))
+            pressureVal += Double(pressure) * (Double(k_array[i]) / Double(totalDistance))
         }
+        
+        self.k_array_for_image.append(k_array)
+        self.k_array_index_for_image.append(k_array_index)
         
         return Int(pressureVal)
         
@@ -403,11 +412,15 @@ class HeatMap {
      */
     private var indexMatrix = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 70)
     
-    private var dist_array: [Int]?
+    /**
+     Contains the K closest pressure point index for the entire image
+     */
+    private var k_array_index_for_image =  [[[Int]]]()
     
-    private var k_array: [Int]?
-    
-    private var k_array_index: [[Int]]?
+    /**
+     Contains the K closest distance value
+     */
+    private var k_array_for_image = [[Int]]()
     
 }
 
