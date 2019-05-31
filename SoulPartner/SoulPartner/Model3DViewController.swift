@@ -60,15 +60,4 @@ class Model3DViewController: UIViewController, Observer {
         
         
     }
-    
-    func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateCounting), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateCounting(){
-        self.sceneView.scene?.rootNode.isPaused = false
-        let rotateOne = SCNAction.rotateBy(x: 1, y: 0, z: 1, duration: 0.5)
-        shoeNode?.runAction(rotateOne)
-    }
 }

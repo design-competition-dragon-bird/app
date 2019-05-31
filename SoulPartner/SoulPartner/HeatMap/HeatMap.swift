@@ -28,17 +28,19 @@ let num_Cols = 5
 
 class HeatMap {
     
-    func updateHeatMap(pressureData: [[Int]]) {
-        copy_outline(self.pixelData)
-//        get_PP_location()
+    func updateHeatMap(pressureData: [[Int]]) -> UIImage{
         self.pressure_Data = pressureData
-        pressureMatrix = fill_pressure_values_for_image(pixelMatrix)
+//        print("pressure Data: ", self.pressure_Data)
+        self.pressureMatrix = fill_pressure_values_for_image()
+//        print("pixel matrix: ", pixelMatrix)
+//        print("pressure matrix: ", pressureMatrix)
         color_map()
         
         /*
          * convert the pixel array into an image
          */
-        right_sole_icon = imageFromARGB32Bitmap(pixels: pixelMatrix, width: image_width, height: image_height)
+        self.right_sole_icon = imageFromARGB32Bitmap(pixels: self.pixelMatrix, width: image_width, height: image_height)
+        return self.right_sole_icon!
     }
     
     func performSetup(_ pixelData: [PixelData]?) {
@@ -142,6 +144,22 @@ class HeatMap {
                 count += 1
             }
         }
+    }
+    
+    /**
+     Assign each pixel whether it's inside or outside boundary
+     */
+    func fill_pressure_values_for_image() -> [[Int]] {
+        
+        for j in 0..<self.image_height{
+            for i in 0..<self.image_width-1{
+                if pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
+                    pressureMatrix[j][i] = get_pressure_value_for_pixel(row: j, col: i)
+                }
+            }
+        }
+        
+        return pressureMatrix
     }
     
     /**
@@ -289,17 +307,20 @@ class HeatMap {
         
     }
     
+    /**
+     sets the color of the pixel given the pressure matrix
+     */
     func color_map(){
         
         for j in 0..<self.image_height {
             for i in 0..<self.image_width {
-                if pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
+                if self.pressureMatrix[j][i] != NOT_INSIDE_BOUNDARY {
                     pixelMatrix[j][i] = from_pressure_data_to_pixel_data(pressureMatrix[j][i])
                 }
                 else{
 //                    1E1B2F
 //                    pixelMatrix[j][i] = PixelData(a: 1, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
-                      pixelMatrix[j][i] = PixelData(a: 0, r: 0x1e/255, g: 0x1b/255, b: 0x2f/255)
+                      pixelMatrix[j][i] = PixelData(a: 0, r: 0/255, g: 0/255, b: 0/255)
 
                 }
             }

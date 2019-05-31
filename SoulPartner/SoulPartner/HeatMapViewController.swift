@@ -21,7 +21,7 @@ class HeatMapViewController: UIViewController, Observer {
             for i in dataArray {
                 intArray.append(Int(i) as! Int)
             }
-//            print("float Array", floatArray)
+//            print("float Array", intArray)
             
             //update the pressure_data 2D matrix in heatmap
             var pressureData = [[Int]](repeating: [Int](repeating: 0, count: 5), count: 14)
@@ -34,8 +34,14 @@ class HeatMapViewController: UIViewController, Observer {
                 }
             }
 //            print("pressure data sent: ", pressureData)
-            heatMap.updateHeatMap(pressureData: pressureData) //call updateHeatMap and pass in the 2D pressure data
-            self.right_sole_icone.image = heatMap.right_sole_icon
+//            heatMap.updateHeatMap(pressureData: pressureData) //call updateHeatMap and pass in the 2D pressure data
+            
+            DispatchQueue.main.async {
+                self.right_sole_icone.image = self.heatMap.updateHeatMap(pressureData: pressureData)
+                self.right_sole_icone.setNeedsDisplay()
+                
+            }
+            
         }
         // do nothing
     }

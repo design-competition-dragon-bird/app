@@ -38,7 +38,7 @@ class Parse {
             end_of_packet = false
             tempString = ""
 //            print("package recieved: ", packetDict)
-//            decodeData()
+//            print("packet num elems: ", packetDict["P"]?.count)
             notify(value: packetDict)
         }
     }
