@@ -381,7 +381,7 @@ class HeatMap {
     private var p2: Point_3D!
     
     /** K used for KNN*/
-    private let K = 8
+    private let K = 7
     
     private let NOT_INSIDE_BOUNDARY = -1
     

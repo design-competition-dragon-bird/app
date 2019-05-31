@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a2e-CF-ADa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -88,6 +88,14 @@
                                     <segue destination="tPx-A5-C4R" kind="presentation" id="os0-h0-uTd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xS-JX-jYI">
+                                <rect key="frame" x="20" y="20" width="142" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button -- Don't Click"/>
+                                <connections>
+                                    <action selector="button_clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aij-oE-2OG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.10588235294117647" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -121,7 +129,6 @@
                         <outlet property="passwordButton_outlet" destination="Yhf-AH-M5Z" id="sJ9-hu-9ay"/>
                         <outlet property="passwordTextField" destination="UHx-MD-Gqo" id="nbb-qk-IX0"/>
                         <segue destination="a2e-CF-ADa" kind="show" identifier="to_bt_connection" id="v29-ey-137"/>
-                        <segue destination="rBM-6a-1AN" kind="show" identifier="main_to_tab_bar_controller" id="kBN-2G-D7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se0-il-iE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,7 +401,6 @@
         <image name="back" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GOd-Jg-bR1"/>
         <segue reference="Y1L-vQ-v3S"/>
         <segue reference="G27-hY-KVJ"/>
     </inferredMetricsTieBreakers>

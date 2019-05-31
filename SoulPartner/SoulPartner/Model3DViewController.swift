@@ -35,6 +35,14 @@ class Model3DViewController: UIViewController, Observer {
             self.roll = roll
             self.yaw = yaw
             
+            User.instance.storeGyroData(pitch: pitch, roll: roll, yaw: yaw, success: {
+                // success
+                print("Gyro data save succesfully")
+            }) {
+                // failure
+                print("Unable to save gyro data...")
+            }
+            
         }
     }
     
