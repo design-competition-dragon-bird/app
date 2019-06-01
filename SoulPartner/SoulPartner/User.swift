@@ -128,31 +128,39 @@ class User{
     
     func storePressureData(intArray: [Int], success: @escaping () -> (), failure: @escaping () -> ()){
         let current = self.get_current_time()
-        self.db.collection("User").document(self.userId).collection("Pressure Data").document(current[0]).collection(current[1]).document(current[2]).collection(current[3]).addDocument(data: [
-            "Data": intArray
-            ]) { (err) in
-            //check for error
-                if err != nil{
-                    failure()
-                }
+        self.db.collection("User").document(self.userId).collection("Pressure Data").document(current[0]).collection(current[1]).document(current[2]).setData([
+            current[3] : intArray
+        ], merge: true) { (error) in
+            if error != nil{
+                failure()
+            }
+            else{
                 success()
+            }
         }
     }
     
-    func getPressureData(success: @escaping () -> (), failure: @escaping () -> [Int : [[Int]]]){
+    func getPressureData(success: @escaping (_ PressureData: [[Int]]) -> (), failure: @escaping () -> ()){
         let current = self.get_current_time()
-        self.db.collection("User").document(self.userId).collection("Pressure Data").document(current[0]).collection(current[1]).getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {//year
-                    if document.documentID == current[2] {
-                        //got date
-                        
+
+        self.db.collection("User").document(self.userId).collection("Pressure Data").document(current[0]).collection(current[1]).document(current[2]).getDocument { (snap, err) in
+            if let error = err {
+                print("Error getting documents: \(error)")
+                failure()
+            }
+            else{
+                if let data = snap?.data(){
+                    let keys = data.keys.sorted()
+                    var pressureData = [[Int]]()
+                    for i in keys{
+                        pressureData.append(data[i] as! [Int])
                     }
-                    
-                    print("\(document.documentID) => \(document.data())")
+                    success(pressureData)
                 }
+                else{
+                    failure()
+                }
+               
             }
         }
     }
@@ -209,6 +217,6 @@ class User{
             current_time = current_time + " AM"
         }
         
-        return [String(year), String(current_month), String(current_day), current_time]
+        return [String(year), String(current_month), current_day, current_time]
     }
 }

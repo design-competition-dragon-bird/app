@@ -13,8 +13,12 @@ class VibrationViewController: UIViewController {
     
     @IBAction func message_button_clicked(_ sender: Any) {
         current_tab = TAB_BAR.VIBRATION_PAGE.rawValue
-        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "messages_navigation_controller")
+//        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "messages_navigation_controller")
+//        self.present(viewController, animated: true, completion: nil)
+        
+        let storyboard = UIStoryboard(name: "History", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "historyTabBar")
         self.present(viewController, animated: true, completion: nil)
     }
     

@@ -65,9 +65,9 @@ class MessagesTableViewController: UITableViewController {
         // get chat members for the chat and save is into cell labels
         User.instance.getMembersFromChat(chat_id: chat_id, success: { (member1, member2) in
             // success
-            print("member1 = ", member1)
-            print("member2 = ", member2)
-            print("user name = ", User.instance.firstName)
+//            print("member1 = ", member1)
+//            print("member2 = ", member2)
+//            print("user name = ", User.instance.firstName)
             if User.instance.firstName == member1 {
                 cell.name_label.text = member2
             }

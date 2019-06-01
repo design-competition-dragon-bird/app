@@ -43,7 +43,7 @@ class HeatMapViewController: UIViewController, Observer {
                     //            print("float Array", intArray)
                     
                     //update the pressure_data 2D matrix in heatmap
-                    var pressureData = [[Int]](repeating: [Int](repeating: 0, count: 5), count: 14)
+                    var pressureData = [[Int]](repeating: [Int](repeating: 0, count: num_Cols), count: num_Rows)
                     var counter: Double = 0
                     
                     for j in 0..<num_Rows {
@@ -56,15 +56,15 @@ class HeatMapViewController: UIViewController, Observer {
                 self.right_sole_icone.image = HeatMap.instance.updateHeatMap(pressureData: pressureData)
                 self.right_sole_icone.setNeedsDisplay()
                     
-//                User.instance.storePressureData(intArray: intArray, success: {
-//                        // success
-//                        // do nothing for now
-//                    print("Heatmap data saved successfully")
-//                }, failure: {
-//                    // failure
-//                    // do nothing for now
-//                    print("Unable to save heatmap data...")
-//                })
+                User.instance.storePressureData(intArray: intArray, success: {
+                        // success
+                        // do nothing for now
+                    print("Heatmap data saved successfully")
+                }, failure: {
+                    // failure
+                    // do nothing for now
+                    print("Unable to save heatmap data...")
+                })
             }
             
         }

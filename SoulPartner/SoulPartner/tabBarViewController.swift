@@ -61,6 +61,9 @@ class tabBarViewController: UITabBarController, Observer {
         self.tabBar.barTintColor = tab_bar_color[self.selectedIndex]
         self.tabBar.items![selectedIndex].title = tab_bar_titles[self.selectedIndex]
         
+
+
+        
     }
     
     private func customize_tab_bar(){
