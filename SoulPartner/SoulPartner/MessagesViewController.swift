@@ -27,7 +27,7 @@ class MessageViewController: MessagesViewController{
         dbFirestore = Firestore.firestore()
         dbRealTime = Database.database().reference()
         
-        member = Member(name: "Dragon Bird", color: .blue)
+        member = Member(name: User.instance.firstName, color: .blue)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messageInputBar.delegate = self

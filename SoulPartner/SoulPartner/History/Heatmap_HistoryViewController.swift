@@ -19,15 +19,15 @@ class Heatmap_HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        User.instance.getPressureData(success: {
-            // success
-            // do nothing for now
-            print("Heatmap data retieved successfully")
-        }, failure: {
-            // failure
-            // do nothing for now
-            print("Unable to retrieve heatmap data...")
-        })
+//        User.instance.getPressureData(success: {
+//            // success
+//            // do nothing for now
+//            print("Heatmap data retieved successfully")
+//        }, failure: {
+//            // failure
+//            // do nothing for now
+//            print("Unable to retrieve heatmap data...")
+//        })
         // Do any additional setup after loading the view.
     }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseDatabase
 
 class User{
     
@@ -20,9 +21,11 @@ class User{
     var password: String!
     var userType: String!
     var phone: String!
+    var chat_ids: [String]!
     var selectedButton: String!
     
     private var db: Firestore!
+    private var ref: DatabaseReference!
     
     init() {
         // do nothing
@@ -33,9 +36,45 @@ class User{
         self.password = nil
         self.userType = nil
         self.phone = nil
+        self.chat_ids = nil
         self.selectedButton = "default button"
 
         self.db = Firestore.firestore()
+        self.ref = Database.database().reference()
+    }
+    
+    func getUserInfo(UID uid: String, success: @escaping () -> (), failure: @escaping () -> ()){
+        self.db.collection("User").document(uid).getDocument { (snapshot, err) in
+            if err != nil {
+                failure()
+            }
+            else{
+                let data = snapshot?.data()
+                self.firstName = (data!["First Name"] as! String)
+                self.lastName = (data!["Last Name"] as! String)
+                self.email = (data!["Email"] as! String)
+                self.phone = (data!["Phone"] as! String)
+                self.userType = (data!["User Type"] as! String)
+//                print("data = ", data)
+                success()
+            }
+        }
+    }
+    
+    
+    func getMembersFromChat(chat_id: String, success: @escaping (_ member1: String, _ member2: String) -> (), failure: @escaping () -> ()) {
+        self.ref.child(chat_id).observeSingleEvent(of: .value, with: { (snapshot) in
+            // code
+            let value = snapshot.value as? NSDictionary
+            let mem1 = value?["member1"] as? String ?? ""
+            let mem2 = value?["member2"] as? String ?? ""
+//            print("mem1 = ", mem1)
+//            print("mem2 = ", mem2)
+            success(mem1, mem2)
+        }) { (err) in
+            // error
+            failure()
+        }
     }
     
     func storeUserInfo(success: @escaping () -> (), failure: @escaping () -> ()){
@@ -63,6 +102,27 @@ class User{
             // user registration failure
             print("failure during user registration...")
             failure()
+        }
+    }
+    
+    func getChats(success: @escaping () -> (), failure: @escaping () -> ()) {
+        self.db.collection("User").document(self.userId).getDocument { (snapshot, err) in
+            if let document = snapshot, snapshot!.exists {
+                let data = document.data()!
+                let chats = data["Chat IDs"] as? [String]
+                
+                if chats != nil {
+                    self.chat_ids = chats
+                    success()
+                }
+                else{
+                    failure()
+                }
+            }
+            else {
+                print("Document does not exist")
+                failure()
+            }
         }
     }
     

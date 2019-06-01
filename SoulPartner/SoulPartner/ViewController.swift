@@ -13,8 +13,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func button_clicked(_ sender: Any) {
         Authenticate.instance.authenticate_user_login(email: "rap004@ucsd.edu", passWord: "password1", success: {
             // perform segue
-            let storyboard = UIStoryboard(name: "History", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "historyTabBar")
+            let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "messages_navigation_controller")
             self.present(viewController, animated: true, completion: nil)
 //            self.performSegue(withIdentifier: "to_bt_connection", sender: self)
         }) {

@@ -75,7 +75,13 @@ class Authenticate{
                     else {
                         print("user id during authentication = ", user.uid)
                         User.instance.userId = user.uid
-                        success()
+                        User.instance.getUserInfo(UID: user.uid, success: {
+                            // success
+                            success()
+                        }, failure: {
+                            // failure
+                            failure()
+                        })
                     }
                 }
                 
