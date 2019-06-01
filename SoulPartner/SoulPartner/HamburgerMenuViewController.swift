@@ -10,16 +10,28 @@ import UIKit
 
 
 
-class HamburgerMenuViewController: UIViewController {
+class HamburgerMenuViewController: UIViewController, Observer {
+    func update(value: [Character : String]) {
+        if let data = value["B"] {
+            let battery_level = data
+            self.batteryLabel.text = battery_level + "%"
+        }
+    }
+    
 
     var viewWidth: CGFloat!
     
-
+    @IBOutlet weak var batteryLabel: UILabel!
+    
     @IBOutlet weak var menu_view: UIView!
+     var parser: Parse!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        parser = Parse()
+        parser.attachObserver(observer: self)
+        
         self.view.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         viewWidth = self.view.bounds.width * 0.65
         menu_view.frame = CGRect(x: -viewWidth, y: 0, width: viewWidth, height: self.view.bounds.height)

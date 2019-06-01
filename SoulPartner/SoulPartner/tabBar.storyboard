@@ -215,12 +215,42 @@
                                 <rect key="frame" x="0.0" y="0.0" width="277" height="755"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4H-1F-geo">
-                                        <rect key="frame" x="0.0" y="248" width="277" height="42"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger_fancy_1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-Ng-ATI">
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="747"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="   History"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4H-1F-geo">
+                                        <rect key="frame" x="0.0" y="28" width="277" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.2691452005411214" green="0.095725604281692411" blue="0.83187262055837563" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="30"/>
+                                        <state key="normal" title=" Dragon Bird">
+                                            <color key="titleColor" red="1" green="0.80210155709825282" blue="0.63453401764698147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="        Soul Partner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCP-HL-xt4">
+                                        <rect key="frame" x="0.0" y="689" width="277" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.37286434530529139" green="0.30904920784648626" blue="0.8763880076142132" alpha="0.35386344178082191" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="34"/>
+                                        <color key="textColor" red="0.92603427528536519" green="1" blue="0.92494400122331943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby-footprints" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-MA-ozP">
+                                        <rect key="frame" x="0.0" y="689" width="66" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="80%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuU-B4-e7H">
+                                        <rect key="frame" x="229" y="33" width="40" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.92603427530000004" green="1" blue="0.92494400119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flash" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-8R-wkX">
+                                        <rect key="frame" x="200" y="33" width="21" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -229,6 +259,7 @@
                         <viewLayoutGuide key="safeArea" id="Kbi-ka-v96"/>
                     </view>
                     <connections>
+                        <outlet property="batteryLabel" destination="PuU-B4-e7H" id="v8C-4i-DbB"/>
                         <outlet property="menu_view" destination="LkS-B2-mIu" id="WFc-P4-dMQ"/>
                     </connections>
                 </viewController>
@@ -486,6 +517,9 @@
     </scenes>
     <resources>
         <image name="Hamburger_icon" width="220" height="220"/>
+        <image name="baby-footprints" width="512" height="512"/>
+        <image name="flash" width="128" height="128"/>
+        <image name="hamburger_fancy_1" width="3840" height="5760"/>
         <image name="messages" width="512" height="512"/>
         <image name="right_sole_icon" width="82" height="199"/>
         <image name="right_sole_icon_tab" width="64" height="26"/>
